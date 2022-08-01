@@ -39,4 +39,5 @@ public String addStockPurchases(Model model){
    purchaseService.addStockProduct(purchases);
    return "redirect:/trade/tradelist";
 }
+
 }
