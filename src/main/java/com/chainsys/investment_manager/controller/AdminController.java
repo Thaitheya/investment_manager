@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
 import com.chainsys.investment_manager.model.Stock_Product;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 import com.chainsys.investment_manager.service.StockProductService;
@@ -74,5 +76,12 @@ public class AdminController {
     public String updateStock( @ModelAttribute("updatestock") Stock_Product sp) {
     	 productService.save(sp);
     	return "redirect:/admin/list";
+    }
+    @GetMapping("/")
+    public String StockProdectPurchaseDTO(Model model) {
+	StockProdectPurchaseDTO dto  = new  StockProdectPurchaseDTO();
+       model.addAttribute(dto.getSharesPurchase());
+	  model.addAttribute(dto.getStock_Product());
+	  return "stock-productpurchase";
     }
 }

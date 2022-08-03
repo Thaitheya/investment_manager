@@ -32,4 +32,5 @@ public class LoginController {
 		ur.save(userreg);
 		return "home";
 	}
+	
 }

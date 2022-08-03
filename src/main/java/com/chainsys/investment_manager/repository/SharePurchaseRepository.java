@@ -7,11 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.chainsys.investment_manager.model.SharesPurchase;
 @Repository
-public interface SharesPurchasesRepository extends JpaRepository<SharesPurchase,Integer>{
-     
-     SharesPurchase save( SharesPurchase purchaseService);
-     SharesPurchase findById(int id);
-	void deleteById(int dr_id);
-	List <SharesPurchase> findAll();
-
+public interface SharePurchaseRepository extends JpaRepository<SharesPurchase, Integer>{
+     List<SharesPurchase>  findByStock_ProductStockId(int id);
 }

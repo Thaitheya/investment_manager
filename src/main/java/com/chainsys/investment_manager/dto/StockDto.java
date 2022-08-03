@@ -1,15 +1,13 @@
-// package com.chainsys.investment_manager.dto;
+package com.chainsys.investment_manager.dto;
 
-// import java.io.Serializable;
+import lombok.Data;
 
-// import javax.persistence.Entity;
-// import javax.persistence.Table;
-
-// import lombok.Data;
-// import lombok.NoArgsConstructor;
-// @Entity
-// @Data
-// @Table
-// @NoArgsConstructor
-// public class StockDto implements Serializable{
-// }
+@Data
+public class StockDto {
+     private String adhaarNumber;
+     private String StockId;
+     private String StockName;
+     private String noOfSharesInHand;
+     private String lastTransactionalDate;
+     private String lastTransactionalValue;
+}

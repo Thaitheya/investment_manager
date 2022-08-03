@@ -56,4 +56,11 @@ public String addStockSales(@ModelAttribute("addsales") SharesSales sales) {
      salesService.addStockProduct(sales);
      return "redirect:/trade/tradelist";
 }
+
+
+
+
+
+//Customer Account
+    
 }

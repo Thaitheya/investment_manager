@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+@Data
 @Entity
 @Table(name = "transactions")
 public class Transactions {
@@ -23,77 +25,5 @@ public class Transactions {
      private int amountReceived;
 	@Column(name = "amount_paid")
      private int amountPaid;
-	public long getTransactionId() {
-		return transactionId;
-	}
-	public void setTransactionId(long transactionId) {
-		this.transactionId = transactionId;
-	}
-	public Date getTransactionDate() {
-		return transactionDate;
-	}
-	public void setTransactionDate(Date transactionDate) {
-		this.transactionDate = transactionDate;
-	}
-	public long getAdhaarNumber() {
-		return adhaarNumber;
-	}
-	public void setAdhaarNumber(long adhaarNumber) {
-		this.adhaarNumber = adhaarNumber;
-	}
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public int getAmountReceived() {
-		return amountReceived;
-	}
-	public void setAmountReceived(int amountReceived) {
-		this.amountReceived = amountReceived;
-	}
-	public int getAmountPaid() {
-		return amountPaid;
-	}
-	public void setAmountPaid(int amountPaid) {
-		this.amountPaid = amountPaid;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
