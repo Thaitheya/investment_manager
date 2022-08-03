@@ -7,14 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "shares_purchases")
-public class SharesPurchases {
+public class SharesPurchase {
      @Id
-	@Column(name = "adhaar_number")
-     private long adhaarNumber;
 	@Column(name = "purchase_id")
      private int purchaseId;
+     @Column(name = "adhaar_number")
+     private long adhaarNumber;
 	@Column(name = "date_of_txn")
      private Date dateOfTxn;
 	@Column(name = "stock_id")

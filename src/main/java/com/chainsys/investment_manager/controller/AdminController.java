@@ -1,4 +1,5 @@
 package com.chainsys.investment_manager.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.investment_manager.model.Stock_Product;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 import com.chainsys.investment_manager.service.StockProductService;
+
+
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -19,11 +23,13 @@ public class AdminController {
   @Autowired
   StockProductService productService;
 
-//Stock_Product
+     //Stock_Product
+
 	@GetMapping("/adminhome")
 	public String adminHome() {
 		return "admin";
 	}
+     //List
 
 	@GetMapping("/list")
 	public String getAllStockProduct(Model model) {
@@ -31,6 +37,7 @@ public class AdminController {
 		model.addAttribute("allstockproduct", stocklist);
 		return "list_stock_product";
 	}
+     //Added stock
 
 	@GetMapping("/addstockform")
 	public String stockProduct(Model model) {
@@ -45,15 +52,16 @@ public class AdminController {
 		return "redirect:/admin/list";
 	}
 
+     //Delete stock
+
 	@GetMapping("/deletestock")
 	public String deleteStockProduct(@RequestParam("id") int id, Model model) {
 		productService.deleteById(id);
 		return "redirect:/admin/list";
 	}
-     // @RequestMapping(method = RequestMethod.DELETE, value = "delete/{stock_id}")
-	// public void deleteStock(@PathVariable int  stock_id){
-	     //  sps.deleteById(stock_id);
-	// }
+
+	//update stock
+
 	@GetMapping("/updateform")
 	public String updateStockProductForm(@RequestParam("id") int id, Model model) {
 		Stock_Product sp = new Stock_Product();

@@ -13,7 +13,7 @@
 <div id="root">
 
 		<div id="form">
-			<form:form action="add" method="post" modelAttribute="addpurchases">
+			<form:form action="addp" method="post" modelAttribute="addpurchases">
 
 				<div>
 					<label for="adhaarNumber">Adhaar Number</label>
@@ -65,7 +65,9 @@
 				</div>
 				<div>
 					<div>
-						<form:button>Add stock</form:button>
+						<%-- <form:button>Add stock</form:button> --%>
+						<button  id="add_stock"> Add stock</button>
+						<p id="demo">Please add stock</p>
 					</div>
 				</div>
 			</form:form>
@@ -73,6 +75,11 @@
 
 		</div>
 	</div>
+	<script type="text/javascript">
+	       function add_stock() {
+			 document.getElementById("demo").innerHTML = "Sucessfully added stock"
+		  }
 	
+	</script>
 </body>
 </html>

@@ -13,7 +13,7 @@ import com.chainsys.investment_manager.repository.User_registrationRepository;
 import com.chainsys.investment_manager.service.UserRegistrationService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/form")
 public class LoginController {
 	@Autowired
 	User_registrationRepository ur;

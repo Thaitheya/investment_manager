@@ -5,13 +5,13 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.chainsys.investment_manager.model.SharesPurchases;
+import com.chainsys.investment_manager.model.SharesPurchase;
 @Repository
-public interface SharesPurchasesRepository extends JpaRepository<SharesPurchases,Integer>{
+public interface SharesPurchasesRepository extends JpaRepository<SharesPurchase,Integer>{
 
-     SharesPurchases save( SharesPurchases purchaseService);
-     SharesPurchases findById(int id);
+     SharesPurchase save( SharesPurchase purchaseService);
+     SharesPurchase findById(int id);
 	void deleteById(int dr_id);
-	List <SharesPurchases> findAll();
+	List <SharesPurchase> findAll();
 
 }

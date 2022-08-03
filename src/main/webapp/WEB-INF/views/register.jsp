@@ -18,19 +18,19 @@
 				<div>
 					<label for="first_name">First Name</label>
 					<div>
-						<form:input path="first_name"   />
+						<form:input path="firstName"   />
 					</div>
 				</div>
 				<div>
 					<label for="last_name">Last Name</label>
 					<div>
-						<form:input path="last_name" />
+						<form:input path="lastName" />
 					</div>
 				</div>
 				<div>
 					<label for="user_name">User Name</label>
 					<div>
-						<form:input path="user_name" />
+						<form:input path="userName" />
 					</div>
 				</div>
 				<div>
@@ -42,13 +42,13 @@
 				<div>
 					<label for="adhaar_number">Adhaar Number</label>
 					<div>
-						<form:input path="adhaar_number" />
+						<form:input path="adhaarNumber" />
 					</div>
 				</div>
 				<div>
 					<label for="pan_number">Pan Number</label>
 					<div>
-						<form:input path="pan_number" />
+						<form:input path="panNumber" />
 					</div>
 				</div>
 				<div>
@@ -60,7 +60,7 @@
 				<div>
 					<label for="phone_number">Phone Number</label>
 					<div>
-						<form:input path="phone_number" />
+						<form:input path="phoneNumber" />
 					</div>
 				</div>
 				<div>
@@ -69,7 +69,7 @@
 					</div>
 				</div>
 			</form:form>
-
+${userRegistration.firstName}
 
 		</div>
 	</div>

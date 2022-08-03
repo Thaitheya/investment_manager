@@ -25,18 +25,23 @@
 			<tbody>
 				<c:forEach var="Shares_purchases" items="${allpurchasedstock}">
 					<tr>
-						<td>${Shares_purchases.adhaar_number}</td>
-						<td>${Shares_purchases.purchase_id}</td>
-						<td>${Shares_purchases.date_of_txn}</td>
-						<td>${Shares_purchases.stock_id}</td>
-						<td>${Shares_purchases.buy_price}</td>
-						<td>${Shares_purchases.quantity}</td>
-						<td>${Shares_purchases.amount_of_inr}</td>
-						<td>${Shares_purchases.mode_of_payment}</td>
+						<td>${SharesPurchases.adhaarNumber}</td>
+						<td>${SharesPurchases.purchaseId}</td>
+						<td>${SharesPurchases.dateOfTxn}</td>
+						<td>${SharesPurchases.stockId}</td>
+						<td>${SharesPurchases.buyPrice}</td>
+						<td>${SharesPurchases.quantity}</td>
+						<td>${SharesPurchases.amountOfInr}</td>
+						<td>${SharesPurchases.modeOfPayment}</td>
 					</tr>
 
 				</c:forEach>
-
+<script type="text/javascript">
+       function add_stock() {
+		 document.getElementById("demo").innerHTML = "Sucessfully added stock"
+	  }
+	
+</script>
 
 			</tbody>
 		</table>
