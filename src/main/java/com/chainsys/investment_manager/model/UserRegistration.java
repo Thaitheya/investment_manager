@@ -1,8 +1,13 @@
 package com.chainsys.investment_manager.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -11,11 +16,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
-@Data
+
 @Entity
 @Table(name="user_registration")
 public class UserRegistration {
      @Id
+     @GeneratedValue
      @Column(name = "adhaar_number")
      private long adhaarNumber;
 	@Column(name ="first_name")
@@ -32,23 +38,55 @@ public class UserRegistration {
      private String address;
 	@Column(name = "phone_number")
      private long phoneNumber;
-     
-     @ManyToOne(fetch = FetchType.LAZY)
-     @JoinColumn(name = "transaction_pk_id",referencedColumnName = "transaction_id")
-     private Transactions transactions;
-
-     @OneToOne(fetch = FetchType.LAZY)
-     @JoinColumn(name = "customer_fk_id",referencedColumnName = "adhaar_number")
-     private CustomerAccount customerAccount;
-     @OneToMany(fetch = FetchType.LAZY)
-     @JoinColumn(name = "share_p__fk_id", referencedColumnName = "purchase_id")
-     private SharesPurchase sharesPurchase;
-
-     @OneToMany(fetch = FetchType.LAZY)
-     @JoinColumn(name = "share_s_fk_id", referencedColumnName = "sales_id")
-     private SharesSales sharesSales;
-
-     @OneToOne(fetch = FetchType.LAZY)
-     @JoinColumn(name = "stock_fk_id", referencedColumnName = "stock_id")
-     private Stock_Product stock_Product; 
+	public long getAdhaarNumber() {
+		return adhaarNumber;
+	}
+	public void setAdhaarNumber(long adhaarNumber) {
+		this.adhaarNumber = adhaarNumber;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public int getPanNumber() {
+		return panNumber;
+	}
+	public void setPanNumber(int panNumber) {
+		this.panNumber = panNumber;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public long getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	
+	
+	
 }

@@ -77,11 +77,6 @@ public class AdminController {
     	 productService.save(sp);
     	return "redirect:/admin/list";
     }
-    @GetMapping("/")
-    public String StockProdectPurchaseDTO(Model model) {
-	StockProdectPurchaseDTO dto  = new  StockProdectPurchaseDTO();
-       model.addAttribute(dto.getSharesPurchase());
-	  model.addAttribute(dto.getStock_Product());
-	  return "stock-productpurchase";
-    }
+
+    
 }

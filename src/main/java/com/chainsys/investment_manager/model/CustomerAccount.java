@@ -1,9 +1,14 @@
 package com.chainsys.investment_manager.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 import lombok.Data;
 @Data
 @Entity
@@ -20,8 +25,6 @@ public class CustomerAccount {
      private int sharesSold;
 	@Column(name = "amount_under_settlement")
      private int amountUnderSettlement;
-
-     
      
 	
 	

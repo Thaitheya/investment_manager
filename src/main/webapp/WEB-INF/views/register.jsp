@@ -16,19 +16,19 @@
 			<form:form action="register" method="post" modelAttribute="user">
 
 				<div>
-					<label for="first_name">First Name</label>
+					<label for="firstName">First Name</label>
 					<div>
 						<form:input path="firstName"   />
 					</div>
 				</div>
 				<div>
-					<label for="last_name">Last Name</label>
+					<label for="lastName">Last Name</label>
 					<div>
 						<form:input path="lastName" />
 					</div>
 				</div>
 				<div>
-					<label for="user_name">User Name</label>
+					<label for="userName">User Name</label>
 					<div>
 						<form:input path="userName" />
 					</div>
@@ -40,13 +40,13 @@
 					</div>
 				</div>
 				<div>
-					<label for="adhaar_number">Adhaar Number</label>
+					<label for="adhaarNumber">Adhaar Number</label>
 					<div>
 						<form:input path="adhaarNumber" />
 					</div>
 				</div>
 				<div>
-					<label for="pan_number">Pan Number</label>
+					<label for="panNumber">Pan Number</label>
 					<div>
 						<form:input path="panNumber" />
 					</div>
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				<div>
-					<label for="phone_number">Phone Number</label>
+					<label for="phoneNumber">Phone Number</label>
 					<div>
 						<form:input path="phoneNumber" />
 					</div>
@@ -69,7 +69,6 @@
 					</div>
 				</div>
 			</form:form>
-${userRegistration.firstName}
 
 		</div>
 	</div>

@@ -1,30 +1,30 @@
 package com.chainsys.investment_manager.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "stock_product")
 public class Stock_Product {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	@Column(name = "stock_id")
 	private int stockId; 
 	@Column(name = "adhaar_number")
@@ -41,12 +41,83 @@ public class Stock_Product {
 	private Date lastTansactionedDate;
 	@Column(name = "last_tansactioned_value")
 	private float lastTansactionedValue;
-	 
-	@OneToMany(mappedBy = "stock_Product", fetch = FetchType.LAZY)
-     private List<SharesPurchase> purchaselist;
-
-	// @ManyToMany(mappedBy = "stock_product", fetch = FetchType.LAZY)
-	// @JoinColumn(name = "sales_pk_id", referencedColumnName = "sales_id")
-	// private SharesSales sales;
 	
+	public int getStockId() {
+		return stockId;
+	}
+
+	public void setStockId(int stockId) {
+		this.stockId = stockId;
+	}
+
+	public long getAdhaarNumber() {
+		return adhaarNumber;
+	}
+
+	public void setAdhaarNumber(long adhaarNumber) {
+		this.adhaarNumber = adhaarNumber;
+	}
+
+	public String getStockName() {
+		return stockName;
+	}
+
+	public void setStockName(String stockName) {
+		this.stockName = stockName;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public int getNoOfSharesInHand() {
+		return noOfSharesInHand;
+	}
+
+	public void setNoOfSharesInHand(int noOfSharesInHand) {
+		this.noOfSharesInHand = noOfSharesInHand;
+	}
+
+	public float getFaceValue() {
+		return faceValue;
+	}
+
+	public void setFaceValue(float faceValue) {
+		this.faceValue = faceValue;
+	}
+
+	public Date getLastTansactionedDate() {
+		return lastTansactionedDate;
+	}
+
+	public void setLastTansactionedDate(Date lastTansactionedDate) {
+		this.lastTansactionedDate = lastTansactionedDate;
+	}
+
+	public float getLastTansactionedValue() {
+		return lastTansactionedValue;
+	}
+
+	public void setLastTansactionedValue(float lastTansactionedValue) {
+		this.lastTansactionedValue = lastTansactionedValue;
+	}
+    @OneToMany(
+    		mappedBy = "stockProduct",
+    		cascade = CascadeType.ALL
+    		)
+    
+	private List<SharesPurchase> sharesPurchases = new ArrayList<>();
+     
+    @OneToMany(
+    		mappedBy = "stockProduct",
+    		cascade = CascadeType.ALL
+    		)
+    
+    private List<SharesSales> sharesSales = new ArrayList<>();
+    
+
 }
