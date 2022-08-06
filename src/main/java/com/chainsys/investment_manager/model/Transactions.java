@@ -4,17 +4,11 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.JoinFormula;
-
-import lombok.Data;
-@Data
 @Entity
 @Table(name = "transactions")
 public class Transactions {
@@ -23,13 +17,138 @@ public class Transactions {
      private long transactionId;
 	@Column(name = "transaction_date")
      private Date transactionDate;
+	@Column(name = "customer_id")
+	private int customerId;
 	@Column(name = "adhaar_number")
      private long adhaarNumber;
 	@Column(name = "description")
      private String description;
-	@Column(name = "amount_recieved")
+	@Column(name = "amount_received")
      private int amountReceived;
 	@Column(name = "amount_paid")
      private int amountPaid;
+     
+ 	@ManyToOne
+ 	@JoinColumn(name = "customer_id", insertable = false, nullable = false, updatable = false)
+	 private CustomerAccount customerAccount;
 
+	public long getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(long transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public Date getTransactionDate() {
+		return transactionDate;
+	}
+
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public long getAdhaarNumber() {
+		return adhaarNumber;
+	}
+
+	public void setAdhaarNumber(long adhaarNumber) {
+		this.adhaarNumber = adhaarNumber;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public int getAmountReceived() {
+		return amountReceived;
+	}
+
+	public void setAmountReceived(int amountReceived) {
+		this.amountReceived = amountReceived;
+	}
+
+	public int getAmountPaid() {
+		return amountPaid;
+	}
+
+	public void setAmountPaid(int amountPaid) {
+		this.amountPaid = amountPaid;
+	}
+
+	public CustomerAccount getCustomerAccount() {
+		return customerAccount;
+	}
+
+	public void setCustomerAccount(CustomerAccount customerAccount) {
+		this.customerAccount = customerAccount;
+	}
+
+	
+	 
+
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+ 	
+ 	
+ 	
+ 	
 }

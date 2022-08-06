@@ -1,5 +1,7 @@
 package com.chainsys.investment_manager.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,54 +9,55 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
-import com.chainsys.investment_manager.model.Stock_Product;
+import com.chainsys.investment_manager.dto.CustomerTransDTO;
+import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
+import com.chainsys.investment_manager.repository.TransactionsRepository;
 import com.chainsys.investment_manager.service.StockProductService;
-
-
-
+import com.chainsys.investment_manager.service.TransactionService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-	
-  @Autowired
-  StockProductsRepository stockProductsRepository;
-  @Autowired
-  StockProductService productService;
 
-     //Stock_Product
+	@Autowired
+	StockProductsRepository stockProductsRepository;
+	@Autowired
+	StockProductService productService;
+    @Autowired
+    TransactionService transactionService;
+	// Stock_Product
 
 	@GetMapping("/adminhome")
 	public String adminHome() {
 		return "admin";
 	}
-     //List
+	// List
 
 	@GetMapping("/list")
 	public String getAllStockProduct(Model model) {
-		Iterable<Stock_Product> stocklist = productService.getAllStock();
+		List<StockProduct> stocklist =  productService.getAllStock();
 		model.addAttribute("allstockproduct", stocklist);
 		return "list_stock_product";
 	}
-     //Added stock
+	// Added stock
 
 	@GetMapping("/addstockform")
 	public String stockProduct(Model model) {
-		Stock_Product stock = new Stock_Product();
+		StockProduct stock = new StockProduct();
 		model.addAttribute("stock", stock);
 		return "add-stock-form";
 	}
 
 	@PostMapping("/add")
-	public String addStockProduct(@ModelAttribute("stock") Stock_Product stock_Product) {
+	public String addStockProduct(@ModelAttribute("stock") StockProduct stock_Product) {
 		productService.save(stock_Product);
 		return "redirect:/admin/list";
 	}
 
-     //Delete stock
+	// Delete stock
 
 	@GetMapping("/deletestock")
 	public String deleteStockProduct(@RequestParam("id") int id, Model model) {
@@ -62,21 +65,25 @@ public class AdminController {
 		return "redirect:/admin/list";
 	}
 
-	//update stock
+	// update stock
 
 	@GetMapping("/updateform")
 	public String updateStockProductForm(@RequestParam("id") int id, Model model) {
-		Stock_Product sp = new Stock_Product();
-	     productService.findById(id);
-		model.addAttribute("updatestock",sp);
+		StockProduct sp = new StockProduct();
+		productService.findById(id);
+		model.addAttribute("updatestock", sp);
 		return "update-stock-form";
 	}
 
 	@PostMapping("/update")
-    public String updateStock( @ModelAttribute("updatestock") Stock_Product sp) {
-    	 productService.save(sp);
-    	return "redirect:/admin/list";
-    }
-
-    
+	public String updateStock(@ModelAttribute("updatestock") StockProduct sp) {
+		productService.save(sp);
+		return "redirect:/admin/list";
+	} 
+	@GetMapping("/getcustomertrans")
+	public String getCustomerTrans(@RequestParam("id") int id, Model model) {
+		CustomerTransDTO dto = transactionService.getCustomerTransDTO(id);
+		model.addAttribute("getcustomeraccounttransaction",dto.getCustomerAccount());
+		return "customer-trans-list";
+	}
 }

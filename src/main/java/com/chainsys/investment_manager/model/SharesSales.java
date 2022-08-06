@@ -72,10 +72,10 @@ public class SharesSales {
 	}
 	@ManyToOne
 	@JoinColumn(name = "stock_id", insertable = false, updatable = false,nullable = false)
-	private Stock_Product stockProduct;
+	private StockProduct stockProduct;
 	
 	public SharesSales(long adhaarNumber, int salesId, Date dateOfTxn, int stockId, float soldPrice, int quantity,
-			int amountOfInr, Stock_Product stockProduct) {
+			int amountOfInr, StockProduct stockProduct) {
 		super();
 		this.adhaarNumber = adhaarNumber;
 		this.salesId = salesId;

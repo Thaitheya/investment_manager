@@ -13,7 +13,7 @@
 <div id="root">
 
 		<div id="form">
-			<form:form action="addp" method="post" modelAttribute="addpurchases">
+			<form:form action="adds" method="post" modelAttribute="addsales">
 
 				<div>
 					<label for="adhaarNumber">Adhaar Number</label>
@@ -22,9 +22,9 @@
 					</div>
 				</div>
 				<div>
-					<label for="purchaseId">Purchase Id</label>
+					<label for="salesId">Sales Id</label>
 					<div>
-						<form:input path="purchaseId" />
+						<form:input path="salesId" />
 					</div>
 				</div>
 				<div>
@@ -40,9 +40,9 @@
 					</div>
 				</div>
 				<div>
-					<label for="buyPrice">Buy Price</label>
+					<label for="soldPrice">Buy Price</label>
 					<div>
-						<form:input path="buyPrice" />
+						<form:input path="soldPrice" />
 					</div>
 				</div>
 				<div>
@@ -58,15 +58,8 @@
 					</div>
 				</div>
 				<div>
-					<label for="modeOfPayment">Mode Of Payment</label>
 					<div>
-						<form:input path="modeOfPayment"/>
-					</div>
-				</div>
-				<div>
-					<div>
-						<button  id="add_stock"> Add stock</button>
-						<p id="demo">Please add stock</p>
+						<button  id="add_stock"> Add sold stock</button>
 					</div>
 				</div>
 			</form:form>
@@ -74,6 +67,5 @@
 
 		</div>
 	</div>
-	
 </body>
 </html>

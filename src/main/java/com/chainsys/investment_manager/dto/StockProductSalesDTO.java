@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.chainsys.investment_manager.model.SharesSales;
-import com.chainsys.investment_manager.model.Stock_Product;
+import com.chainsys.investment_manager.model.StockProduct;
 
 public class StockProductSalesDTO {
 
-	private Stock_Product stockProduct;
-	private List<SharesSales> sharesSales = new ArrayList<>();
-	public Stock_Product getStockProduct() {
+	private StockProduct stockProduct;
+    private List<SharesSales> sharesSales = new ArrayList<>();
+	public StockProduct getStockProduct() {
 		return stockProduct;
 	}
-	public void setStockProduct(Stock_Product stockProduct) {
+	public void setStockProduct(StockProduct stockProduct) {
 		this.stockProduct = stockProduct;
 	}
 	public List<SharesSales> getSharesSales() {
@@ -22,6 +22,6 @@ public class StockProductSalesDTO {
 	public void setSharesSales(List<SharesSales> sharesSales) {
 		this.sharesSales = sharesSales;
 	}
-	
+    
 	
 }

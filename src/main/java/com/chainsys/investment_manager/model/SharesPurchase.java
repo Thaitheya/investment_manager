@@ -19,7 +19,6 @@ import lombok.NoArgsConstructor;
 
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "shares_purchases")
 public class SharesPurchase {
@@ -124,11 +123,11 @@ public class SharesPurchase {
 //TODO DTO
 	@ManyToOne
 	@JoinColumn(name = "stock_id", insertable = false, nullable = false, updatable = false)
-	private Stock_Product stockProduct;
+	private StockProduct stockProduct;
 
 
 	public SharesPurchase(long adhaarNumber, Date dateOfTxn, int stockId, float buyPrice, int quantity, int amountOfInr,
-			String modeOfPayment, Stock_Product stock_Product) {
+			String modeOfPayment, StockProduct stock_Product) {
 		super();
 		this.adhaarNumber = adhaarNumber;
 		this.dateOfTxn = dateOfTxn;

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Get Stock productr</title>
+<title>Get Stock product</title>
 </head>
 <body>
 
@@ -31,16 +31,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="Stock_Product" items="${allstockproduct}">
+				<c:forEach var="StockProduct" items="${allstockproduct}">
 					<tr>
-						<td>${Stock_Product.adhaarNumber}</td>
-						<td>${Stock_Product.stockId}</td>
-						<td>${Stock_Product.stockName}</td>
-						<td>${Stock_Product.company}</td>
-						<td>${Stock_Product.noOfSharesInHand}</td>
-						<td>${Stock_Product.faceValue}</td>
-						<td>${Stock_Product.lastTansactionedDate}</td>
-						<td>${Stock_Product.lastTansactionedValue}</td>
+						<td>${StockProduct.adhaarNumber}</td>
+						<td>${StockProduct.stockId}</td>
+						<td>${StockProduct.stockName}</td>
+						<td>${StockProduct.company}</td>
+						<td>${StockProduct.noOfSharesInHand}</td>
+						<td>${StockProduct.faceValue}</td>
+						<td>${StockProduct.lastTansactionedDate}</td>
+						<td>${StockProduct.lastTansactionedValue}</td>
 					</tr>
 
 				</c:forEach>

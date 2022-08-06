@@ -81,15 +81,15 @@
 			<tr>AmountOfInr</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="SharesSales" items="${listofstockssales}">
+			<c:forEach var="Sales" items="${listofstockssales}">
 				<tr>
-					<td>${SharesSales.adhaarNumber}</td>
-					<td>${SharesSales.purchaseId}</td>
-					<td>${SharesSales.dateOfTxn}</td>
-					<td>${SharesSales.stockId}</td>
-					<td>${SharesSales.buyPrice}</td>
-					<td>${SharesSales.quantity}</td>
-					<td>${SharesSales.amountOfInr}</td>
+					<td>${Sales.adhaarNumber}</td>
+					<td>${Sales.salesId}</td>
+					<td>${Sales.dateOfTxn}</td>
+					<td>${Sales.stockId}</td>
+					<td>${Sales.soldPrice}</td>
+					<td>${Sales.quantity}</td>
+					<td>${Sales.amountOfInr}</td>
 				</tr>
 	        </c:forEach>
 		</tbody>

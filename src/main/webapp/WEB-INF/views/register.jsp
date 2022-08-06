@@ -2,17 +2,20 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form"
 	uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Add user</title>
+<link href="${pageContext.request.contextPath}/resources/static/style.css" rel="stylesheet" >
+
 </head>
 <body>
 <div id="root">
 
-		<div id="form">
+		<div class="login-form">
 			<form:form action="register" method="post" modelAttribute="user">
 
 				<div>

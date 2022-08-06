@@ -1,58 +1,94 @@
 package com.chainsys.investment_manager.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import lombok.Data;
-@Data
+import org.eclipse.jdt.internal.compiler.ast.FalseLiteral;
+
 @Entity
-@Table(name="customer_account")
+@Table(name = "customer_account")
 public class CustomerAccount {
-     @Id
+	@Id
+	@Column(name = "customer_id")
+	private int customerId;
 	@Column(name = "adhaar_number")
-     private long adhaarNumber;
+	private long adhaarNumber;
 	@Column(name = "deposited_amount")
-     private float depositedAmount;
+	private float depositedAmount;
 	@Column(name = "shares_purchased")
-     private int sharesPurchased;
+	private int sharesPurchased;
 	@Column(name = "shares_sold")
-     private int sharesSold;
+	private int sharesSold;
 	@Column(name = "amount_under_settlement")
-     private int amountUnderSettlement;
-     
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	private int amountUnderSettlement;
+	@OneToMany(mappedBy = "customerAccount", fetch = FetchType.LAZY, cascade = CascadeType.ALL
+
+	)
+	List<Transactions> transactionslist = new ArrayList<>();
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "adhaar_number", nullable = false,updatable = false,insertable = false)
+    private UserRegistration registration;
+	public int getCustomerId() {
+		return customerId;
+	}
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+	public long getAdhaarNumber() {
+		return adhaarNumber;
+	}
+	public void setAdhaarNumber(long adhaarNumber) {
+		this.adhaarNumber = adhaarNumber;
+	}
+	public float getDepositedAmount() {
+		return depositedAmount;
+	}
+	public void setDepositedAmount(float depositedAmount) {
+		this.depositedAmount = depositedAmount;
+	}
+	public int getSharesPurchased() {
+		return sharesPurchased;
+	}
+	public void setSharesPurchased(int sharesPurchased) {
+		this.sharesPurchased = sharesPurchased;
+	}
+	public int getSharesSold() {
+		return sharesSold;
+	}
+	public void setSharesSold(int sharesSold) {
+		this.sharesSold = sharesSold;
+	}
+	public int getAmountUnderSettlement() {
+		return amountUnderSettlement;
+	}
+	public void setAmountUnderSettlement(int amountUnderSettlement) {
+		this.amountUnderSettlement = amountUnderSettlement;
+	}
+	public List<Transactions> getTransactionslist() {
+		return transactionslist;
+	}
+	public void setTransactionslist(List<Transactions> transactionslist) {
+		this.transactionslist = transactionslist;
+	}
+	public UserRegistration getRegistration() {
+		return registration;
+	}
+	public void setRegistration(UserRegistration registration) {
+		this.registration = registration;
+	}	
+    
+    
+    
+    
 
 }
