@@ -28,21 +28,18 @@
 				</tr>
 				<tr>Amount Of INR
 				</tr>
-				<tr>Mode Of Payment
-				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="SharesPurchases" items="${allstock}">
+				<c:forEach var="SharesSold" items="${allstocksold}">
 					<tr>
 
-						<td>${SharesPurchases.purchaseId}</td>
-						<td>${SharesPurchases.adhaarNumber}</td>
-						<td>${SharesPurchases.dateOfTxn}</td>
-						<td>${SharesPurchases.stockId}</td>
-						<td>${SharesPurchases.buyPrice}</td>
-						<td>${SharesPurchases.quantity}</td>
-						<td>${SharesPurchases.amountOfInr}</td>
-						<td>${SharesPurchases.modeOfPayment}</td>
+						<td>${SharesSold.adhaarNumber}</td>
+						<td>${SharesSold.salesId}</td>
+						<td>${SharesSold.dateOfTxn}</td>
+						<td>${SharesSold.stockId}</td>
+						<td>${SharesSold.soldPrice}</td>
+						<td>${SharesSold.quantity}</td>
+						<td>${SharesSold.amountOfInr}</td>
 					</tr>
 
 				</c:forEach>

@@ -35,9 +35,7 @@ public class CustomerAccount {
 
 	)
 	List<Transactions> transactionslist = new ArrayList<>();
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "adhaar_number", nullable = false,updatable = false,insertable = false)
-    private UserRegistration registration;
+	
 	public int getCustomerId() {
 		return customerId;
 	}
@@ -80,13 +78,6 @@ public class CustomerAccount {
 	public void setTransactionslist(List<Transactions> transactionslist) {
 		this.transactionslist = transactionslist;
 	}
-	public UserRegistration getRegistration() {
-		return registration;
-	}
-	public void setRegistration(UserRegistration registration) {
-		this.registration = registration;
-	}	
-    
     
     
     

@@ -20,6 +20,7 @@ import com.chainsys.investment_manager.repository.StockProductsRepository;
 import com.chainsys.investment_manager.service.CustomerAccountService;
 import com.chainsys.investment_manager.service.SharePurchasesService;
 import com.chainsys.investment_manager.service.StockSalesService;
+
 @Controller
 @RequestMapping("/trade")
 public class HomeController {
@@ -31,18 +32,18 @@ public class HomeController {
 	@Autowired
 	SharePurchasesService purchasesServices;
 	@Autowired
-    CustomerAccountService accountService;
-    
+	CustomerAccountService accountService;
+
 	@GetMapping("/index")
 	public String index() {
 		return "index";
 	}
 
-	@GetMapping("/tradelist")
+	@GetMapping("/tradepurchaselist")
 	public String getAllPurchasedStock(Model model) {
 		List<SharesPurchase> purchasesList = purchasesServices.getAllPurchasedStock();
-		model.addAttribute("allstock", purchasesList);
-		return "list_stock_product";
+		model.addAttribute("allstockpurchase", purchasesList);
+		return "list_stock_purchases";
 	}
 
 	@GetMapping("/addpurchases")
@@ -58,6 +59,13 @@ public class HomeController {
 		return "redirect:/trade/tradelist";
 	}
 
+	@GetMapping("/tradesaleslist")
+	public String getAllSoldStock(Model model) {
+		List<SharesSales> sharesSalesList = salesService.getAllSoldStock();
+		model.addAttribute("allstocksold", sharesSalesList);
+		return "list_stock_sales";
+	}
+
 	@GetMapping("/addSale")
 	public String addStockSell(Model model) {
 		SharesSales sales = new SharesSales();
@@ -69,9 +77,9 @@ public class HomeController {
 	@PostMapping("/adds")
 	public String addStockSales(@ModelAttribute("addsales") SharesSales sales) {
 		salesService.sellStockProduct(sales);
-		return "redirect:/trade/tradelist";
+		return "redirect:/trade/tradesaleslist";
 	}
-	 
+
 	@GetMapping("/getstockofsharespurchase")
 	public String getStockToPurchase(@RequestParam("id") int id, Model model) {
 		StockProdectPurchaseDTO dto = purchasesServices.getStockProdectPurchaseDTO(id);
@@ -88,5 +96,5 @@ public class HomeController {
 		model.addAttribute("listofstockssales", dto.getSharesSales());
 		return "stock-product-sales";
 	}
-	
+
 }

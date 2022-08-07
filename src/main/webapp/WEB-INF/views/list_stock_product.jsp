@@ -31,7 +31,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="StockProduct" items="${allstockproduct}">
+				<c:forEach var="StockProduct" items="${allstock}">
 					<tr>
 						<td>${StockProduct.adhaarNumber}</td>
 						<td>${StockProduct.stockId}</td>
