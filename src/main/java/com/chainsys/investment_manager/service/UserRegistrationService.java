@@ -13,31 +13,15 @@ import com.chainsys.investment_manager.dto.UserRegisterDTO;
 import com.chainsys.investment_manager.dto.UserregCustDTO;
 import com.chainsys.investment_manager.model.UserRegistration;
 import com.chainsys.investment_manager.repository.CustomerAccountRepository;
-import com.chainsys.investment_manager.repository.User_registrationRepository;
+import com.chainsys.investment_manager.repository.UserRegistrationRepository;
 
 @Service
 public class UserRegistrationService {
-
-	@Autowired 
-	CustomerAccountRepository accountRepository;
-	
 	@Autowired
-	User_registrationRepository registrationRepository;
-	
-	
-	public UserregCustDTO userRegCustDTO(int id) {
-		UserregCustDTO dto = new UserregCustDTO();
-		dto.setAccount(accountRepository.findById(id));
-		dto.setRegistration(registrationRepository.getReferenceById(id));
-		return dto;
-		
-	}
-	@Transactional
-	public Optional<UserRegistration>findByUserName(String userName){
-		return registrationRepository.findByUserName(userName);
+	UserRegistrationRepository registrationRepository;
+	public UserRegistration createUser(UserRegistration userRegistration) {
+		return registrationRepository.save(userRegistration);
 	}
 	
-    public boolean userExist(String userName) {
-    	return findByUserName(userName).isPresent();
-    }
+	
 }

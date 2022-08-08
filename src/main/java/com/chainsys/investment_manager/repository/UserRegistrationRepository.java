@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.chainsys.investment_manager.model.UserRegistration;
 @Repository
-public interface User_registrationRepository extends JpaRepository<UserRegistration,Integer> {
-     
-	Optional<UserRegistration> findByUserName(String userName);
+public interface UserRegistrationRepository extends JpaRepository<UserRegistration,Integer> {
+     UserRegistration save(UserRegistration registration);
 }

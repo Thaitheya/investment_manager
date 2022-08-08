@@ -4,59 +4,54 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.Valid;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
-
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-@Entity
 @Table(name = "user_registration")
+@Entity
 public class UserRegistration {
 	@Id
-	@GeneratedValue
-	@NotNull
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name = "adhaar_number")
 	private long adhaarNumber;
-	@NotEmpty
-	@Size(min = 2, max = 50)
-//	@Pattern(regexp = "[a-zA-Z]+\\.?",message = "Please enter the valid firstname")
+
 	@Column(name = "first_name")
+	@NotEmpty
+	@Size(min = 2, message = "firstname should have at least 2 characters")
 	private String firstName;
 	@NotEmpty
-	@Size(min = 2, max = 50)
-//	@Pattern(regexp = "[a-zA-Z]+\\.?",message = "Please enter the valid lastname")
+	@Size(min = 2, message = "lastname should have at least 2 characters")
 	@Column(name = "last_name")
 	private String lastName;
-	
+
 	@Column(name = "user_name")
+	@NotEmpty
+	@Size(min = 2, message = "firstname should have at least 2 characters")
 	private String userName;
-	@NotEmpty
-//	@Pattern(regexp = "^[a-zA-Z0-9]{3}", message = "length must be 3")
+
 	@Column(name = "password")
+    @NotEmpty
+    @Size(min = 8, message = "password should be at least 8 characters")
 	private String password;
-	@NotEmpty
-//	@Pattern(regexp = "^[A-Z0-9A-Z]{10}", message = "length must be 10")
+
 	@Column(name = "pan_number")
-	private String  panNumber;
-	@NotEmpty
-	@Size(min = 20, max = 100 , message = "please enter the address")
+	private String panNumber;
+
 	@Column(name = "address")
 	private String address;
-//	@Pattern(regexp = "^[0-9]+$", message = "Please enter 10 digit phone number")
+
 	@Column(name = "phone_number")
 	private long phoneNumber;
+
 	public long getAdhaarNumber() {
 		return adhaarNumber;
 	}
@@ -118,6 +113,23 @@ public class UserRegistration {
 	}
 
 	public void setPhoneNumber(long phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public UserRegistration() {
+
+	}
+
+	public UserRegistration(long adhaarNumber, String firstName, String lastName, String userName, String password,
+			String panNumber, String address, long phoneNumber) {
+		super();
+		this.adhaarNumber = adhaarNumber;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.panNumber = panNumber;
+		this.address = address;
 		this.phoneNumber = phoneNumber;
 	}
 
