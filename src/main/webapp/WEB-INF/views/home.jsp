@@ -13,6 +13,24 @@
 
 
 	<div id="preloader"></div>
+	<div id="root">
+		<nav class="navbar">
+			<div class="navbar__container">
+				<a href="#" id="navbar__logo">OpenSea.io</a>
+
+				<ul class="navbar__menu">
+						<li class="navbar__item"><a href="/trade/addpurchases"
+						class="navbar__links">Buy</a></li>
+						<li class="navbar__item"><a href="/trade/addSale"
+						class="navbar__links">Sell</a></li>
+						<li class="navbar__item"><a href=""
+						class="navbar__links">About</a></li>
+						<li class="navbar__item"><a href=""
+						class="navbar__links">Contact Us</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
 	<nav class="navbar_manage" style="background-color: #141414;">
 		<div class="container">
 			<div class="item item1">

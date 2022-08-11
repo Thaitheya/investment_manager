@@ -8,8 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Add user</title>
 <style>
-<%@
-include file="/WEB-INF/views/assert/style.css"%>
+<%@include file="/WEB-INF/views/assert/style.css"%>
 </style>
 </head>
 <body>
@@ -82,16 +81,10 @@ include file="/WEB-INF/views/assert/style.css"%>
 			<div>
 				<div>
 					<button id="add_stock">Add stock</button>
-					<p id="demo">Please add stock</p>
 				</div>
 			</div>
 		</form:form>
 	</div>
-	<script type="text/javascript">
-			var load = function auto() {
-				Math.floor(Math.random()*100 + 1)
-			}
-	</script>
 
 </body>
 </html>

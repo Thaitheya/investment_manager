@@ -23,6 +23,8 @@
 					<li class="navbar__item"><a href="/admin"
 						class="navbar__links">Admin-Home</a></li>
 					<li class="navbar__item"><a href="/Signup"
+						class="navbar__links">Signin</a></li>
+					<li class="navbar__item"><a href="/Signup"
 						class="navbar__links">Signup</a></li>
 				</ul>
 			</div>
@@ -35,7 +37,8 @@
 			<div>
 				<label for="adhaarNumber">Adhaar Number</label>
 				<div>
-					<form:input path="adhaarNumber" min="12"  pattern="^\d{4}\s\d{4}\s\d{4}$" title=" Adhaar must be number" />
+					<form:input path="adhaarNumber" min="12"  pattern="^\d{4}\s\d{4}\s\d{4}$" title=" Adhaar must be number" 
+					placeholder="Enter AdhaarNumber"/>
 				</div>
 				<form:errors path="adhaarNumber" cssClass="text-danger" />
 			</div>
@@ -106,5 +109,9 @@
 			</div>
 		</form:form>
 	</div>
+	<script type="text/javascript">
+	alert("Hello Mani")
+	
+	</script>
 </body>
 </html>

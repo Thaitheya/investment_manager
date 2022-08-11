@@ -5,14 +5,17 @@ import javax.persistence.Entity;
 
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "customer_account")
 public class CustomerAccount {
 	@Id
 	@Column(name = "customer_id")
+	@NotNull
 	private int customerId;
 	@Column(name = "adhaar_number")
+	@NotNull
 	private long adhaarNumber;
 	@Column(name = "deposited_amount")
 	private float depositedAmount;

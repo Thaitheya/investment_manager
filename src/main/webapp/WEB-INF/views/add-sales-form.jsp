@@ -11,7 +11,21 @@
 </head>
 <body>
 <div id="root">
+<div id="preloader"></div>
+	<div id="root">
+		<nav class="navbar">
+			<div class="navbar__container">
+				<a href="#" id="navbar__logo">OpenSea.io</a>
 
+				<ul class="navbar__menu">
+					<li class="navbar__item"><a href="/admin"
+						class="navbar__links">Admin-Home</a></li>
+					<li class="navbar__item"><a href="/Signup"
+						class="navbar__links">Signup</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
 		<div id="form">
 			<form:form action="adds" method="post" modelAttribute="addsales">
 
