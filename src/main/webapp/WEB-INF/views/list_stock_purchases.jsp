@@ -13,10 +13,9 @@
 	<div>
 		<table id="table root">
 			<thead>
-
-				<tr>Purchase Id
-				</tr>
 				<tr>Adhaar Number
+				</tr>
+				<tr>Purchase Id
 				</tr>
 				<tr>Date Of Txn
 				</tr>
@@ -34,7 +33,7 @@
 			<tbody>
 				<c:forEach var="SharesPurchases" items="${allstock}">
 					<tr>
-
+						
 						<td>${SharesPurchases.purchaseId}</td>
 						<td>${SharesPurchases.adhaarNumber}</td>
 						<td>${SharesPurchases.dateOfTxn}</td>

@@ -13,10 +13,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
@@ -32,34 +36,33 @@ public class StockProduct {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	@Column(name = "stock_id")
 	@NotNull
-	@Size(min = 4, max = 6, message = "Please enter the valid min 4 or max 6 digit")
+	@Range(min = 1, message = "Enter the value greater than zero")
 	private int stockId; 
 	@Column(name = "adhaar_number")
-	@NotEmpty
-	@Size(min = 12, message = "Adhaar number should be have 12 numbers")
+	@NotNull
+	@Range(min = 12, message = "Enter the valid Adhaar Number")
 	private long adhaarNumber;
 	@Column(name = "stock_name")
-	@NotEmpty
-	@Size(min = 2, max = 50, message = "Stock name should be atleast 2 characters")
+	@NotBlank(message = "*Name can't be Empty")
 	private String stockName;
 	@Column(name = "company")
-	@Size(min = 2, max = 50, message = "Company name should be atleast 2 characters")
+	@NotBlank(message = "*Name can't be Empty")
 	private String company;
 	@Column(name ="no_of_shares_in_hand")
-	@NotEmpty
-	@Size(min = 1, message = "The section should not be empty")
+	@NotNull
+	@Range(min = 1, message = "enter the valid number")
 	private int noOfSharesInHand;
+	
 	@Column(name = "face_value")
-	@NotEmpty
-	@Size(min = 1, message = "please enter the valid face value")
+	@NotNull
+	@Range(min = 1, message = "enter the valid face value")
 	private float faceValue;
 	@Column(name = "last_tansactioned_date")
-	@NotEmpty
-	@DateTimeFormat
+	@NotNull
 	private Date lastTansactionedDate;
 	@Column(name = "last_tansactioned_value")
-	@NotEmpty
-	@Size(min = 1 ,max = 100000, message = "transaction much be in limit 1L")
+	@NotNull
+	@Range(min = 1, message = "Enter the valid transaction value")
 	private float lastTansactionedValue;
 	
 	public int getStockId() {

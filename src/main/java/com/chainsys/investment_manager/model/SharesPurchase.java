@@ -120,7 +120,6 @@ public class SharesPurchase {
 		this.modeOfPayment = modeOfPayment;
 	}
 
-//TODO DTO
 	@ManyToOne
 	@JoinColumn(name = "stock_id", insertable = false, nullable = false, updatable = false)
 	private StockProduct stockProduct;

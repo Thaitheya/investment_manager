@@ -36,7 +36,7 @@ public class HomeController {
 
 	@GetMapping("/index")
 	public String index() {
-		return "index";
+		return "home";
 	}
 
 	@GetMapping("/tradepurchaselist")
@@ -56,7 +56,7 @@ public class HomeController {
 	@PostMapping("/addp")
 	public String addStockPurchases(@ModelAttribute("addpurchases") SharesPurchase purchases) {
 		purchasesServices.addStockProduct(purchases);
-		return "redirect:/trade/tradelist";
+		return "redirect:/trade/tradepurchaselist";
 	}
 
 	@GetMapping("/tradesaleslist")

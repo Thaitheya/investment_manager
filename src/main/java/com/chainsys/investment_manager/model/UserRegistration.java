@@ -1,5 +1,6 @@
 package com.chainsys.investment_manager.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -7,49 +8,44 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
 
 @Table(name = "user_registration")
 @Entity
 public class UserRegistration {
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "adhaar_number")
+	@NotNull
 	private long adhaarNumber;
 
 	@Column(name = "first_name")
-	@NotEmpty
-	@Size(min = 2, message = "firstname should have at least 2 characters")
+	@NotNull
 	private String firstName;
-	@NotEmpty
-	@Size(min = 2, message = "lastname should have at least 2 characters")
 	@Column(name = "last_name")
+	@NotNull
 	private String lastName;
 
-	@Column(name = "user_name")
-	@NotEmpty
-	@Size(min = 2, message = "firstname should have at least 2 characters")
-	private String userName;
+	@Column(name = "email")
+	@NotNull
+	private String email;
 
 	@Column(name = "password")
-    @NotEmpty
-    @Size(min = 8, message = "password should be at least 8 characters")
+	@NotNull
 	private String password;
 
 	@Column(name = "pan_number")
+	@NotNull
 	private String panNumber;
 
 	@Column(name = "address")
+	@NotNull
 	private String address;
 
 	@Column(name = "phone_number")
+	@NotNull
 	private long phoneNumber;
 
 	public long getAdhaarNumber() {
@@ -76,12 +72,12 @@ public class UserRegistration {
 		this.lastName = lastName;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {
@@ -113,23 +109,6 @@ public class UserRegistration {
 	}
 
 	public void setPhoneNumber(long phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	public UserRegistration() {
-
-	}
-
-	public UserRegistration(long adhaarNumber, String firstName, String lastName, String userName, String password,
-			String panNumber, String address, long phoneNumber) {
-		super();
-		this.adhaarNumber = adhaarNumber;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.userName = userName;
-		this.password = password;
-		this.panNumber = panNumber;
-		this.address = address;
 		this.phoneNumber = phoneNumber;
 	}
 

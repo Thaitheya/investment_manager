@@ -5,7 +5,7 @@
 }
 
 body {
-	background: url('../resources/templates/Homepageimage.jpg');
+	background: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.foolcdn.com%2Fmedia%2Fdubs%2Foriginal_images%2FIntro_slide_-_digital_stock_chart_going_up_-_source_getty.jpg&imgrefurl=https%3A%2F%2Fwww.fool.com%2Finvesting%2Fstock-market%2F&tbnid=uI6j8bMlWErxEM&vet=12ahUKEwjsnunzyrf5AhURj9gFHfSqDL4QMygBegUIARDhAQ..i&docid=O3URQm9V-5q_-M&w=2121&h=1414&q=stock%20market&ved=2ahUKEwjsnunzyrf5AhURj9gFHfSqDL4QMygBegUIARDhAQ');
 	background-size: cover;
 }
 
@@ -614,7 +614,21 @@ h3 {
 	position: fixed;
 	z-index: 100;
 }
-.txt-error {
+.text-danger {
 color: red;
 font-size: 1em;
 }
+
+/*Slider section*/
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

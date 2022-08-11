@@ -9,13 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.chainsys.investment_manager.dto.CustomerTransDTO;
 import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
-import com.chainsys.investment_manager.repository.TransactionsRepository;
 import com.chainsys.investment_manager.service.StockProductService;
 import com.chainsys.investment_manager.service.TransactionService;
 @Controller
@@ -32,7 +28,7 @@ public class AdminController {
 
 	@GetMapping("/adminhome")
 	public String adminHome() {
-		return "admin";
+		return "home";
 	}
 	// List
 
@@ -80,10 +76,6 @@ public class AdminController {
 		productService.save(sp);
 		return "redirect:/admin/list";
 	} 
-	@GetMapping("/getcustomertrans")
-	public String getCustomerTrans(@RequestParam("id") int id, Model model) {
-		CustomerTransDTO dto = transactionService.getCustomerTransDTO(id);
-		model.addAttribute("getcustomeraccounttransaction",dto.getCustomerAccount());
-		return "customer-trans-list";
-	}
+	
+	
 }

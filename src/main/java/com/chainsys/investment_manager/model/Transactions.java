@@ -17,8 +17,6 @@ public class Transactions {
      private long transactionId;
 	@Column(name = "transaction_date")
      private Date transactionDate;
-	@Column(name = "customer_id")
-	private int customerId;
 	@Column(name = "adhaar_number")
      private long adhaarNumber;
 	@Column(name = "description")
@@ -27,128 +25,41 @@ public class Transactions {
      private int amountReceived;
 	@Column(name = "amount_paid")
      private int amountPaid;
-     
- 	@ManyToOne
- 	@JoinColumn(name = "customer_id", insertable = false, nullable = false, updatable = false)
-	 private CustomerAccount customerAccount;
-
 	public long getTransactionId() {
 		return transactionId;
 	}
-
 	public void setTransactionId(long transactionId) {
 		this.transactionId = transactionId;
 	}
-
 	public Date getTransactionDate() {
 		return transactionDate;
 	}
-
 	public void setTransactionDate(Date transactionDate) {
 		this.transactionDate = transactionDate;
 	}
-
-	public int getCustomerId() {
-		return customerId;
-	}
-
-	public void setCustomerId(int customerId) {
-		this.customerId = customerId;
-	}
-
 	public long getAdhaarNumber() {
 		return adhaarNumber;
 	}
-
 	public void setAdhaarNumber(long adhaarNumber) {
 		this.adhaarNumber = adhaarNumber;
 	}
-
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	public int getAmountReceived() {
 		return amountReceived;
 	}
-
 	public void setAmountReceived(int amountReceived) {
 		this.amountReceived = amountReceived;
 	}
-
 	public int getAmountPaid() {
 		return amountPaid;
 	}
-
 	public void setAmountPaid(int amountPaid) {
 		this.amountPaid = amountPaid;
 	}
-
-	public CustomerAccount getCustomerAccount() {
-		return customerAccount;
-	}
-
-	public void setCustomerAccount(CustomerAccount customerAccount) {
-		this.customerAccount = customerAccount;
-	}
-
-	
-	 
-
-	
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
- 	
- 	
- 	
- 	
+    
 }

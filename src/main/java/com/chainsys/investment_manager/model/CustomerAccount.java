@@ -1,19 +1,10 @@
 package com.chainsys.investment_manager.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
-import org.eclipse.jdt.internal.compiler.ast.FalseLiteral;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "customer_account")
@@ -31,11 +22,6 @@ public class CustomerAccount {
 	private int sharesSold;
 	@Column(name = "amount_under_settlement")
 	private int amountUnderSettlement;
-	@OneToMany(mappedBy = "customerAccount", fetch = FetchType.LAZY, cascade = CascadeType.ALL
-
-	)
-	List<Transactions> transactionslist = new ArrayList<>();
-	
 	public int getCustomerId() {
 		return customerId;
 	}
@@ -72,14 +58,7 @@ public class CustomerAccount {
 	public void setAmountUnderSettlement(int amountUnderSettlement) {
 		this.amountUnderSettlement = amountUnderSettlement;
 	}
-	public List<Transactions> getTransactionslist() {
-		return transactionslist;
-	}
-	public void setTransactionslist(List<Transactions> transactionslist) {
-		this.transactionslist = transactionslist;
-	}
-    
-    
-    
+	
+		
 
 }

@@ -8,9 +8,11 @@
 <head>
 <meta charset="ISO-8859-1">
 
-<style><%@include file="/WEB-INF/views/assert/style.css"%></style>
+<style><%@include file="/WEB-INF/views/assert/style.css"%>
+</style>
+<script type="text/javascript" src="/WEB-INF/views/assert/app.js"></script>
 </head>
-<body>
+<body style="background-color: #141414;">
 	<div id="preloader"></div>
 	<div id="root">
 		<nav class="navbar">
@@ -27,78 +29,82 @@
 		</nav>
 	</div>
 	<div class="login-form">
-		<h1>Register Form</h1>
+		<h1>Register Form</h1> 
 		<form:form action="register" method="post" modelAttribute="user">
 
 			<div>
+				<label for="adhaarNumber">Adhaar Number</label>
+				<div>
+					<form:input path="adhaarNumber" min="12"  pattern="^\d{4}\s\d{4}\s\d{4}$" title=" Adhaar must be number" />
+				</div>
+				<form:errors path="adhaarNumber" cssClass="text-danger" />
+			</div>
+			
+			<div>
 				<label for="firstName">First Name</label>
 				<div>
-					<form:input path="firstName" />
+					<form:input path="firstName" title="Name can't be empty"
+						pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 				</div>
 			</div>
-			<form:errors path="firstName" cssClass="txt-error"/>
+			<form:errors path="firstName" cssClass="text-danger"/>
 			<div>
 				<label for="lastName">Last Name</label>
 				<div>
-					<form:input path="lastName" />
+					<form:input path="lastName" title="Name can't be empty"
+						pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 				</div>
 			</div>
-			<form:errors path="lastName" cssClass="txt-error"/>
+			<form:errors path="lastName" cssClass="text-danger" />
 			<div>
-				<label for="userName">User Name</label>
+				<label for="email">Email</label>
 				<div>
-					<form:input path="userName" />
+					<form:input path="email"  title="Email can't be empty"
+					pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required="true"/>
 				</div>
 			</div>
-			<form:errors path="userName" cssClass="txt-error"/>
+			<form:errors path="email" cssClass="text-danger" />
 			<div>
 				<label for="password">Password</label>
 				<div>
-					<form:input path="password" type="password" />
+					<form:input path="password" type="password"
+					title='password must begin with letter and contain atleast one number and must have atleast 8 characters'
+						pattern="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$"
+						required="true"/>
 				</div>
 			</div>
-			<form:errors path="password" cssClass="txt-error"/>
-			<div>
-				<label for="adhaarNumber">Adhaar Number</label>
-				<div>
-					<form:input path="adhaarNumber" />
-				</div>
-			</div>
-			<form:errors path="adhaarNumber" cssClass="txt-error"/>
+			<form:errors path="password" cssClass="text-danger" />
 			<div>
 				<label for="panNumber">Pan Number</label>
 				<div>
-					<form:input path="panNumber" />
+					<form:input path="panNumber" 
+					title="panNumber must begin with character and mid should be number and end should be character"
+					pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
+					required="true"/>
 				</div>
 			</div>
-			<form:errors path="panNumber" cssClass="txt-error"/>
+			<form:errors path="panNumber" cssClass="text-danger" />
 			<div>
 				<label for="address">Address</label>
 				<div>
-					<form:input path="address" />
+					<form:input path="address" title="Address should atleast contain 10 characters" required="true"/>
 				</div>
 			</div>
-			<form:errors path="address" cssClass="txt-error"/>
+			<form:errors path="address" cssClass="text-danger" />
 			<div>
 				<label for="phoneNumber">Phone Number</label>
 				<div>
-					<form:input path="phoneNumber" />
+					<form:input path="phoneNumber"  max="10" title="PhoneNumber should have atleast 10 digits"
+					pattern="^\\+?[1-9][0-9]{7,14}$" required="true"/>
 				</div>
 			</div>
-			<form:errors path="phoneNumber" cssClass="txt-error"/>
+			<form:errors path="phoneNumber" cssClass="text-danger" />
 			<div>
 				<div>
 					<form:button>Register</form:button>
 				</div>
 			</div>
 		</form:form>
-
 	</div>
-	<script>
-		var loader = document.getElementById("preloader");
-		window.addEventListener("load", function() {
-			loader.style.display = "none";
-		})}
-	</script>
 </body>
 </html>
