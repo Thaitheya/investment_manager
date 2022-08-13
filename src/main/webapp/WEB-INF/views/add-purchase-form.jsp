@@ -35,12 +35,12 @@
 			<div>
 				<label for="adhaarNumber">Adhaar Number</label>
 				<div>
-					<form:input path="adhaarNumber" readonly =true/>
+					<form:input path="adhaarNumber"/>
 				</div>
 			</div>
 			<div>
 				<label for="purchaseId">Purchase Id</label>
-				<div id="auto"  onsubmit="func()">
+				<div id="auto">
 					<form:input path="purchaseId" />
 				</div>
 			</div>
@@ -89,16 +89,9 @@
 				<div>
 					<button id="add_stock" style="color: #fff">Add stock</button>
 				</div>
+				<div>${result}</div>
 			</div>
 		</form:form>
 	</div>
-<script type="text/javascript">
-function func() {
-	var d = new Date().getTime().toString();
-	return d;
-}
-
-
-</script>
 </body>
 </html>

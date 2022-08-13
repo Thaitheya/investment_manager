@@ -2,9 +2,12 @@ package com.chainsys.investment_manager.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,30 +34,45 @@ public class HomeController {
 	SharePurchasesService purchasesServices;
 	@Autowired
 	CustomerAccountService accountService;
-
+    @GetMapping("/home")
+    public String home() {
+    	return "home1";
+    }
 	@GetMapping("/index")
 	public String index() {
 		return "home";
 	}
-
+    @GetMapping("/about")
+    public String about() {
+    	return "About";
+    }
 	@GetMapping("/tradepurchaselist")
 	public String getAllPurchasedStock(Model model) {
 		List<SharesPurchase> purchasesList = purchasesServices.getAllPurchasedStock();
 		model.addAttribute("allstockpurchase", purchasesList);
 		return "list_stock_purchases";
 	}
-
+	
 	@GetMapping("/addpurchases")
-	public String stockPurchases(Model model) {
+	public String stockPurchases(@RequestParam("purchaseId") int id,Model model) {
 		SharesPurchase purchases = new SharesPurchase();
-		model.addAttribute("addpurchases", purchases);
+		model.addAttribute("purchasestock", purchasesServices.getAllPurchasedStock());
+		model.addAttribute("addpurchases",purchases);
+		purchases.setPurchaseId(id);
 		return "add-purchase-form";
 	}
 
 	@PostMapping("/addp")
-	public String addStockPurchases(@ModelAttribute("addpurchases") SharesPurchase purchases) {
+	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase purchases, Errors error, Model model) {
+		if(error.hasErrors()) {
+		  return "add-purchase-form";
+		}
+		else {
 		purchasesServices.addStockProduct(purchases);
-		return "redirect:/trade/tradepurchaselist";
+		model.addAttribute(purchases.getPurchaseId());
+		model.addAttribute("result","Stock added successfully");
+		return  "add-purchase-form";
+		}
 	}
 
 	@GetMapping("/tradesaleslist")

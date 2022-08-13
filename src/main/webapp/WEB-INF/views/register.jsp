@@ -37,7 +37,7 @@
 			<div>
 				<label for="adhaarNumber">Adhaar Number</label>
 				<div>
-					<form:input path="adhaarNumber" min="12"  pattern="^\d{4}\s\d{4}\s\d{4}$" title=" Adhaar must be number" 
+					<form:input path="adhaarNumber" min="12"  title=" Adhaar must be number" 
 					placeholder="Enter AdhaarNumber"  />
 				</div>
 				<form:errors path="adhaarNumber" cssClass="text-danger" />

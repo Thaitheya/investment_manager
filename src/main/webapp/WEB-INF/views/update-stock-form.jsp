@@ -3,7 +3,7 @@
 <%@ taglib prefix="form"
 	uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update user</title>
@@ -11,25 +11,25 @@
 <body>
 <div id="root">
 
-		<div id="form">
+		<div id="login-form">
 			<form:form action="update" method="post" modelAttribute="updatestock">
 
 				<div>
-					<label for="adhaar_number">Adhaar Number</label>
+					<label for="adhaarNumber">Adhaar Number</label>
 					<div>
-						<form:input path="adhaar_number"/>
+						<form:input path="adhaarNumber"/>
 					</div>
 				</div>
 				<div>
-					<label for="stock_id">Stock Id</label>
+					<label for="stockId">Stock Id</label>
 					<div>
-						<form:input path="stock_id" />
+						<form:input path="stockId" />
 					</div>
 				</div>
 				<div>
-					<label for="stock_name">Stock Name</label>
+					<label for="stockName">Stock Name</label>
 					<div>
-						<form:input path="stock_name" />
+						<form:input path="stockName" />
 					</div>
 				</div>
 				<div>
@@ -39,27 +39,27 @@
 					</div>
 				</div>
 				<div>
-					<label for="no_of_shares_in_hand">No Of Shares In Hand</label>
+					<label for="noOfSharesInHand">No Of Shares In Hand</label>
 					<div>
-						<form:input path="no_of_shares_in_hand" />
+						<form:input path="noOfSharesInHand" />
 					</div>
 				</div>
 				<div>
-					<label for="face_value">Face Value</label>
+					<label for="faceValue">Face Value</label>
 					<div>
-						<form:input path="face_value" />
+						<form:input path="faceValue" />
 					</div>
 				</div>
 				<div>
-					<label for="last_tansactioned_date">Last Transactioned Date</label>
+					<label for="lastTansactionedDate">Last Transactioned Date</label>
 					<div>
-						<form:input path="last_tansactioned_date" />
+						<form:input path="lastTansactionedDate" />
 					</div>
 				</div>
 				<div>
-					<label for="last_tansactioned_value">Last Transactioned Value</label>
+					<label for="lastTansactionedValue">Last Transactioned Value</label>
 					<div>
-						<form:input path="last_tansactioned_value"/>
+						<form:input path="lastTansactionedValue"/>
 					</div>
 				</div>
 				<div>

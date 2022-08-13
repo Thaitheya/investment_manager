@@ -13,7 +13,7 @@ a {
 }
 .content-table {
   border-collapse: collapse;
-  margin: 25px 40px;
+  margin: 25px 80px;
   font-size: 0.9em;
   min-width: 400px;
   border-radius: 5px 5px 0 0;
@@ -28,7 +28,7 @@ a {
 }
 .content-table th,
 .content-table td {
-  padding: 12px 15px;
+  padding: 20px 15px;
 }
 
 .content-table tbody tr {
@@ -47,7 +47,6 @@ border-bottom: 2px solid #009879;
 		<table class="content-table">
 			<thead>
 				<tr>
-				    <th>SNO</th>
 					<th>Adhaar Number</th>
 					<th>Stock Id</th>
 					<th>Stock Name</th>
@@ -62,8 +61,6 @@ border-bottom: 2px solid #009879;
 			</thead>
 			<tbody>
 				<c:forEach var="StockProduct" items="${allstockproduct}">
-					<tr>
-						<td th:text="${iStat.index + 1}">1</td>
 						<td>${StockProduct.adhaarNumber}</td>
 						<td>${StockProduct.stockId}</td>
 						<td>${StockProduct.stockName}</td>

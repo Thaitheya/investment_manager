@@ -35,7 +35,7 @@ import lombok.NoArgsConstructor;
 public class StockProduct {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "stock_id")
-    @SequenceGenerator(name = "stock_id", sequenceName = "stock_id",  allocationSize = 1)
+    @SequenceGenerator(name = "stock_id", sequenceName = "stock_id",  allocationSize = 5)
 	@Column(name = "stock_id")
 	@NotNull
 	@Range(min = 1, message = "Enter the value greater than zero")
@@ -66,7 +66,20 @@ public class StockProduct {
 	@NotNull
 	@Range(min = 1, message = "Enter the valid transaction value")
 	private float lastTansactionedValue;
-	
+    @OneToMany(
+    		mappedBy = "stockProduct",
+    		cascade = CascadeType.ALL
+    		)
+    
+	private List<SharesPurchase> sharesPurchases = new ArrayList<>();
+     
+    @OneToMany(
+    		mappedBy = "stockProduct",
+    		cascade = CascadeType.ALL
+    		)
+    
+    private List<SharesSales> sharesSales = new ArrayList<>();
+
 	public int getStockId() {
 		return stockId;
 	}
@@ -130,19 +143,22 @@ public class StockProduct {
 	public void setLastTansactionedValue(float lastTansactionedValue) {
 		this.lastTansactionedValue = lastTansactionedValue;
 	}
-    @OneToMany(
-    		mappedBy = "stockProduct",
-    		cascade = CascadeType.ALL
-    		)
-    
-	private List<SharesPurchase> sharesPurchases = new ArrayList<>();
-     
-    @OneToMany(
-    		mappedBy = "stockProduct",
-    		cascade = CascadeType.ALL
-    		)
-    
-    private List<SharesSales> sharesSales = new ArrayList<>();
+
+	public List<SharesPurchase> getSharesPurchases() {
+		return sharesPurchases;
+	}
+
+	public void setSharesPurchases(List<SharesPurchase> sharesPurchases) {
+		this.sharesPurchases = sharesPurchases;
+	}
+
+	public List<SharesSales> getSharesSales() {
+		return sharesSales;
+	}
+
+	public void setSharesSales(List<SharesSales> sharesSales) {
+		this.sharesSales = sharesSales;
+	}
     
 
 }
