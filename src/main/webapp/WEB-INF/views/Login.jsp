@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Login</title>
@@ -32,12 +32,14 @@
 			<form:input path="email" name="email" type="email" id="emails"/>
 			<label>password</label>
 			<form:input path="password" id="pass" name="password" type="password"  onkeyup= "return validate()" />
+		<ul>
 			<li id="lower">aleast one lowercase</li>
 			<li id="speacial_character">atleast one special symbol</li>
 			<li id= "number">atleast one number</li>
 			<li id="length">atleast 6 characters</li>
 			<li id="upper">atleast one uppercase</li>
-			<button >Submit</button>
+		</ul>
+		     <button >Submit</button>
 		</form:form>
 	</div>
 	<script>
