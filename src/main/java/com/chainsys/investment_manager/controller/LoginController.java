@@ -1,4 +1,4 @@
-package com.chainsys.investment_manager.controller;
+ package com.chainsys.investment_manager.controller;
 
 import javax.validation.Valid;
 
@@ -44,12 +44,15 @@ public class LoginController {
 		model.addAttribute("loginhere",userRegistration);
 		return "login";
 	}
-	@PostMapping("/getlogin")
-	public String log(@ModelAttribute("loginhere") UserRegistration registration) {
-		if(registration.getEmail().isEmpty()) {
-		 return "login";
+	@RequestMapping("/getlogin")
+	public String log(@ModelAttribute("loginhere") UserRegistration registration, Model model) {
+		UserRegistration userRegistration = userRegistrationService.getEmailAndPasssword(registration.getEmail(),registration.getPassword());
+		if(userRegistration != null) {
+		 return "redirect:/trade/index";
+		}else {
+		  model.addAttribute("Sign in failed");
 		}
-		return "redirect:/trade/index";
+		return "login";
 	}
 
 }

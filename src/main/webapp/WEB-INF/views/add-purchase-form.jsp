@@ -8,10 +8,10 @@
 <meta charset="ISO-8859-1">
 <title>Add user</title>
 <style>
-<%@include file="/WEB-INF/views/assert/style.css"%>
+<%@include file="/WEB-INF/views/asserts/style.css"%>
 </style>
 </head>
-<body>
+<body style="background-color: #141414">
 	<div id="preloader"></div>
 	<div id="root">
 		<nav class="navbar">
@@ -20,9 +20,11 @@
 
 				<ul class="navbar__menu">
 					<li class="navbar__item"><a href="/admin"
-						class="navbar__links">Admin-Home</a></li>
-					<li class="navbar__item"><a href="/Signup"
-						class="navbar__links">Signup</a></li>
+						class="navbar__links">Home</a></li>
+					<li class="navbar__item"><a href="/admin"
+						class="navbar__links">About</a></li>
+					<li class="navbar__item"><a href="/admin"
+						class="navbar__links">Help</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -80,7 +82,7 @@
 			</div>
 			<div>
 				<div>
-					<button id="add_stock">Add stock</button>
+					<button id="add_stock" style="color: #fff">Add stock</button>
 				</div>
 			</div>
 		</form:form>

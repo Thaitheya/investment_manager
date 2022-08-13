@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Login</title>
 <style>
-<%@include file="/WEB-INF/views/assert/style.css"%>
+<%@include file="/WEB-INF/views/asserts/style.css"%>
 </style>
 </head>
 <body>
@@ -29,27 +29,67 @@
 		<h1>Login Form</h1>
 		<form:form action="getlogin" method="post" modelAttribute="loginhere" name="myForm">
 			<label>Email</label>
-			<form:input path="email" name="email"/>
+			<form:input path="email" name="email" type="email" id="emails"/>
 			<label>password</label>
-			<form:input path="password" name="password" type="password" />
+			<form:input path="password" id="pass" name="password" type="password"  onkeyup= "return validate()" />
+			<li id="lower">aleast one lowercase</li>
+			<li id="speacial_character">atleast one special symbol</li>
+			<li id= "number">atleast one number</li>
+			<li id="length">atleast 6 characters</li>
+			<li id="upper">atleast one uppercase</li>
 			<button >Submit</button>
 		</form:form>
 	</div>
 	<script>
-    function validate() {
-     var uname = document.myForm.email.value;
-     if(uname == "") {
-       alert("Please enter the email");
-       document.myForm.email.focus();
-       return false;
-     var passw = document.myForm.password.value;
-       if((passw.length<5)|| (passw.length>15)){
-    	   alert("Password should be min5 and max 15");
-    	   document.myForm.email.focus();
-           return false;
-       }
-       }
-    }
+     function validate() {
+    	 var pass = document.getElementById('pass');
+    	 var upper = document.getElementById('upper');
+    	 var lower = document.getElementById('lower');
+    	 var num = document.getElementById('number');
+    	 var len = document.getElementById('length');
+    	 var sp_char = document.getElementById('special_character');
+    	 
+    	 if(pass.value.match(/[0-9]/)) {
+    		 num.style.color = 'green'
+    	 }
+    	 else {
+    		 num.style.color = 'red'
+    	 }
+    	 if(pass.value.match(/[A-Z]/)) {
+    		 upper.style.color = 'green'
+    	 }
+    	 else{
+    		 upper.style.color = 'red'
+    	 }
+    	 if(pass.value.match(/[a-z]/)) {
+    		 
+    		 lower.style.color = 'green'
+    	 }
+    	 else{
+    		 lower.style.color = 'red';
+    	 }
+         if(pass.value.match(/[!\@\#\$\%\^\&\*\(\)\_\-\+\=\?\>\<\.\,]/)) {
+    		 
+        	 sp_char.style.color = 'green'
+    	 }
+    	 else{
+    		 sp_char.style.color = 'red';
+    	 }
+ 		if(pass.value.length<6) {
+    		 
+ 			len.style.color = 'green'
+    	 }
+    	 else{
+    		 len.style.color = 'red';
+    	 }
+     }
+     function confirm() {
+    	 var pass = document.getElementById('pass');
+    	 var email = document.getElementById('email');
+    	 if(pass.value != email.value) {
+    		 document.getElementById('number').style.display = 'none'
+    	 }
+     }
      </script>
 </body>
 </html>

@@ -10,4 +10,6 @@ import com.chainsys.investment_manager.model.UserRegistration;
 public interface UserRegistrationRepository extends JpaRepository<UserRegistration,Integer> {
      UserRegistration save(UserRegistration registration);
      
+     UserRegistration findByEmailAndPassword(String email, String password);
+     
 }

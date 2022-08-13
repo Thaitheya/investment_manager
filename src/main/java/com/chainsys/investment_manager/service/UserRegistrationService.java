@@ -23,5 +23,7 @@ public class UserRegistrationService {
 		return registrationRepository.save(userRegistration);
 	}
 	
-	
+	public UserRegistration getEmailAndPasssword(String email, String password) {
+		return registrationRepository.findByEmailAndPassword(email, password);
+	}
 }

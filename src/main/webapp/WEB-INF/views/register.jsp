@@ -8,9 +8,9 @@
 <head>
 <meta charset="ISO-8859-1">
 
-<style><%@include file="/WEB-INF/views/assert/style.css"%>
+<style>
+<%@include file="/WEB-INF/views/asserts/style.css"%>
 </style>
-<script type="text/javascript" src="/WEB-INF/views/assert/app.js"></script>
 </head>
 <body style="background-color: #141414;">
 	<div id="preloader"></div>
@@ -21,7 +21,7 @@
 
 				<ul class="navbar__menu">
 					<li class="navbar__item"><a href="/admin"
-						class="navbar__links">Admin-Home</a></li>
+						class="navbar__links">Home</a></li>
 					<li class="navbar__item"><a href="/Signup"
 						class="navbar__links">Signin</a></li>
 					<li class="navbar__item"><a href="/Signup"
@@ -106,12 +106,11 @@
 				<div>
 					<form:button>Register</form:button>
 				</div>
-			</div>
+			</div><br>
+			${Register}
+	
 		</form:form>
 	</div>
-	<script type="text/javascript">
-	alert("Hello Mani")
 	
-	</script>
 </body>
 </html>

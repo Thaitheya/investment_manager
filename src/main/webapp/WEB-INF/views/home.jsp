@@ -6,28 +6,29 @@
 <meta charset="ISO-8859-1">
 <title></title>
 <style>
-<%@include file="/WEB-INF/views/assert/style.css"%>
+<%@ include file="/WEB-INF/views/asserts/style.css"%>
 </style>
 </head>
 <body>
 
 
-	<div id="preloader"></div>
+	<div id="preloader">
+		<img src="">
+	</div>
 	<div id="root">
 		<nav class="navbar">
 			<div class="navbar__container">
 				<a href="#" id="navbar__logo">OpenSea.io</a>
-
-				<ul class="navbar__menu">
+				<div>
+					<ul class="navbar__menu">
 						<li class="navbar__item"><a href="/trade/addpurchases"
-						class="navbar__links">Buy</a></li>
+							class="navbar__links">Buy</a></li>
 						<li class="navbar__item"><a href="/trade/addSale"
-						class="navbar__links">Sell</a></li>
-						<li class="navbar__item"><a href=""
-						class="navbar__links">About</a></li>
-						<li class="navbar__item"><a href=""
-						class="navbar__links">Contact Us</a></li>
-				</ul>
+							class="navbar__links">Sell</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">About</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Contact Us</a></li>
+					</ul>
+				</div>
 			</div>
 		</nav>
 	</div>
