@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
@@ -33,7 +34,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "stock_product")
 public class StockProduct {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "stock_id")
+    @SequenceGenerator(name = "stock_id", sequenceName = "stock_id",  allocationSize = 1)
 	@Column(name = "stock_id")
 	@NotNull
 	@Range(min = 1, message = "Enter the value greater than zero")

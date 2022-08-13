@@ -4,7 +4,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 
@@ -22,7 +22,7 @@
 				<ul class="navbar__menu">
 					<li class="navbar__item"><a href="/admin"
 						class="navbar__links">Home</a></li>
-					<li class="navbar__item"><a href="/Signup"
+					<li class="navbar__item"><a href="/form/login"
 						class="navbar__links">Signin</a></li>
 					<li class="navbar__item"><a href="/Signup"
 						class="navbar__links">Signup</a></li>
@@ -38,7 +38,7 @@
 				<label for="adhaarNumber">Adhaar Number</label>
 				<div>
 					<form:input path="adhaarNumber" min="12"  pattern="^\d{4}\s\d{4}\s\d{4}$" title=" Adhaar must be number" 
-					placeholder="Enter AdhaarNumber"/>
+					placeholder="Enter AdhaarNumber"  />
 				</div>
 				<form:errors path="adhaarNumber" cssClass="text-danger" />
 			</div>

@@ -77,5 +77,9 @@ public class AdminController {
 		return "redirect:/admin/list";
 	} 
 	
-	
+//	@GetMapping("/adminlogin")
+//	public String adminLogin(Model model) {
+//		StockProduct product = ;
+//		
+//	}
 }

@@ -64,7 +64,7 @@
 				</div>
 				<div>
 					<div>
-						<form:button>Add stock</form:button>
+						<form:button>Update stock</form:button>
 					</div>
 				</div>
 			</form:form>

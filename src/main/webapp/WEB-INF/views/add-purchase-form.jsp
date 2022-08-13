@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Add user</title>
@@ -19,11 +19,11 @@
 				<a href="#" id="navbar__logo">OpenSea.io</a>
 
 				<ul class="navbar__menu">
-					<li class="navbar__item"><a href="/admin"
+					<li class="navbar__item"><a href="/trade/index"
 						class="navbar__links">Home</a></li>
-					<li class="navbar__item"><a href="/admin"
+					<li class="navbar__item"><a href="/about"
 						class="navbar__links">About</a></li>
-					<li class="navbar__item"><a href="/admin"
+					<li class="navbar__item"><a href="/Help"
 						class="navbar__links">Help</a></li>
 				</ul>
 			</div>
@@ -35,12 +35,12 @@
 			<div>
 				<label for="adhaarNumber">Adhaar Number</label>
 				<div>
-					<form:input path="adhaarNumber" />
+					<form:input path="adhaarNumber" readonly =true/>
 				</div>
 			</div>
 			<div>
 				<label for="purchaseId">Purchase Id</label>
-				<div id="auto">
+				<div id="auto"  onsubmit="func()">
 					<form:input path="purchaseId" />
 				</div>
 			</div>
@@ -74,10 +74,15 @@
 					<form:input path="amountOfInr" />
 				</div>
 			</div>
-			<div>
+			<div class="drop">
 				<label for="modeOfPayment">Mode Of Payment</label>
 				<div>
-					<form:input path="modeOfPayment" />
+			    <select name="modeOfPayment" id="modeOfPayment">
+				  <option value="GooglePay">GOOGLEPAY</option>
+				  <option value="Paytm">PAYTM</option>
+				  <option value="Phonepe">Adani</option>
+				  <option value="NetBanking">ICICI</option>
+				</select>
 				</div>
 			</div>
 			<div>
@@ -87,6 +92,13 @@
 			</div>
 		</form:form>
 	</div>
+<script type="text/javascript">
+function func() {
+	var d = new Date().getTime().toString();
+	return d;
+}
 
+
+</script>
 </body>
 </html>

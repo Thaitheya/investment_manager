@@ -4,68 +4,62 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Add user</title>
-<script
-	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-	integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-	integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-	crossorigin="anonymous"></script>
+<style>
+<%@include file="/WEB-INF/views/asserts/style.css"%>
+</style>
 </head>
 <body>
-	<div id="root">
-		<h1>Customer Purchase List</h1>
-		<div id="form">
+	<div>
+		<h1 style="text-align: center;">Customer Purchase List</h1>
+		<div class="login-form">
 			<form:form action="" method="post" modelAttribute="getstockproduct">
-
-				<div class="mb-3">
+				<div>
 					<label for="adhaarNumber">Adhaar Number</label>
 					<div>
-						<form:input path="adhaarNumber" />
+						<form:input path="adhaarNumber"/>
 					</div>
 				</div>
-				<div class="mb-3">
+				<div>
 					<label for="stockId">Stock Id</label>
 					<div>
 						<form:input path="stockId" />
 					</div>
 				</div>
-				<div class="mb-3">
+				<div>
 					<label for="stockName">Stock Name</label>
 					<div>
 						<form:input path="stockName" />
 					</div>
 				</div>
-				<div class="mb-3">
+				<div>
 					<label for="company">company</label>
 					<div>
 						<form:input path="company" />
 					</div>
 				</div>
-				<div class="mb-3">
+				<div>
 					<label for="noOfSharesInHand">No Of Shares In Hand</label>
 					<div>
 						<form:input path="noOfSharesInHand" />
 					</div>
 				</div>
-				<div class="mb-3">
+				<div>
 					<label for="faceValue">Face Value</label>
 					<div>
 						<form:input path="faceValue" />
 					</div>
 				</div>
-				<div class="mb-3">
+				<div>
 					<label for="lastTansactionedDate">Last Transactioned Date</label>
 					<div>
 						<form:input path="lastTansactionedDate" />
 					</div>
 				</div>
-				<div class="mb-3">
+				<div>
 					<label for="lastTansactionedValue">Last Transactioned value</label>
 					<div>
 						<form:input path="lastTansactionedValue" />
@@ -77,9 +71,10 @@
 		</div>
 	</div>
 	<div>
-		<table id="table root" class="table-primary">
+		<table class="content-table">
 			<thead>
 				<tr>
+				    <td th:text="${iStat.index + 1}">S NO</td>
 					<th scope="col">Adhaar Number</th>
 					<th scope="col">Purchase Id</th>
 					<th scope="col">dateOfTxn</th>

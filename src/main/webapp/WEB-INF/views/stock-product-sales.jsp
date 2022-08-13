@@ -9,11 +9,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add user</title>
+<style type="text/css"><%@include file="/WEB-INF/views/asserts/style.css"%></style>
 </head>
 <body>
 <div id="root">
 
-		<div id="form">
+		<div class="login-form">
 			<form:form action="" method="post" modelAttribute="getStockproductsales">
 
 				<div>
