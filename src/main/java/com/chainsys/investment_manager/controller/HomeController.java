@@ -1,5 +1,6 @@
 package com.chainsys.investment_manager.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -54,14 +55,13 @@ public class HomeController {
 	}
 	
 	@GetMapping("/addpurchases")
-	public String stockPurchases(@RequestParam("purchaseId") int id,Model model) {
+	public String stockPurchases(Model model, Date date) {
 		SharesPurchase purchases = new SharesPurchase();
-		model.addAttribute("purchasestock", purchasesServices.getAllPurchasedStock());
 		model.addAttribute("addpurchases",purchases);
-		purchases.setPurchaseId(id);
 		return "add-purchase-form";
 	}
 
+	@SuppressWarnings("deprecation")
 	@PostMapping("/addp")
 	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase purchases, Errors error, Model model) {
 		if(error.hasErrors()) {
@@ -69,7 +69,7 @@ public class HomeController {
 		}
 		else {
 		purchasesServices.addStockProduct(purchases);
-		model.addAttribute(purchases.getPurchaseId());
+		model.addAttribute(purchases.getDateOfTxn().getDate());
 		model.addAttribute("result","Stock added successfully");
 		return  "add-purchase-form";
 		}

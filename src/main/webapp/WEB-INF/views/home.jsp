@@ -22,7 +22,7 @@
 							class="navbar__links">Buy</a></li>
 						<li class="navbar__item"><a href="/trade/addSale"
 							class="navbar__links">Sell</a></li>
-						<li class="navbar__item"><a href="/About" class="navbar__links">About</a></li>
+						<li class="navbar__item"><a href="/trade/about" class="navbar__links">About</a></li>
 						<li class="navbar__item"><a href="" class="navbar__links">Contact Us</a></li>
 						<li class="navbar__item"><a href="" class="navbar__links">Profile</a></li>
 					</ul>

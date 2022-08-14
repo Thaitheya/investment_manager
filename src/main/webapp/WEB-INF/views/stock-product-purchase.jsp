@@ -9,18 +9,37 @@
 <meta charset="ISO-8859-1">
 <title>Add user</title>
 <style>
-<%@include file="/WEB-INF/views/asserts/style.css"%>
+<%@
+include file="/WEB-INF/views/asserts/style.css"%>
 </style>
 </head>
 <body>
-	<div>
-		<h1 style="text-align: center;">Customer Purchase List</h1>
-		<div class="login-form">
+<div class= actiom>
+		<nav class="navbar">
+			<div class="navbar__container">
+				<a href="#" id="navbar__logo">OpenSea.io</a>
+				<div>
+					<ul class="navbar__menu">
+						<li class="navbar__item"><a href="/trade/addpurchases"
+							class="navbar__links">Buy</a></li>
+						<li class="navbar__item"><a href="/trade/addSale"
+							class="navbar__links">Sell</a></li>
+						<li class="navbar__item"><a href="/trade/about" class="navbar__links">About</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Contact Us</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Profile</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+    <h1 style="text-align: center;">Customer Purchase List</h1>
+	<div class="login-form">
+		<div>
 			<form:form action="" method="post" modelAttribute="getstockproduct">
 				<div>
 					<label for="adhaarNumber">Adhaar Number</label>
 					<div>
-						<form:input path="adhaarNumber"/>
+						<form:input path="adhaarNumber" />
 					</div>
 				</div>
 				<div>
@@ -74,7 +93,6 @@
 		<table class="content-table">
 			<thead>
 				<tr>
-				    <td th:text="${iStat.index + 1}">S NO</td>
 					<th scope="col">Adhaar Number</th>
 					<th scope="col">Purchase Id</th>
 					<th scope="col">dateOfTxn</th>
@@ -88,7 +106,6 @@
 			<tbody>
 				<c:forEach var="SharesPurchases" items="${listofstocks}">
 					<tr>
-						<th scope="row">1</th>
 						<td>${SharesPurchases.adhaarNumber}</td>
 						<td>${SharesPurchases.purchaseId}</td>
 						<td>${SharesPurchases.dateOfTxn}</td>
@@ -97,7 +114,6 @@
 						<td>${SharesPurchases.quantity}</td>
 						<td>${SharesPurchases.amountOfInr}</td>
 						<td>${SharesPurchases.modeOfPayment}</td>
-						
 					</tr>
 				</c:forEach>
 			</tbody>

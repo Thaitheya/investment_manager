@@ -29,13 +29,14 @@
 			</div>
 		</nav>
 	</div>
+	<button style="top: 25px"><a href="/trade/index">BACK</a></button>
 	<div class="login-form">
 		<form:form action="addp" method="post" modelAttribute="addpurchases">
 
 			<div>
 				<label for="adhaarNumber">Adhaar Number</label>
 				<div>
-					<form:input path="adhaarNumber"/>
+					<form:input path="adhaarNumber"  title=" Adhaar must be number" min="0" placeholder="xxxx xxxx xxxx"/>
 				</div>
 			</div>
 			<div>
@@ -47,7 +48,7 @@
 			<div>
 				<label for="dateOfTxn">Date Of TXN</label>
 				<div>
-					<form:input path="dateOfTxn" />
+					<form:input path="dateOfTxn" type="date"/>
 				</div>
 			</div>
 			<div>
@@ -59,29 +60,30 @@
 			<div>
 				<label for="buyPrice">Buy Price</label>
 				<div>
-					<form:input path="buyPrice" />
+					<form:input path="buyPrice" id="num1"/>
 				</div>
 			</div>
 			<div>
 				<label for="quantity">Quantity </label>
 				<div>
-					<form:input path="quantity" />
+					<form:input path="quantity" id="num2"/>
 				</div>
 			</div>
+			
 			<div>
 				<label for="amountOfInr">Amount Of INR </label>
 				<div>
-					<form:input path="amountOfInr" />
+					<form:input path="amountOfInr" id="result" onmouseover="add_number()" readonly="true"/>
 				</div>
 			</div>
 			<div class="drop">
 				<label for="modeOfPayment">Mode Of Payment</label>
 				<div>
 			    <select name="modeOfPayment" id="modeOfPayment">
-				  <option value="GooglePay">GOOGLEPAY</option>
+				  <option value="GooglePay">GooglePay</option>
 				  <option value="Paytm">PAYTM</option>
-				  <option value="Phonepe">Adani</option>
-				  <option value="NetBanking">ICICI</option>
+				  <option value="Phonepe">Phonepe</option>
+				  <option value="NetBanking">NetBanking</option>
 				</select>
 				</div>
 			</div>
@@ -93,5 +95,16 @@
 			</div>
 		</form:form>
 	</div>
+	<script type="text/javascript">
+	function add_number() {
+
+        var first_number = parseInt(document.getElementById("num1").value);
+        var second_number = parseInt(document.getElementById("num2").value);
+        var result = first_number * second_number;
+
+        document.getElementById("result").value = result;
+      }
+	
+	</script>
 </body>
 </html>

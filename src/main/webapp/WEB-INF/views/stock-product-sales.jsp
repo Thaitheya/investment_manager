@@ -9,11 +9,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add user</title>
-<style type="text/css"><%@include file="/WEB-INF/views/asserts/style.css"%></style>
+<style type="text/css">
+<%@include file="/WEB-INF/views/asserts/style.css"%></style>
 </head>
 <body>
-<div id="root">
-
+<div>
+<h1 style="text-align: center;">Customer Sales List</h1>
 		<div class="login-form">
 			<form:form action="" method="post" modelAttribute="getStockproductsales">
 
@@ -71,19 +72,22 @@
 		</div>
 	</div>
      <div>
-	<table id="table root">
+	<table id="content-table">
 		<thead>
-			<tr>Adhaar Number</tr>
-			<tr>Sales Id</tr>
-			<tr>Date Of Txn </tr>
-			<tr>Stock Id</tr>
-			<tr>Sold Price</tr>
-			<tr>Quantity</tr>
-			<tr>AmountOfInr</tr>
+		<tr>
+			<th>Adhaar Number</th>
+			<th>Sales Id</th>
+			<th>Date Of Txn </th>
+			<th>Stock Id</th>
+			<th>Sold Price</th>
+			<th>Quantity</th>
+			<th>AmountOfInr</th>
+		</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="Sales" items="${listofstockssales}">
 				<tr>
+				    <th scope="row">1</th>
 					<td>${Sales.adhaarNumber}</td>
 					<td>${Sales.salesId}</td>
 					<td>${Sales.dateOfTxn}</td>
