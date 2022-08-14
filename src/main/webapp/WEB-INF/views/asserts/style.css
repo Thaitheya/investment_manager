@@ -792,19 +792,19 @@ border-bottom: 2px solid #009879;
  display:flex;
  align-items:center;
  justify-content: center;
- background-color:#e3f2fd;
+ background-color:#141414;
  }
  .testmonial {
  position:relative;
  max-width:900px;
  width: 100%;
  padding:50px 0;
- background-color:#fff;
+ background-color:gold;
  }
 .testmonial .image {
 	height:170px;
 	width:170px;
-	object-fit:cover;
+	object-fit:fill;
 	border-radius:50%;
 }
 .testmonial .slide {
@@ -817,6 +817,17 @@ text-align:center;
 padding: 0 160px;
 font-size: 14px;
 font-weight:400;
-color: #333;
+color: #141414;
 }
-   
+
+
+/*Preloader*/
+
+#preloader {
+background:  url('https://i.pinimg.com/originals/45/12/4d/45124d126d0f0b6d8f5c4d635d466246.gif') no-repeat center center;
+background-size:15%;
+height:100vh;
+width:100%;
+position:fixed;
+z-index:100;
+}

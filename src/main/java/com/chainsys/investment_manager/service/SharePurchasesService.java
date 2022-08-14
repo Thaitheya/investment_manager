@@ -19,7 +19,6 @@ public class SharePurchasesService {
 	StockProductsRepository productsRepository;
 
 	public StockProdectPurchaseDTO getStockProdectPurchaseDTO(int id) {
-		StockProduct pro = new StockProduct();
 		StockProdectPurchaseDTO dto = new StockProdectPurchaseDTO();
 		dto.setStockProduct(productsRepository.findById(id));
 		dto.setSharesPurchases(purchasesRepository.findAll());

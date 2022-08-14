@@ -12,7 +12,7 @@
 </style>
 </head>
 <body style="background-color: #141414">
-	<div id="preloader"></div>
+<div id= "preloader"></div>
 	<div id="root">
 		<nav class="navbar">
 			<div class="navbar__container">
@@ -29,14 +29,13 @@
 			</div>
 		</nav>
 	</div>
-	<button style="top: 25px"><a href="/trade/index">BACK</a></button>
 	<div class="login-form">
 		<form:form action="addp" method="post" modelAttribute="addpurchases">
 
 			<div>
 				<label for="adhaarNumber">Adhaar Number</label>
 				<div>
-					<form:input path="adhaarNumber"  title=" Adhaar must be number" min="0" placeholder="xxxx xxxx xxxx"/>
+					<form:input path="adhaarNumber"  title=" Adhaar must be number"  placeholder="xxxx xxxx xxxx"/>
 				</div>
 			</div>
 			<div>
@@ -48,7 +47,7 @@
 			<div>
 				<label for="dateOfTxn">Date Of TXN</label>
 				<div>
-					<form:input path="dateOfTxn" type="date"/>
+					<form:input path="dateOfTxn" id="date" name="date" onkeyup="showdate();"/>
 				</div>
 			</div>
 			<div>
@@ -106,5 +105,18 @@
       }
 	
 	</script>
+	
+	<script type="text/javascript">
+			var loader = document.getElementById("preloader");
+            window.addEventListener("load",function() {
+                loader.style.display ="none";
+            },1000)
+</script>
+
+<script type="text/javascript">
+  document.getElementById('date').value = new Date().toISOString(); 
+
+</script>
+	
 </body>
 </html>
