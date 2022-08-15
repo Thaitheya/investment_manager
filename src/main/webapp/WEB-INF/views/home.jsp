@@ -13,14 +13,12 @@
 	background: #141414;
 	width: 100%;
 	height: 80px;
-	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 50px;
 }
 
 .navbar .logo a {
-	display: block;
 	text-decoration: none;
 	color: #fff;
 	font-weight: 700;
@@ -151,20 +149,15 @@ border-radius:30px;
 								<div class="dd_menu">
 									<div class="dd_left">
 										<ul>
-											<li><i class="fas fa-map-marker-alt"></i></li>
-											<li><i class="far fa-star"></i></li>
-											<li><i class="far fa-plus-square"></i></li>
-											<li><i class="fas fa-cog"></i></li>
-											<li><i class="fas fa-download"></i></li>
-											<li><i class="fas fa-sign-out-alt"></i></li>
+											<li class="navbar__item"><a class="navbar__links"><i class="fas fa-solid fa-user"></i></a></li>
+											<li class="navbar__item"><a a class="navbar__links"><i class="fas fa-sign-out-alt"></i></a></li>
+											
 										</ul>
 									</div>
 									<div class="dd_right">
 										<ul>
-											<li>Profile</li>
-											<li>Last Transaction Date</li>
-											<li>Last Transaction Value</li>
-											<li>Logout</li>
+											<li class="navbar__item"><a  href=""class="navbar__links">Profile</a></li>
+											<li class="navbar__item"><a  href="/trade/home" class="navbar__links">Logout</a></li>
 										</ul>
 									</div>
 								</div></li>
