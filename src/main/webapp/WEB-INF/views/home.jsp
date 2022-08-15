@@ -35,12 +35,12 @@
 }
 
 .navbar .nav_right ul li.nr_li {
-	margin-left: 1200px;
+	margin-left: 900px;
 	cursor: pointer;
 	color: #fff;
 	font-size: 20px;
 	position: relative;
-	margin-bottom: 150px;
+	top: -75px;
 	list-style:none;
 }
 
@@ -131,8 +131,7 @@ border-radius:30px;
 							class="navbar__links">Sell</a></li>
 						<li class="navbar__item"><a href="/trade/about"
 							class="navbar__links">About</a></li>
-						<li class="navbar__item"><a href="" class="navbar__links">Contact
-								Us</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -150,17 +149,21 @@ border-radius:30px;
 									<div class="dd_left">
 										<ul>
 											<li class="navbar__item"><a class="navbar__links"><i class="fas fa-solid fa-user"></i></a></li>
-											<li class="navbar__item"><a a class="navbar__links"><i class="fas fa-sign-out-alt"></i></a></li>
+											<li class="navbar__item"><a class="navbar__links"><img src="https://img.icons8.com/emoji/48/000000/chart-increasing-with-yen-emoji.png"/></a></li>
+											<li class="navbar__item"><a class="navbar__links"><img src="https://img.icons8.com/emoji/48/000000/chart-increasing-emoji.png"/></a></li>
+											<li class="navbar__item"><a  class="navbar__links"><i class="fas fa-sign-out-alt"></i></a></li>
 											
 										</ul>
 									</div>
 									<div class="dd_right">
 										<ul>
 											<li class="navbar__item"><a  href=""class="navbar__links">Profile</a></li>
+											<li class="navbar__item"><a  href="/trade/tradepurchaselist"class="navbar__links">Recent Buy</a></li>
+											<li class="navbar__item"><a  href="/trade/tradesaleslist"class="navbar__links">Recent Sell</a></li>
 											<li class="navbar__item"><a  href="/trade/home" class="navbar__links">Logout</a></li>
 										</ul>
 									</div>
-								</div></li>
+								</div>
 						</ul>
 					</div>
 				</div>

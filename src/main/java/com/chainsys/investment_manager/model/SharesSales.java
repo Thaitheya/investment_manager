@@ -19,7 +19,7 @@ public class SharesSales {
 	@Column(name = "sales_id")
      private int salesId;
 	@Column(name = "date_of_txn")
-     private Date dateOfTxn;
+     private String dateOfTxn;
 	@Column(name = "stock_id")
      private int stockId;
 	@Column(name = "sold_price")
@@ -28,6 +28,9 @@ public class SharesSales {
      private int quantity;
 	@Column(name = "amount_of_inr")
      private int amountOfInr;
+	@ManyToOne
+	@JoinColumn(name = "stock_id", insertable = false, updatable = false,nullable = false)
+	private StockProduct stockProduct;
 	public long getAdhaarNumber() {
 		return adhaarNumber;
 	}
@@ -40,10 +43,10 @@ public class SharesSales {
 	public void setSalesId(int salesId) {
 		this.salesId = salesId;
 	}
-	public Date getDateOfTxn() {
+	public String getDateOfTxn() {
 		return dateOfTxn;
 	}
-	public void setDateOfTxn(Date dateOfTxn) {
+	public void setDateOfTxn(String dateOfTxn) {
 		this.dateOfTxn = dateOfTxn;
 	}
 	public int getStockId() {
@@ -70,24 +73,12 @@ public class SharesSales {
 	public void setAmountOfInr(int amountOfInr) {
 		this.amountOfInr = amountOfInr;
 	}
-	@ManyToOne
-	@JoinColumn(name = "stock_id", insertable = false, updatable = false,nullable = false)
-	private StockProduct stockProduct;
-	
-	public SharesSales(long adhaarNumber, int salesId, Date dateOfTxn, int stockId, float soldPrice, int quantity,
-			int amountOfInr, StockProduct stockProduct) {
-		super();
-		this.adhaarNumber = adhaarNumber;
-		this.salesId = salesId;
-		this.dateOfTxn = dateOfTxn;
-		this.stockId = stockId;
-		this.soldPrice = soldPrice;
-		this.quantity = quantity;
-		this.amountOfInr = amountOfInr;
+	public StockProduct getStockProduct() {
+		return stockProduct;
+	}
+	public void setStockProduct(StockProduct stockProduct) {
 		this.stockProduct = stockProduct;
 	}
-    public SharesSales() {
-    	
-    }
+	
 	
 }

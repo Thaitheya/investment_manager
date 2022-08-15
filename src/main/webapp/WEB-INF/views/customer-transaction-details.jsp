@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Add user</title>
@@ -51,7 +51,7 @@
 
 	</div>
 	<div>
-		<table id="table root">
+		<table>
 			<thead>
 				<tr>Adhaar Number
 				</tr>

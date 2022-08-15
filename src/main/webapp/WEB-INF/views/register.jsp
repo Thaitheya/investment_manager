@@ -13,25 +13,23 @@
 </style>
 </head>
 <body style="background-color: #141414;">
-	<div id="preloader"></div>
 	<div id="root">
 		<nav class="navbar">
 			<div class="navbar__container">
 				<a href="#" id="navbar__logo">OpenSea.io</a>
 
 				<ul class="navbar__menu">
-					<li class="navbar__item"><a href="/admin"
+					<li class="navbar__item"><a href="/trade/home"
 						class="navbar__links">Home</a></li>
-					<li class="navbar__item"><a href="/Signup"
-						class="navbar__links">Signup</a></li>
-					<li class="navbar__item"><a href="/Signup"
+					<li class="navbar__item"><a href="/form/login"
 						class="navbar__links">Signin</a></li>
 				</ul>
 			</div>
 		</nav>
 	</div>
 	<div class="login-form">
-		<h1>Register Form</h1>
+	<div id="preloader"></div>
+		<h1 style="margin-top: 80px">Register Form</h1>
 		<form:form action="register" method="post" modelAttribute="user">
 
 			<div>
@@ -101,9 +99,13 @@
 				</div>
 			</div>
 			<br>
-
 		</form:form>
 	</div>
-
+     <script type="text/javascript">
+		var loader = document.getElementById("preloader");
+		window.addEventListener("load", function() {
+			loader.style.display = "none";
+		}, 1000)
+	</script>
 </body>
 </html>

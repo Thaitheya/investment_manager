@@ -28,6 +28,7 @@
 				</ul>
 			</div>
 		</nav>
+		<button>Back</button>
 	</div>
 	<div class="login-form">
 		<form:form action="addp" method="post" modelAttribute="addpurchases">
@@ -41,7 +42,7 @@
 			<div>
 				<label for="purchaseId">Purchase Id</label>
 				<div id="auto">
-					<form:input path="purchaseId" />
+					<form:input path="purchaseId" id="purchaseid"/>
 				</div>
 			</div>
 			<div>
@@ -88,9 +89,8 @@
 			</div>
 			<div>
 				<div>
-					<button id="add_stock" style="color: #fff">Add stock</button>
+					<button id="add_stock" style="color: #fff" onclick="con();">Add stock</button>
 				</div>
-				<div>${result}</div>
 			</div>
 		</form:form>
 	</div>
@@ -117,6 +117,14 @@
   document.getElementById('date').value = new Date().toISOString(); 
 
 </script>
+	<script type="text/javascript">
+	function con() {
+			  return confirm("Are you sure you wnat to Buy?");
+	}
+	</script>
+	<script type="text/javascript">
+		document.getElementById('purchaseid').value = new Date().getTime();
 	
+	</script>
 </body>
 </html>

@@ -53,6 +53,7 @@ public class HomeController {
 		model.addAttribute("allstockpurchase", purchasesList);
 		return "list_stock_purchases";
 	}
+	//
 	
 	@GetMapping("/addpurchases")
 	public String stockPurchases(Model model, Date date) {
@@ -61,16 +62,13 @@ public class HomeController {
 		return "add-purchase-form";
 	}
 
-	@SuppressWarnings("deprecation")
 	@PostMapping("/addp")
-	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase purchases, Errors error, Model model) {
+	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase purchases, Errors error) {
 		if(error.hasErrors()) {
 		  return "add-purchase-form";
 		}
 		else {
 		purchasesServices.addStockProduct(purchases);
-		model.addAttribute(purchases.getDateOfTxn().getDate());
-		model.addAttribute("result","Stock added successfully");
 		return  "add-purchase-form";
 		}
 	}
@@ -79,7 +77,7 @@ public class HomeController {
 	public String getAllSoldStock(Model model) {
 		List<SharesSales> sharesSalesList = salesService.getAllSoldStock();
 		model.addAttribute("allstocksold", sharesSalesList);
-		return "list_stock_sales";
+		return "list_stock_sold";
 	}
 
 	@GetMapping("/addSale")

@@ -17,9 +17,9 @@
 				<a href="#" id="navbar__logo">OpenSea.io</a>
 
 				<ul class="navbar__menu">
-					<li class="navbar__item"><a href="/admin"
+					<li class="navbar__item"><a href="/trade/home"
 						class="navbar__links">Home</a></li>
-					<li class="navbar__item"><a href="/Signup"
+					<li class="navbar__item"><a href="/form/registerform"
 						class="navbar__links">Signup</a></li>
 				</ul>
 			</div>
@@ -28,7 +28,7 @@
 	<div class="login-form">
 		<h1>Login Form</h1>
 		<form:form action="getlogin" method="post" modelAttribute="loginhere" name="myForm">
-			<label>Email</label>
+			<label>Email</label><br>
 			<form:input path="email" name="email" type="email" id="emails"/>
 			<label>password</label>
 			<form:input path="password" id="pass" name="password" type="password"  onkeyup= "return validate()" />
