@@ -10,11 +10,19 @@
 <style>
 <%@include file="/WEB-INF/views/asserts/style.css"%>
 </style>
+<style type="text/css">
+#back {
+text-decoration: none;
+color: #fff;
+}
+</style>
 </head>
 <body style="background-color: #141414">
 <div id= "preloader"></div>
 	<div id="root">
+     
 		<nav class="navbar">
+		<button><a href="/trade/index" id="back">Back</a></button>
 			<div class="navbar__container">
 				<a href="#" id="navbar__logo">OpenSea.io</a>
 
@@ -28,7 +36,7 @@
 				</ul>
 			</div>
 		</nav>
-		<button>Back</button>
+		 
 	</div>
 	<div class="login-form">
 		<form:form action="addp" method="post" modelAttribute="addpurchases">
@@ -123,7 +131,7 @@
 	}
 	</script>
 	<script type="text/javascript">
-		document.getElementById('purchaseid').value = new Date().getTime();
+		document.getElementById('purchaseid').value = Math.floor(Math.random() * 100);
 	
 	</script>
 </body>

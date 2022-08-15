@@ -29,9 +29,9 @@
 							class="navbar__links">Sell</a></li>
 						<li class="navbar__item"><a href="/trade/about"
 							class="navbar__links">About</a></li>
-						<li class="navbar__item"><a href="" class="navbar__links">ContactUs</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Contact</a></li>
 						<li class="navbar__item"><a href="/form/login" class="navbar__links">Signin</a></li>
-						<li class="navbar__item"><a href="/form/register" class="navbar__links">Signup</a></li>
+						<li class="navbar__item"><a href="/form/registerform" class="navbar__links">Signup</a></li>
 					</ul>
 				</div>
 			</div>

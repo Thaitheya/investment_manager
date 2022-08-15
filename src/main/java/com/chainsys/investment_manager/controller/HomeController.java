@@ -1,6 +1,5 @@
 package com.chainsys.investment_manager.controller;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -93,7 +92,12 @@ public class HomeController {
 		salesService.sellStockProduct(sale);
 		return "redirect:/trade/tradesaleslist";
 	}
-
+    public String updateSalesForm(@RequestParam("id") int id, Model model) {
+    	SharesSales sales = new SharesSales();
+    	salesService.finBySalesId(id);
+    	model.addAttribute("updatesales",sales);
+    	return "update-sales-form";
+    }
 	@GetMapping("/getstockofsharespurchase")
 	public String getStockToPurchase(@RequestParam("id") int id, Model model) {
 		StockProdectPurchaseDTO dto = purchasesServices.getStockProdectPurchaseDTO(id);

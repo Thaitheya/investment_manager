@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.chainsys.investment_manager.model.SharesSales;
 @Repository
 public interface ShareSalesRepository extends JpaRepository<SharesSales,Integer>{
-     
+      SharesSales findById(int id);
 }

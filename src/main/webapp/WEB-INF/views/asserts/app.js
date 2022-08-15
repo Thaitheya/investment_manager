@@ -14,3 +14,5 @@ fetch('https://stock-price4.p.rapidapi.com/price/TSLA', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
+	

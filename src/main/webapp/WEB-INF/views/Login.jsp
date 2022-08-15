@@ -34,7 +34,7 @@
 			<form:input path="password" id="pass" name="password" type="password"  onkeyup= "return validate()" />
 		<ul>
 			<li id="lower">aleast one lowercase</li>
-			<li id="speacial_character">atleast one special symbol</li>
+			<li id="special_character">atleast one special symbol</li>
 			<li id= "number">atleast one number</li>
 			<li id="length">atleast 6 characters</li>
 			<li id="upper">atleast one uppercase</li>
@@ -77,7 +77,7 @@
     	 else{
     		 sp_char.style.color = 'red';
     	 }
- 		if(pass.value.length<6) {
+ 		if(pass.value.length>6) {
     		 
  			len.style.color = 'green'
     	 }

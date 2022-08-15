@@ -15,7 +15,7 @@
 	height: 80px;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 50px;
+	padding: 0 30px;
 }
 
 .navbar .logo a {
@@ -69,7 +69,7 @@
 
 .navbar .dd_menu .dd_left {
 	background: #141414;
-	padding: 15px 20px;
+	padding: 15px 15px;
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
 	list-style:none;
@@ -81,7 +81,7 @@
 }
 
 .navbar .dd_menu .dd_right {
-	padding: 15px 20px;
+	padding: 15px 10px;
 	list-style:none;
 }
 

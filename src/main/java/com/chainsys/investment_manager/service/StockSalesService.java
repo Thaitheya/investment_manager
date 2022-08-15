@@ -34,5 +34,7 @@ public class StockSalesService {
 		List<SharesSales> sharesSold = repository.findAll();
 		return sharesSold;
 	}
-
+    public SharesSales finBySalesId(int id) {
+    	return repository.findById(id);
+    }
 }

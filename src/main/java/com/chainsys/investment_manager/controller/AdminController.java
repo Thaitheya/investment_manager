@@ -65,9 +65,9 @@ public class AdminController {
 
 	@GetMapping("/updateform")
 	public String updateStockProductForm(@RequestParam("id") int id, Model model) {
-		StockProduct sp = new StockProduct();
+		StockProduct product = new StockProduct();
 		productService.findById(id);
-		model.addAttribute("updatestock", sp);
+		model.addAttribute("updatestock", product);
 		return "update-stock-form";
 	}
 
