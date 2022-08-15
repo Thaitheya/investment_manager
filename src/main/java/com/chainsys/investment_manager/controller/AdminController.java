@@ -48,8 +48,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/add")
-	public String addStockProduct(@ModelAttribute("stock") StockProduct stockProduct) {
-		productService.save(stockProduct);
+	public String addStockProduct(@ModelAttribute("stock") StockProduct Product) {
+		productService.save(Product);
 		return "redirect:/admin/list";
 	}
 
@@ -72,8 +72,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/update")
-	public String updateStock(@ModelAttribute("updatestock") StockProduct sp) {
-		productService.save(sp);
+	public String updateStock(@ModelAttribute("updatestock") StockProduct product) {
+		productService.save(product);
 		return "redirect:/admin/list";
 	} 
 	

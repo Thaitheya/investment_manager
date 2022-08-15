@@ -56,19 +56,19 @@ public class HomeController {
 	//
 	
 	@GetMapping("/addpurchases")
-	public String stockPurchases(Model model, Date date) {
+	public String stockPurchases(Model model) {
 		SharesPurchase purchases = new SharesPurchase();
 		model.addAttribute("addpurchases",purchases);
 		return "add-purchase-form";
 	}
 
 	@PostMapping("/addp")
-	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase purchases, Errors error) {
+	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase purchase, Errors error) {
 		if(error.hasErrors()) {
 		  return "add-purchase-form";
 		}
 		else {
-		purchasesServices.addStockProduct(purchases);
+		purchasesServices.addStockProduct(purchase);
 		return  "add-purchase-form";
 		}
 	}
@@ -89,8 +89,8 @@ public class HomeController {
 	}
 
 	@PostMapping("/adds")
-	public String addStockSales(@ModelAttribute("addsales") SharesSales sales) {
-		salesService.sellStockProduct(sales);
+	public String addStockSales(@ModelAttribute("addsales") SharesSales sale) {
+		salesService.sellStockProduct(sale);
 		return "redirect:/trade/tradesaleslist";
 	}
 

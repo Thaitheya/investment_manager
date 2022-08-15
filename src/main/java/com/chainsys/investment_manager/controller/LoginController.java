@@ -31,11 +31,11 @@ public class LoginController {
 	}
 
 	@PostMapping("/register")
-	public String adduser(@Valid @ModelAttribute("user") UserRegistration userreg, Model model,Errors errors) {
+	public String adduser(@Valid @ModelAttribute("user") UserRegistration register, Model model,Errors errors) {
 		if(errors.hasErrors()) {
 			return "register";
 		}
-		ur.save(userreg);
+		ur.save(register);
 		return "redirect:/form/login";
 	}
 	@GetMapping("/login")
