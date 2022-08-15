@@ -77,12 +77,14 @@
 				</div>
 				<div>
 					<div>
-						<button id="add_stock" onclick="con();">Add sold stock</button>
+						<button id="add_stock" onclick="con();">Update sold stock</button>
 					</div>
 				</div>
 			</form:form>
 		</div>
 	</div>
+	
+	
 	<script type="text/javascript">
 		function sub_number() {
 
