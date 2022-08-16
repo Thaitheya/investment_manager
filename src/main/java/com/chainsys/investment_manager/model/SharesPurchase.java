@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -17,9 +16,7 @@ public class SharesPurchase {
 	@Id
 	@Column(name = "purchase_id")
 	@NotNull
-	
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "purchase_id")
-    @SequenceGenerator(name = "purchase_id", sequenceName = "purchase_id",  allocationSize = 8)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int purchaseId;
 	@Column(name = "adhaar_number")
 	private long adhaarNumber;

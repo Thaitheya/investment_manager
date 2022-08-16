@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.chainsys.investment_manager.model.CustomerAccount;
 
-public interface CustomerAccountRepository extends JpaRepository<CustomerAccount,Long>{
-     CustomerAccount findById(long id);
+public interface CustomerAccountRepository extends JpaRepository<CustomerAccount,Integer>{
+     CustomerAccount findById(int id);
 }

@@ -9,6 +9,8 @@
 <style>
 <%@include file="/WEB-INF/views/asserts/style.css"%>
 </style>
+<script>
+</script>
 </head>
 <body>
 <div id="root">
@@ -55,7 +57,7 @@
     		 num.style.color = 'green'
     	 }
     	 else {
-    		 num.style.color = 'red'
+    		 num.style.color= 'red'
     	 }
     	 if(pass.value.match(/[A-Z]/)) {
     		 upper.style.color = 'green'

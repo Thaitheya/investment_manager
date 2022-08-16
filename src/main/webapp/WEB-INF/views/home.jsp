@@ -195,10 +195,6 @@ border-radius:30px;
 					<h2>Reliance</h2>
 					<p>Reliance Digital</p>
 				</div>
-				<div class="images__card">
-					<h2>SBI</h2>
-					<p>SBI Bank</p>
-				</div>
 			</div>
 		</div>
 	</section>

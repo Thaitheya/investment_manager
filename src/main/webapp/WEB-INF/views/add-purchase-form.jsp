@@ -20,10 +20,10 @@ color: #fff;
 <body style="background-color: #141414">
 <div id= "preloader"></div>
 	<div id="root">
-     
 		<nav class="navbar">
-		<button><a href="/trade/index" id="back">Back</a></button>
+		  <button><a href="/trade/index" id="back">Back</a></button>
 			<div class="navbar__container">
+			
 				<a href="#" id="navbar__logo">OpenSea.io</a>
 
 				<ul class="navbar__menu">
@@ -130,7 +130,7 @@ color: #fff;
 	}
 	</script>
 	<script type="text/javascript">
-		document.getElementById('purchaseid').value = Math.floor(Math.random() * 100);
+		document.getElementById('purchaseid').value = Math.floor(Math.random() * 10000);
 	
 	</script>
 </body>

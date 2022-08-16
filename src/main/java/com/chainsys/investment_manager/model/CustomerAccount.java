@@ -1,10 +1,15 @@
 package com.chainsys.investment_manager.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -27,6 +32,11 @@ public class CustomerAccount {
 	private int sharesSold;
 	@Column(name = "amount_under_settlement")
 	private int amountUnderSettlement;
+	@OneToMany(
+         mappedBy = "account",cascade = CascadeType.ALL
+	)
+	private List<Transactions> transactions = new ArrayList<>();
+	
 	public int getCustomerId() {
 		return customerId;
 	}
@@ -63,7 +73,13 @@ public class CustomerAccount {
 	public void setAmountUnderSettlement(int amountUnderSettlement) {
 		this.amountUnderSettlement = amountUnderSettlement;
 	}
-	
-		
+	public List<Transactions> getTransactions() {
+		return transactions;
+	}
+	public void setTransactions(List<Transactions> transactions) {
+		this.transactions = transactions;
+	}
 
+	
+	
 }

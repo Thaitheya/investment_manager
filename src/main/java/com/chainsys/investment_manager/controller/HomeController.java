@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.chainsys.investment_manager.dto.CustomerTransactionDTO;
 import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
 import com.chainsys.investment_manager.dto.StockProductSalesDTO;
 import com.chainsys.investment_manager.model.SharesPurchase;
@@ -115,4 +117,13 @@ public class HomeController {
 		return "stock-product-sales";
 	}
 
+	@GetMapping("/getCustomerTransaction")
+	public String getCustomerTrans(@RequestParam("cusid") int id, Model model) {
+		CustomerTransactionDTO dto = accountService.getCustomerTransDTO(id);
+		model.addAttribute("getCustomer", dto.getAccount());
+		model.addAttribute("getTrans", dto.getTransactions());
+		return "customer-transaction";
+	}
+
 }
+
