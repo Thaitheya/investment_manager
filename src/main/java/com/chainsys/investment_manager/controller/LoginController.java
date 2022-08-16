@@ -50,7 +50,7 @@ public class LoginController {
 		if(userRegistration != null) {
 		 return "redirect:/trade/index";
 		}else {
-		  model.addAttribute("Sign in failed");
+		  model.addAttribute("Sign in failed","This email is already exist");
 		}
 		return "login";
 	}

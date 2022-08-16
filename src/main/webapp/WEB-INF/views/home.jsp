@@ -40,7 +40,7 @@
 	color: #fff;
 	font-size: 20px;
 	position: relative;
-	top: -75px;
+	top: -80px;
 	list-style:none;
 }
 

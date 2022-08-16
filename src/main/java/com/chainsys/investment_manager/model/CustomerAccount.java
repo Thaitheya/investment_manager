@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -16,7 +14,6 @@ public class CustomerAccount {
 	@Id
 	@Column(name = "customer_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-//	@SequenceGenerator(name ="customer_id", sequenceName = "customer_id",allocationSize = 1)
 	@NotNull
 	private int customerId;
 	@Column(name = "adhaar_number")

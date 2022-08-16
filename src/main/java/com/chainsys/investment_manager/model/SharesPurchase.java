@@ -1,7 +1,4 @@
 package com.chainsys.investment_manager.model;
-
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +24,7 @@ public class SharesPurchase {
 	@Column(name = "adhaar_number")
 	private long adhaarNumber;
 	@Column(name = "date_of_txn")
-	private Date dateOfTxn;
+	private String dateOfTxn;
 	@Column(name = "stock_id")
 	private int stockId;
 	@Column(name = "buy_price")
@@ -38,90 +35,62 @@ public class SharesPurchase {
 	private int amountOfInr;
 	@Column(name = "mode_of_payment")
 	private String modeOfPayment;
-
-	public int getPurchaseId() {
-		return purchaseId;
-	}
-
-	public void setPurchaseId(int purchaseId) {
-		this.purchaseId = purchaseId;
-	}
-
-	public long getAdhaarNumber() {
-		return adhaarNumber;
-	}
-
-	public void setAdhaarNumber(long adhaarNumber) {
-		this.adhaarNumber = adhaarNumber;
-	}
-
-	public Date getDateOfTxn() {
-		return dateOfTxn;
-	}
-
-	public void setDateOfTxn(Date dateOfTxn) {
-		this.dateOfTxn = dateOfTxn;
-	}
-
-	public int getStockId() {
-		return stockId;
-	}
-
-	public void setStockId(int stockId) {
-		this.stockId = stockId;
-	}
-
-	public float getBuyPrice() {
-		return buyPrice;
-	}
-
-	public void setBuyPrice(float buyPrice) {
-		this.buyPrice = buyPrice;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
-	public int getAmountOfInr() {
-		return amountOfInr;
-	}
-
-	public void setAmountOfInr(int amountOfInr) {
-		this.amountOfInr = amountOfInr;
-	}
-
-	public String getModeOfPayment() {
-		return modeOfPayment;
-	}
-
-	public void setModeOfPayment(String modeOfPayment) {
-		this.modeOfPayment = modeOfPayment;
-	}
-
 	@ManyToOne
 	@JoinColumn(name = "stock_id", insertable = false, nullable = false, updatable = false)
 	private StockProduct stockProduct;
-
-	public SharesPurchase(long adhaarNumber, Date dateOfTxn, int stockId, float buyPrice, int quantity, int amountOfInr,
-			String modeOfPayment, StockProduct stock_Product) {
-		super();
+	public int getPurchaseId() {
+		return purchaseId;
+	}
+	public void setPurchaseId(int purchaseId) {
+		this.purchaseId = purchaseId;
+	}
+	public long getAdhaarNumber() {
+		return adhaarNumber;
+	}
+	public void setAdhaarNumber(long adhaarNumber) {
 		this.adhaarNumber = adhaarNumber;
+	}
+	public String getDateOfTxn() {
+		return dateOfTxn;
+	}
+	public void setDateOfTxn(String dateOfTxn) {
 		this.dateOfTxn = dateOfTxn;
+	}
+	public int getStockId() {
+		return stockId;
+	}
+	public void setStockId(int stockId) {
 		this.stockId = stockId;
+	}
+	public float getBuyPrice() {
+		return buyPrice;
+	}
+	public void setBuyPrice(float buyPrice) {
 		this.buyPrice = buyPrice;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	public int getAmountOfInr() {
+		return amountOfInr;
+	}
+	public void setAmountOfInr(int amountOfInr) {
 		this.amountOfInr = amountOfInr;
+	}
+	public String getModeOfPayment() {
+		return modeOfPayment;
+	}
+	public void setModeOfPayment(String modeOfPayment) {
 		this.modeOfPayment = modeOfPayment;
-		this.stockProduct = stock_Product;
 	}
-
-	public SharesPurchase() {
-		// TODO Auto-generated constructor stub
+	public StockProduct getStockProduct() {
+		return stockProduct;
 	}
-
+	public void setStockProduct(StockProduct stockProduct) {
+		this.stockProduct = stockProduct;
+	}
+    
 }

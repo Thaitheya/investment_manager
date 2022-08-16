@@ -112,7 +112,7 @@
 		}
 	</script>
 	<script type="text/javascript">
-		document.getElementById('salesid').value = new Date().getTime();
+		document.getElementById('salesid').value = Math.floor(Math.random() * 100);
 	</script>
 </body>
 </html>

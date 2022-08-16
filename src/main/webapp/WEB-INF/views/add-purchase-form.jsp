@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Add user</title>
@@ -123,7 +123,6 @@ color: #fff;
 
 <script type="text/javascript">
   document.getElementById('date').value = new Date().toISOString(); 
-
 </script>
 	<script type="text/javascript">
 	function con() {
