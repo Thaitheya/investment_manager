@@ -9,8 +9,7 @@
 <meta charset="ISO-8859-1">
 <title>Add user</title>
 <style>
-<%@
-include file="/WEB-INF/views/asserts/style.css"%>
+<%@include file="/WEB-INF/views/asserts/style.css"%>
 </style>
 </head>
 <body>
@@ -32,6 +31,7 @@ include file="/WEB-INF/views/asserts/style.css"%>
 			</div>
 		</nav>
 	</div>
+	<div>
     <h1 style="text-align: center;">Customer Purchase List</h1>
 	<div class="login-form">
 		<div>
@@ -85,9 +85,8 @@ include file="/WEB-INF/views/asserts/style.css"%>
 					</div>
 				</div>
 			</form:form>
-
-
 		</div>
+	</div>
 	</div>
 	<div>
 		<table class="content-table">

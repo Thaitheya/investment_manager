@@ -12,20 +12,6 @@
 </style>
 </head>
 <body>
-<div id="root">
-		<nav class="navbar">
-			<div class="navbar__container">
-				<a href="#" id="navbar__logo">OpenSea.io</a>
-
-				<ul class="navbar__menu">
-					<li class="navbar__item"><a href="/trade/home"
-						class="navbar__links">Home</a></li>
-					<li class="navbar__item"><a href="/form/registerform"
-						class="navbar__links">Signup</a></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
 	<div>
 		<table class="content-table">
 			<thead>
@@ -64,5 +50,11 @@
 		</table>
 
 	</div>
+	<script type="text/javascript">
+	var loader = document.getElementById("preloader");
+	window.addEventListener("load", function() {
+		loader.style.display = "none";
+	}, 1000)
+</script>
 
 </body>

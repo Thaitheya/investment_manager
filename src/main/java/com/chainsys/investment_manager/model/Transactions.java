@@ -1,7 +1,5 @@
 package com.chainsys.investment_manager.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,43 +14,41 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "transactions")
 public class Transactions {
-     @Id
-	@Column(name = "transaction_id")
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "transaction_id")
 	@NotNull
-     private int transactionId;
+	private int transactionId;
 	@Column(name = "transaction_date")
-	@NotNull
-     private Date transactionDate;
+	private String transactionDate;
 	@Column(name = "customer_id")
 	@NotNull
 	private int customerId;
 	@Column(name = "adhaar_number")
 	@NotNull
-     private long adhaarNumber;
+	private long adhaarNumber;
 	@Column(name = "description")
 	@NotNull
-     private String description;
+	private String description;
 	@Column(name = "amount_received")
 	@NotNull
-     private int amountReceived;
+	private int amountReceived;
 	@Column(name = "amount_paid")
 	@NotNull
-     private int amountPaid;
-     @ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="customer_id", insertable = false, nullable = false,updatable = false)
-     private CustomerAccount account;
-
-	public long getTransactionId() {
+	private int amountPaid;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "customer_id", insertable = false, nullable = false, updatable = false)
+	private CustomerAccount account;
+	public int getTransactionId() {
 		return transactionId;
 	}
 	public void setTransactionId(int transactionId) {
 		this.transactionId = transactionId;
 	}
-	public Date getTransactionDate() {
+	public String getTransactionDate() {
 		return transactionDate;
 	}
-	public void setTransactionDate(Date transactionDate) {
+	public void setTransactionDate(String transactionDate) {
 		this.transactionDate = transactionDate;
 	}
 	public int getCustomerId() {
@@ -91,5 +87,7 @@ public class Transactions {
 	public void setAccount(CustomerAccount account) {
 		this.account = account;
 	}
+
 	
+
 }

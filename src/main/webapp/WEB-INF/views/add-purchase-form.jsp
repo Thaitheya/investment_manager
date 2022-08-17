@@ -119,7 +119,7 @@ color: #fff;
             window.addEventListener("load",function() {
                 loader.style.display ="none";
             },1000)
-</script>
+     </script>
 
 <script type="text/javascript">
   document.getElementById('date').value = new Date().toISOString(); 

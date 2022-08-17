@@ -117,13 +117,6 @@ public class HomeController {
 		return "stock-product-sales";
 	}
 
-	@GetMapping("/getCustomerTransaction")
-	public String getCustomerTrans(@RequestParam("cusid") int id, Model model) {
-		CustomerTransactionDTO dto = accountService.getCustomerTransDTO(id);
-		model.addAttribute("getCustomer", dto.getAccount());
-		model.addAttribute("getTrans", dto.getTransactions());
-		return "customer-transaction";
-	}
 
 }
 

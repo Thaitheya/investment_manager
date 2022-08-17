@@ -16,7 +16,6 @@ public class UserRegistration {
 	@Column(name = "adhaar_number")
 	@NotNull
 	private long adhaarNumber;
-
 	@Column(name = "first_name")
 	@NotNull
 	private String firstName;
@@ -107,6 +106,4 @@ public class UserRegistration {
 	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-    
-    
 	}

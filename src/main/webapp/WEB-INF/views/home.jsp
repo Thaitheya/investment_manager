@@ -42,6 +42,7 @@
 	position: relative;
 	top: -80px;
 	list-style:none;
+	right:-40px;
 }
 
 .navbar .nav_right ul li.nr_li:hover {
@@ -107,6 +108,9 @@
 }
 .image {
 border-radius:30px;
+}
+#name {
+	text-align: center;
 }
 </style>
 <link
@@ -198,6 +202,7 @@ border-radius:30px;
 			</div>
 		</div>
 	</section>
+	 
 	<script type="text/javascript">
 		var loader = document.getElementById("preloader");
 		window.addEventListener("load", function() {

@@ -9,11 +9,67 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add user</title>
-<style type="text/css">
-<%@include file="/WEB-INF/views/asserts/style.css"%></style>
+<style>
+<%@include file="/WEB-INF/views/asserts/style.css"%>
+</style>
+<style>
+ a {
+   font-style: none;
+}
+.content-table {
+  border-collapse: collapse;
+  margin: 600px 40px ;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 2px rgba(0,0,0,0.15);
+  margin-left: 230px;
+}
+.content-table thead tr{
+	 background-color: #141414;
+	 color: gold;
+	 text-align: left;
+	 font-weight: bold;
+}
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+border-bottom: 1px solid #dddddd;
+}
+.content-table tbody tr:nth-of-type(even) {
+background-color: #f3f3f3;
+}
+.content-table tbody tr:nth-of-type {
+border-bottom: 2px solid #009879;
+}
+</style>
+
 </head>
 <body>
 <div>
+<div class= actiom>
+		<nav class="navbar">
+			<div class="navbar__container">
+				<a href="#" id="navbar__logo">OpenSea.io</a>
+				<div>
+					<ul class="navbar__menu">
+						<li class="navbar__item"><a href="/trade/addpurchases"
+							class="navbar__links">Buy</a></li>
+						<li class="navbar__item"><a href="/trade/addSale"
+							class="navbar__links">Sell</a></li>
+						<li class="navbar__item"><a href="/trade/about" class="navbar__links">About</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Contact Us</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Profile</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div>
 <h1 style="text-align: center;">Customer Sales List</h1>
 		<div class="login-form">
 			<form:form action="" method="post" modelAttribute="getStockproductsales">
@@ -72,7 +128,7 @@
 		</div>
 	</div>
      <div>
-	<table id="content-table">
+	<table class="content-table">
 		<thead>
 		<tr>
 			<th>Adhaar Number</th>
@@ -87,7 +143,6 @@
 		<tbody>
 			<c:forEach var="Sales" items="${listofstockssales}">
 				<tr>
-				    <th scope="row">1</th>
 					<td>${Sales.adhaarNumber}</td>
 					<td>${Sales.salesId}</td>
 					<td>${Sales.dateOfTxn}</td>
