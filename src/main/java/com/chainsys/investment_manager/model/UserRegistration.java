@@ -2,8 +2,6 @@ package com.chainsys.investment_manager.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -12,10 +10,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class UserRegistration {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "adhaar_number")
 	@NotNull
-	private long adhaarNumber;
+	private String adhaarNumber;
 	@Column(name = "first_name")
 	@NotNull
 	private String firstName;
@@ -43,11 +40,11 @@ public class UserRegistration {
 	@NotNull
 	private long phoneNumber;
 
-	public long getAdhaarNumber() {
+	public String getAdhaarNumber() {
 		return adhaarNumber;
 	}
 
-	public void setAdhaarNumber(long adhaarNumber) {
+	public void setAdhaarNumber(String adhaarNumber) {
 		this.adhaarNumber = adhaarNumber;
 	}
 
@@ -106,4 +103,8 @@ public class UserRegistration {
 	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+	
+	
+	
 	}

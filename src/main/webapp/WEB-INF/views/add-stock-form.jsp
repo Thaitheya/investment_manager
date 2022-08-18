@@ -8,17 +8,35 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add user</title>
+<style>
+<%@include file="/WEB-INF/views/asserts/style.css"%>
+</style>
 </head>
 <body>
-<div id="root">
+<div>
+		<div id="preloader"></div>
+		<div id="root">
+			<nav class="navbar">
+				<div class="navbar__container">
+					<a href="#" id="navbar__logo">OpenSea.io</a>
 
-		<div id="form">
+					<ul class="navbar__menu">
+					<li class="navbar__item"><a href="/trade/index"
+						class="navbar__links">Home</a></li>
+						<li class="navbar__item"><a href="/trade/about"
+							class="navbar__links">About</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div id="login-form">
 			<form:form action="add" method="post" modelAttribute="stock">
 
 				<div>
-					<label for="adhaarNumber">Adhaar Number</label>
+					<label for="adminAdhaarNumber">Adhaar Number</label>
 					<div>
-						<form:input path="adhaarNumber"   />
+						<form:input path="adminAdhaarNumber"   />
 					</div>
 				</div>
 				<div>
@@ -73,6 +91,11 @@
 
 		</div>
 	</div>
-	
+	<script type="text/javascript">
+		var loader = document.getElementById("preloader");
+		window.addEventListener("load", function() {
+			loader.style.display = "none";
+		}, 1000)
+	</script>
 </body>
 </html>

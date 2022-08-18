@@ -23,7 +23,7 @@ public class CustomerAccount {
 	private int customerId;
 	@Column(name = "adhaar_number")
 	@NotNull
-	private long adhaarNumber;
+	private String adhaarNumber;
 	@Column(name = "deposited_amount")
 	private float depositedAmount;
 	@Column(name = "shares_purchased")
@@ -36,17 +36,16 @@ public class CustomerAccount {
          mappedBy = "account",cascade = CascadeType.ALL
 	)
 	private List<Transactions> transactions = new ArrayList<>();
-	
 	public int getCustomerId() {
 		return customerId;
 	}
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
-	public long getAdhaarNumber() {
+	public String getAdhaarNumber() {
 		return adhaarNumber;
 	}
-	public void setAdhaarNumber(long adhaarNumber) {
+	public void setAdhaarNumber(String adhaarNumber) {
 		this.adhaarNumber = adhaarNumber;
 	}
 	public float getDepositedAmount() {
@@ -79,7 +78,8 @@ public class CustomerAccount {
 	public void setTransactions(List<Transactions> transactions) {
 		this.transactions = transactions;
 	}
-
+	
+	
 	
 	
 }

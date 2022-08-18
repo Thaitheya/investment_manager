@@ -3,7 +3,6 @@ package com.chainsys.investment_manager.model;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,31 +10,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.Range;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "stock_product")
 public class StockProduct {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "stock_id")
-    @SequenceGenerator(name = "stock_id", sequenceName = "stock_id",  allocationSize = 5)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "stock_id")
 	@NotNull
 	@Range(min = 1, message = "Enter the value greater than zero")
 	private int stockId; 
-	@Column(name = "adhaar_number")
+	@Column(name = "admin_adhaar_number")
 	@NotNull
-	@Range(min = 12, message = "Enter the valid Adhaar Number")
-	private long adhaarNumber;
+	private long adminAdhaarNumber;
 	@Column(name = "stock_name")
 	@NotBlank(message = "*Name can't be Empty")
 	private String stockName;
@@ -58,19 +49,11 @@ public class StockProduct {
 	@NotNull
 	@Range(min = 1, message = "Enter the valid transaction value")
 	private float lastTansactionedValue;
-    @OneToMany(
-    		mappedBy = "stockProduct",
-    		cascade = CascadeType.ALL
-    		)
-    
+    @OneToMany(mappedBy = "stockProduct",cascade = CascadeType.ALL)
 	private List<SharesPurchase> sharesPurchases = new ArrayList<>();
      
-    @OneToMany(
-    		mappedBy = "stockProduct",
-    		cascade = CascadeType.ALL
-    		)
-    
-    private List<SharesSales> sharesSales = new ArrayList<>();
+    @OneToMany(mappedBy = "stockProduct",cascade = CascadeType.ALL)
+     private List<SharesSales> sharesSales = new ArrayList<>();
 
 	public int getStockId() {
 		return stockId;
@@ -80,12 +63,12 @@ public class StockProduct {
 		this.stockId = stockId;
 	}
 
-	public long getAdhaarNumber() {
-		return adhaarNumber;
+	public long getAdminAdhaarNumber() {
+		return adminAdhaarNumber;
 	}
 
-	public void setAdhaarNumber(long adhaarNumber) {
-		this.adhaarNumber = adhaarNumber;
+	public void setAdminAdhaarNumber(long adminAdhaarNumber) {
+		this.adminAdhaarNumber = adminAdhaarNumber;
 	}
 
 	public String getStockName() {
@@ -151,6 +134,8 @@ public class StockProduct {
 	public void setSharesSales(List<SharesSales> sharesSales) {
 		this.sharesSales = sharesSales;
 	}
-    
+
+
+	 
 
 }

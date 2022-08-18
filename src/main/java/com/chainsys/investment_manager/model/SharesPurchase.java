@@ -19,7 +19,7 @@ public class SharesPurchase {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int purchaseId;
 	@Column(name = "adhaar_number")
-	private long adhaarNumber;
+	private String adhaarNumber;
 	@Column(name = "date_of_txn")
 	private String dateOfTxn;
 	@Column(name = "stock_id")
@@ -41,10 +41,10 @@ public class SharesPurchase {
 	public void setPurchaseId(int purchaseId) {
 		this.purchaseId = purchaseId;
 	}
-	public long getAdhaarNumber() {
+	public String getAdhaarNumber() {
 		return adhaarNumber;
 	}
-	public void setAdhaarNumber(long adhaarNumber) {
+	public void setAdhaarNumber(String adhaarNumber) {
 		this.adhaarNumber = adhaarNumber;
 	}
 	public String getDateOfTxn() {
@@ -90,4 +90,5 @@ public class SharesPurchase {
 		this.stockProduct = stockProduct;
 	}
     
+	
 }

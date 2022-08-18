@@ -12,6 +12,23 @@
 </style>
 </head>
 <body>
+<div id="root">
+		<div id="preloader"></div>
+		<div id="root">
+			<nav class="navbar">
+				<div class="navbar__container">
+					<a href="#" id="navbar__logo">OpenSea.io</a>
+
+					<ul class="navbar__menu">
+					<li class="navbar__item"><a href="/trade/index"
+						class="navbar__links">Home</a></li>
+						<li class="navbar__item"><a href="/trade/about"
+							class="navbar__links">About</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
 	<div>
 		<table class="content-table">
 			<thead>
@@ -31,7 +48,7 @@
 			<tbody>
 				<c:forEach var="StockProduct" items="${allstockproduct}">
 				<tr>
-						<td>${StockProduct.adhaarNumber}</td>
+						<td>${StockProduct.adminAdhaarNumber}</td>
 						<td>${StockProduct.stockId}</td>
 						<td>${StockProduct.stockName}</td>
 						<td>${StockProduct.company}</td>

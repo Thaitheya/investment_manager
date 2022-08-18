@@ -22,6 +22,6 @@ public class StockProductSalesDTO {
 	public void setSharesSales(List<SharesSales> sharesSales) {
 		this.sharesSales = sharesSales;
 	}
-    
+	
 	
 }

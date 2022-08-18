@@ -26,7 +26,7 @@ public class Transactions {
 	private int customerId;
 	@Column(name = "adhaar_number")
 	@NotNull
-	private long adhaarNumber;
+	private String adhaarNumber;
 	@Column(name = "description")
 	@NotNull
 	private String description;
@@ -57,10 +57,10 @@ public class Transactions {
 	public void setCustomerId(int customerId) {
 		this.customerId = customerId;
 	}
-	public long getAdhaarNumber() {
+	public String getAdhaarNumber() {
 		return adhaarNumber;
 	}
-	public void setAdhaarNumber(long adhaarNumber) {
+	public void setAdhaarNumber(String adhaarNumber) {
 		this.adhaarNumber = adhaarNumber;
 	}
 	public String getDescription() {
@@ -87,7 +87,7 @@ public class Transactions {
 	public void setAccount(CustomerAccount account) {
 		this.account = account;
 	}
-
+	
 	
 
 }

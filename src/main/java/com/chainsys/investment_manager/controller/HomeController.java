@@ -19,6 +19,7 @@ import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
 import com.chainsys.investment_manager.dto.StockProductSalesDTO;
 import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.SharesSales;
+import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 import com.chainsys.investment_manager.service.CustomerAccountService;
 import com.chainsys.investment_manager.service.SharePurchasesService;
@@ -60,6 +61,7 @@ public class HomeController {
 	public String stockPurchases(Model model) {
 		SharesPurchase purchases = new SharesPurchase();
 		model.addAttribute("addpurchases",purchases);
+		
 		return "add-purchase-form";
 	}
 

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class SharesSales {
      @Id
 	@Column(name = "adhaar_number")
-     private long adhaarNumber;
+     private String adhaarNumber;
 	@Column(name = "sales_id")
      private int salesId;
 	@Column(name = "date_of_txn")
@@ -28,10 +28,10 @@ public class SharesSales {
 	@ManyToOne
 	@JoinColumn(name = "stock_id", insertable = false, updatable = false,nullable = false)
 	private StockProduct stockProduct;
-	public long getAdhaarNumber() {
+	public String getAdhaarNumber() {
 		return adhaarNumber;
 	}
-	public void setAdhaarNumber(long adhaarNumber) {
+	public void setAdhaarNumber(String adhaarNumber) {
 		this.adhaarNumber = adhaarNumber;
 	}
 	public int getSalesId() {
