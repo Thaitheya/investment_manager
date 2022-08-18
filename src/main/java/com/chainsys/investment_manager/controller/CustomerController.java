@@ -45,7 +45,7 @@ public class CustomerController {
 
   @GetMapping("/getCustomerTransaction")
   public String getCustomerTrans(@RequestParam("cusid") int id, Model model) {
-	CustomerTransDTO dto = accountService.getCustomerTransDTO(id);
+	CustomerTransactionDTO dto = accountService.getCustomerTransDTO(id);
 	model.addAttribute("getCustomer", dto.getAccount());
 	model.addAttribute("getTrans", dto.getTransactions());
 	return "customer-transaction";

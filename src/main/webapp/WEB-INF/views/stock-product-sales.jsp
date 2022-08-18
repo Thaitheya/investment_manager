@@ -18,7 +18,7 @@
 }
 .content-table {
   border-collapse: collapse;
-  margin: 600px 40px ;
+  margin: 500px 40px ;
   font-size: 0.9em;
   min-width: 400px;
   border-radius: 5px 5px 0 0;
@@ -50,7 +50,6 @@ border-bottom: 2px solid #009879;
 
 </head>
 <body>
-<div>
 <div class= actiom>
 		<nav class="navbar">
 			<div class="navbar__container">
@@ -69,7 +68,7 @@ border-bottom: 2px solid #009879;
 			</div>
 		</nav>
 	</div>
-	<div>
+<div>
 <h1 style="text-align: center;">Customer Sales List</h1>
 		<div class="login-form">
 			<form:form action="" method="post" modelAttribute="getStockproductsales">

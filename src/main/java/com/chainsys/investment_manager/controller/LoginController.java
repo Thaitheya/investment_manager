@@ -1,5 +1,6 @@
  package com.chainsys.investment_manager.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +46,8 @@ public class LoginController {
 		return "login";
 	}
 	@RequestMapping("/getlogin")
-	public String log(@ModelAttribute("loginhere") UserRegistration registration, Model model) {
+	public String log(@ModelAttribute("loginhere") UserRegistration registration, Model model, HttpSession httpSession) {
+		
 		UserRegistration userRegistration = userRegistrationService.getEmailAndPasssword(registration.getEmail(),registration.getPassword());
 		if(userRegistration != null) {
 		 return "redirect:/trade/index";
