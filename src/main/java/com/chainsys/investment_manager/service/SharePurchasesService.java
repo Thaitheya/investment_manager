@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
 import com.chainsys.investment_manager.model.SharesPurchase;
+import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.repository.SharesPurchasesRepository;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 @Service
@@ -16,6 +17,8 @@ public class SharePurchasesService {
 
 	@Autowired
 	StockProductsRepository productsRepository;
+	@Autowired
+	StockProductService stockProductService;
 
 	public StockProdectPurchaseDTO getStockProdectPurchaseDTO(int id) {
 		StockProdectPurchaseDTO dto = new StockProdectPurchaseDTO();
@@ -27,7 +30,11 @@ public class SharePurchasesService {
 	
 
 	public SharesPurchase addStockProduct(SharesPurchase purchaseService) {
+		StockProduct stockProduct= stockProductService.findById(purchaseService.getStockId());
+		stockProduct.setNoOfSharesInHand(stockProduct.getNoOfSharesInHand()-purchaseService.getQuantity());
+		stockProductService.save(stockProduct);
 		return purchasesRepository.save(purchaseService);
+		
 	}
 
 	public void deleteById(int stock_id) {

@@ -48,8 +48,11 @@ public class AdminController {
 	}
 
 	@PostMapping("/add")
-	public String addStockProduct(@ModelAttribute("stock") StockProduct Product) {
-		productService.save(Product);
+	public String addStockProduct(@ModelAttribute("stock") StockProduct product, Model model) {
+		if(product.getNoOfSharesInHand() == 0) {
+		     return "error-page";
+		}
+		productService.save(product);
 		return "redirect:/admin/list";
 	}
 

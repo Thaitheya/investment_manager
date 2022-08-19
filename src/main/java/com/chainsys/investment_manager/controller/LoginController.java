@@ -32,10 +32,11 @@ public class LoginController {
 	}
 
 	@PostMapping("/register")
-	public String adduser(@Valid @ModelAttribute("user") UserRegistration register, Model model,Errors errors) {
+	public String adduser(@Valid @ModelAttribute("user") UserRegistration register, Model model,Errors errors,HttpSession session) {
 		if(errors.hasErrors()) {
 			return "register";
 		}
+		session.setAttribute("adhaarNo", register.getAdhaarNumber());
 		ur.save(register);
 		return "redirect:/form/login";
 	}

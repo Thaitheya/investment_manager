@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 

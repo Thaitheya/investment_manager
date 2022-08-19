@@ -102,6 +102,11 @@ color: #fff;
 			</div>
 		</form:form>
 	</div>
+	<%
+	   
+             ${adhaarNo};
+	
+	%>
 	<script type="text/javascript">
 	function add_number() {
 

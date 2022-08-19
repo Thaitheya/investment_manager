@@ -72,6 +72,7 @@ public class HomeController {
 		}
 		else {
 		purchasesServices.addStockProduct(purchase);
+		
 		return  "add-purchase-form";
 		}
 	}
