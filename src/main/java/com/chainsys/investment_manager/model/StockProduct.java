@@ -24,9 +24,9 @@ public class StockProduct {
 	@NotNull
 	@Range(min = 1, message = "Enter the value greater than zero")
 	private int stockId; 
-	@Column(name = "admin_adhaar_number")
+	@Column(name = "admin_id")
 	@NotNull
-	private long adminAdhaarNumber;
+	private int adminId;
 	@Column(name = "stock_name")
 	@NotBlank(message = "*Name can't be Empty")
 	private String stockName;
@@ -35,7 +35,6 @@ public class StockProduct {
 	private String company;
 	@Column(name ="no_of_shares_in_hand")
 	@NotNull
-	@Range(min = 1, message = "enter the valid number")
 	private int noOfSharesInHand;
 	
 	@Column(name = "face_value")
@@ -63,12 +62,12 @@ public class StockProduct {
 		this.stockId = stockId;
 	}
 
-	public long getAdminAdhaarNumber() {
-		return adminAdhaarNumber;
+	public int getAdminId() {
+		return adminId;
 	}
 
-	public void setAdminAdhaarNumber(long adminAdhaarNumber) {
-		this.adminAdhaarNumber = adminAdhaarNumber;
+	public void setAdminId(int adminId) {
+		this.adminId = adminId;
 	}
 
 	public String getStockName() {
@@ -134,6 +133,8 @@ public class StockProduct {
 	public void setSharesSales(List<SharesSales> sharesSales) {
 		this.sharesSales = sharesSales;
 	}
+    
+    
 
 
 	 

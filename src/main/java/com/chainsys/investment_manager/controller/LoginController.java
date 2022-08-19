@@ -1,4 +1,4 @@
- package com.chainsys.investment_manager.controller;
+package com.chainsys.investment_manager.controller;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.model.UserRegistration;
 import com.chainsys.investment_manager.repository.UserRegistrationRepository;
+import com.chainsys.investment_manager.service.StockProductService;
 import com.chainsys.investment_manager.service.UserRegistrationService;
 
 @Controller
@@ -22,8 +24,10 @@ public class LoginController {
 	@Autowired
 	UserRegistrationRepository ur;
 	@Autowired
-    UserRegistrationService userRegistrationService;
-	
+	UserRegistrationService userRegistrationService;
+	@Autowired
+	StockProductService productService;
+
 	@GetMapping("/registerform")
 	public String userRegister(Model model) {
 		UserRegistration user = new UserRegistration();
@@ -32,30 +36,36 @@ public class LoginController {
 	}
 
 	@PostMapping("/register")
-	public String adduser(@Valid @ModelAttribute("user") UserRegistration register, Model model,Errors errors,HttpSession session) {
-		if(errors.hasErrors()) {
+	public String adduser(@Valid @ModelAttribute("user") UserRegistration register, Model model, Errors errors,
+			HttpSession session) {
+		if (errors.hasErrors()) {
 			return "register";
 		}
 		session.setAttribute("adhaarNo", register.getAdhaarNumber());
 		ur.save(register);
 		return "redirect:/form/login";
 	}
+
 	@GetMapping("/login")
-	public String logUser( Model model) {
+	public String logUser(Model model) {
 		UserRegistration userRegistration = new UserRegistration();
-		model.addAttribute("loginhere",userRegistration);
+		model.addAttribute("loginhere", userRegistration);
 		return "login";
 	}
+
 	@RequestMapping("/getlogin")
-	public String log(@ModelAttribute("loginhere") UserRegistration registration, Model model, HttpSession httpSession) {
+	public String log(@ModelAttribute("loginhere") UserRegistration registration, StockProduct products, Model model,
+			HttpSession httpSession) {
 		
-		UserRegistration userRegistration = userRegistrationService.getEmailAndPasssword(registration.getEmail(),registration.getPassword());
-		if(userRegistration != null) {
-		 return "redirect:/trade/index";
-		}else {
-		  model.addAttribute("Sign in failed","This email is already exist");
-		}
-		return "login";
-	}
+				return null;
+   
+ }
+//		if(userRegistration != null) {
+//		 return "redirect:/trade/index";
+//		}else {
+//		  model.addAttribute("Sign in failed","This email is already exist");
+//		}
+//		return "login";
+
 
 }

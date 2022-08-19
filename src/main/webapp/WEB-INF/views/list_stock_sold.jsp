@@ -31,6 +31,7 @@
 	</div>
 	<div>
 		<table class="content-table">
+		<caption></caption>
 			<thead>
 				<tr>
 				<th>Adhaar Number</th>

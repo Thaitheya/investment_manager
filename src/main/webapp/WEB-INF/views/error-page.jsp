@@ -4,9 +4,17 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<style type="text/css">
+#align 
+{
+text-align: center;
+}
+</style>
 </head>
 <body>
 
+           <p id="align">Insufficent Stock</p>
+           <p id="align">Please visit our site within an our</p>
+           
 </body>
 </html>

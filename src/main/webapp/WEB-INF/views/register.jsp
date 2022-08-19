@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-
+<title>Register</title>
 <style>
 <%@include file="/WEB-INF/views/asserts/style.css"%>
 </style>

@@ -126,6 +126,7 @@ border-bottom: 2px solid #009879;
 	</div>
 	<div>
 		<table class="content-table">
+		<caption></caption>
 			<thead>
 				<tr>
 					<th scope="col">Adhaar Number</th>

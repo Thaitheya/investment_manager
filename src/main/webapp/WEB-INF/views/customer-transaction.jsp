@@ -114,6 +114,7 @@ border-bottom: 2px solid #009879;
 	</div>
     <div>
 		<table class="content-table">
+		<caption></caption>
 			<tr>
 				<th>transactionId</th>
 				<th>transactionDate</th>

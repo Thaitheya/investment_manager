@@ -119,7 +119,55 @@ border-radius:30px;
 <link
 	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
 	rel="stylesheet">
-<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+<script>
+window.onload = function () {
+
+var dps = [];
+var chart = new CanvasJS.Chart("chartContainer", {
+	title :{
+		text: "Dynamic Data"
+	},
+	data: [{
+		theme: "dark1",
+		lineColor: "gold",
+		lineThickness: 5,
+		type: "line",
+		markerSize: 3,
+		dataPoints: dps
+	}]
+});
+
+var xVal = 0;
+var yVal = 100; 
+var updateInterval = 1000;
+var dataLength = 20;
+
+var updateChart = function (count) {
+
+	count = count || 1;
+
+	for (var j = 0; j < count; j++) {
+		yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
+		dps.push({
+			x: xVal,
+			y: yVal
+		});
+		xVal++;
+	}
+
+	if (dps.length > dataLength) {
+		dps.shift();
+	}
+
+	chart.render();
+};
+
+updateChart(dataLength);
+setInterval(function(){updateChart()}, updateInterval);
+
+}
+</script>
 </head>
 <body>
 	<div id="preloader"></div>
@@ -175,6 +223,7 @@ border-radius:30px;
 		</div>
 	</div>
 	<section>
+	
 		<div class="images" id="coll">
 			<h1>Explore</h1>
 			<div class="images__container">
@@ -202,7 +251,7 @@ border-radius:30px;
 			</div>
 		</div>
 	</section>
-	 
+	 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script type="text/javascript">
 		var loader = document.getElementById("preloader");
 		window.addEventListener("load", function() {
@@ -216,5 +265,7 @@ border-radius:30px;
 			this.classList.toggle("active");
 		})
 	</script>
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </body>
 </html>

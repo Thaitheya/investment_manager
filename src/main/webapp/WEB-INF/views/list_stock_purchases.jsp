@@ -34,6 +34,7 @@ file="/WEB-INF/views/asserts/style.css"%>
 		</div>
 		<div>
 			<table class="content-table">
+			<caption></caption>
 				<thead>
 					<tr>
 						<th>Adhaar Number</th>

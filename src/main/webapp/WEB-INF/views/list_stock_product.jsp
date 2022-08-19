@@ -12,7 +12,7 @@
 </style>
 </head>
 <body>
-<div id="root">
+	<div id="root">
 		<div id="preloader"></div>
 		<div id="root">
 			<nav class="navbar">
@@ -20,8 +20,8 @@
 					<a href="#" id="navbar__logo">OpenSea.io</a>
 
 					<ul class="navbar__menu">
-					<li class="navbar__item"><a href="/trade/index"
-						class="navbar__links">Home</a></li>
+						<li class="navbar__item"><a href="/trade/index"
+							class="navbar__links">Home</a></li>
 						<li class="navbar__item"><a href="/trade/about"
 							class="navbar__links">About</a></li>
 						<li class="navbar__item"><a href="" class="navbar__links">Contact</a></li>
@@ -29,8 +29,9 @@
 				</div>
 			</nav>
 		</div>
-	<div>
+		<div></div>
 		<table class="content-table">
+			<caption></caption>
 			<thead>
 				<tr>
 					<th>Adhaar Number</th>
@@ -47,7 +48,7 @@
 			</thead>
 			<tbody>
 				<c:forEach var="StockProduct" items="${allstockproduct}">
-				<tr>
+					<tr>
 						<td>${StockProduct.adminAdhaarNumber}</td>
 						<td>${StockProduct.stockId}</td>
 						<td>${StockProduct.stockName}</td>
@@ -56,9 +57,12 @@
 						<td>${StockProduct.faceValue}</td>
 						<td>${StockProduct.lastTansactionedDate}</td>
 						<td>${StockProduct.lastTansactionedValue}</td>
-		                <td><a id="red" href="/admin/deletestock?id=${StockProduct.stockId}">Delete</a><td>
-		                <td><a id ="blue" href="/admin/updateform?id=${StockProduct.stockId}">update</a></td>
-				</tr>
+						<td><a id="red"
+							href="/admin/deletestock?id=${StockProduct.stockId}">Delete</a>
+						<td>
+						<td><a id="blue"
+							href="/admin/updateform?id=${StockProduct.stockId}">update</a></td>
+					</tr>
 
 				</c:forEach>
 
@@ -68,10 +72,10 @@
 
 	</div>
 	<script type="text/javascript">
-	var loader = document.getElementById("preloader");
-	window.addEventListener("load", function() {
-		loader.style.display = "none";
-	}, 1000)
-</script>
+		var loader = document.getElementById("preloader");
+		window.addEventListener("load", function() {
+			loader.style.display = "none";
+		}, 1000)
+	</script>
 
 </body>

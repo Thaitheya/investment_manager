@@ -25,6 +25,7 @@
 	</div>
 	<div>
 		<table class="content-table">
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Transaction Id</th>
