@@ -13,13 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.chainsys.investment_manager.dto.CustomerTransactionDTO;
 import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
 import com.chainsys.investment_manager.dto.StockProductSalesDTO;
 import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.SharesSales;
-import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 import com.chainsys.investment_manager.service.CustomerAccountService;
 import com.chainsys.investment_manager.service.SharePurchasesService;
@@ -31,7 +28,7 @@ public class HomeController {
 	 private static final String ADD = "add-purchase-form";
 	 private static final String LIST ="list_stock_purchases";
 	@Autowired
-	StockProductsRepository products_Repository;
+	StockProductsRepository productsRepository;
 	@Autowired
 	StockSalesService salesService;
 	@Autowired
@@ -54,7 +51,7 @@ public class HomeController {
 	public String getAllPurchasedStock(Model model) {
 		List<SharesPurchase> purchasesList = purchasesServices.getAllPurchasedStock();
 		model.addAttribute("allstockpurchase", purchasesList);
-		return "list_stock_purchases";
+		return LIST;
 	}
 	//
 	

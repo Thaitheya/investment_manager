@@ -3,8 +3,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 
@@ -15,11 +13,10 @@ public class StockProductService {
 	StockProductsRepository stockProductsRepository;
 	
 	public List<StockProduct> getAllStock() {
-		List<StockProduct> stock_Products = stockProductsRepository.findAll();
-		return stock_Products;
+		return stockProductsRepository.findAll();
 	}
-	public StockProduct save(StockProduct stock_Product) {
-          return stockProductsRepository.save(stock_Product);
+	public StockProduct save(StockProduct stockProduct) {
+          return stockProductsRepository.save(stockProduct);
 	}
 	public void deleteById(int id) {
 		stockProductsRepository.deleteById(id);

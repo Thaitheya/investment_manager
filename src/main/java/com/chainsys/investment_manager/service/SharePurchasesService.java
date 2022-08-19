@@ -37,8 +37,8 @@ public class SharePurchasesService {
 		
 	}
 
-	public void deleteById(int stock_id) {
-		purchasesRepository.deleteById(stock_id);
+	public void deleteById(int stockid) {
+		purchasesRepository.deleteById(stockid);
 	}
 
 	public SharesPurchase findById(int id) {
@@ -47,8 +47,7 @@ public class SharePurchasesService {
 	}
 
 	public List<SharesPurchase> getAllPurchasedStock() {
-		List<SharesPurchase> sharesPurchases = purchasesRepository.findAll();
-		return sharesPurchases;
+		return purchasesRepository.findAll();
 	}
 
 }

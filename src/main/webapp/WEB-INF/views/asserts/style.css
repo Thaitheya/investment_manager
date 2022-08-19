@@ -7,6 +7,8 @@
 
 body {
 	background-size: cover;
+	background-color: #333;
+	height: 100vh;
 }
 .action .menu ul li:hover a {
   color: #b8860b;
@@ -174,6 +176,8 @@ body {
 		margin: 5px auto;
 		transition: all 0.3s ease-in-out;
 		background: #fff;
+		display: block;
+		cursor: pointer;
 	}
 	.navbar__item {
 		width: 100%;
@@ -195,10 +199,7 @@ body {
 		height: 80px;
 		margin: 0;
 	}
-	.navbar__toggle .bar {
-		display: block;
-		cursor: pointer;
-	}
+		
 	#mobile-menu {
 		position: absolute;
 		top: 20%;
@@ -585,11 +586,6 @@ h3 {
 
 /*customer Account*/
 
-body {
-	background-color: #333;
-	height: 100vh;
-}
-
 .icons-size {
 	color: #333;
 	font-size: 14px;
@@ -697,9 +693,6 @@ body {
 	opacity: 1;
 }
 
-.action .menu ul li:hover a {
-	color: #ff00ff;
-}
 
 /*Drop*/
 .drop {
@@ -797,5 +790,5 @@ border-bottom: 1px solid #dddddd;
 background-color: #f3f3f3;
 }
 .content-table tbody tr:nth-of-type {
-border-bottom: 2px solid #141414;;
+border-bottom: 2px solid #141414;
 }

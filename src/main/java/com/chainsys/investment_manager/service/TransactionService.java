@@ -17,8 +17,7 @@ public class TransactionService {
      private CustomerAccountRepository accountRepository;
 
      public List<Transactions> getAllTrans(){
-          List<Transactions> transactions = repository.findAll();
-          return transactions;
+          return repository.findAll();
      }  
      
      public Transactions addTransactions(Transactions transactions) {

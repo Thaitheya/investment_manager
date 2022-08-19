@@ -56,9 +56,7 @@ public class LoginController {
 	@RequestMapping("/getlogin")
 	public String log(@ModelAttribute("loginhere") UserRegistration registration, StockProduct products, Model model,
 		HttpSession httpSession) {
-		if(registration.getEmail(),registration.getPassword()) {
-			
-		}
+		
 
 	}
 	}
