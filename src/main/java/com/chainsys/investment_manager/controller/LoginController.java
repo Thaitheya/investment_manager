@@ -36,13 +36,13 @@ public class LoginController {
 	}
 
 	@PostMapping("/register")
-	public String adduser(@Valid @ModelAttribute("user") UserRegistration register, Model model, Errors errors,
+	public String adduser(@Valid @ModelAttribute("user") UserRegistration userRegisteration, Model model, Errors errors,
 			HttpSession session) {
 		if (errors.hasErrors()) {
 			return "register";
 		}
-		session.setAttribute("adhaarNo", register.getAdhaarNumber());
-		ur.save(register);
+		session.setAttribute("adhaarNo", userRegisteration.getAdhaarNumber());
+		ur.save(userRegisteration);
 		return "redirect:/form/login";
 	}
 
@@ -54,7 +54,7 @@ public class LoginController {
 	}
 
 	@RequestMapping("/getlogin")
-	public String log(@ModelAttribute("loginhere") UserRegistration registration, StockProduct products, Model model,
+	public String log(@ModelAttribute("loginhere") UserRegistration registration, StockProduct stockProduct, Model model,
 		HttpSession httpSession) {
 		
 

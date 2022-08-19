@@ -35,8 +35,8 @@ public class CustomerController {
       return "add-trans-form";
   }
 @PostMapping("/transact")
-  public String addTrans(@ModelAttribute("trans") Transactions transactions) {
-     service.addTransactions(transactions);
+  public String addTrans(@ModelAttribute("trans") Transactions transaction) {
+     service.addTransactions(transaction);
      return "redirect:/customer/list";
   }
 

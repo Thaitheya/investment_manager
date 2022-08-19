@@ -64,13 +64,13 @@ public class HomeController {
 	}
 
 	@PostMapping("/addp")
-	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase purchase, Errors error, Model model) {
+	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase sharePurchase, Errors error, Model model) {
 		if(error.hasErrors()) {
 		  return ADD;
 		}
 		else {
 			try {
-				purchasesServices.addStockProduct(purchase);
+				purchasesServices.addStockProduct(sharePurchase);
 				return LIST;
 			}
 		    catch(Exception ex) {
@@ -96,8 +96,8 @@ public class HomeController {
 	}
 
 	@PostMapping("/adds")
-	public String addStockSales(@ModelAttribute("addsales") SharesSales sale) {
-		salesService.sellStockProduct(sale);
+	public String addStockSales(@ModelAttribute("addsales") SharesSales sharesSale) {
+		salesService.sellStockProduct(sharesSale);
 		return "redirect:/trade/tradesaleslist";
 	}
     public String updateSalesForm(@RequestParam("id") int id, Model model) {

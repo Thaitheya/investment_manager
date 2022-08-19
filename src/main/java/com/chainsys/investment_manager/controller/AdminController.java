@@ -50,13 +50,13 @@ public class AdminController {
 	}
 
 	@PostMapping("/add")
-	public String addStockProduct(@ModelAttribute("stock") StockProduct product, Model model) {
-		if(product.getNoOfSharesInHand() <= 0) {
+	public String addStockProduct(@ModelAttribute("stock") StockProduct stockProduct, Model model) {
+		if(stockProduct.getNoOfSharesInHand() <= 0) {
 			 return "error-pages";
 		}
 		else {
 			try {
-				productService.save(product);
+				productService.save(stockProduct);
 				model.addAttribute("message","Stock added successfully");
 				return "redirect:/admin/list";
 			}
@@ -87,8 +87,8 @@ public class AdminController {
 	}
 
 	@PostMapping("/update")
-	public String updateStock(@ModelAttribute("updatestock") StockProduct product) {
-		productService.save(product);
+	public String updateStock(@ModelAttribute("updatestock") StockProduct stockProduct) {
+		productService.save(stockProduct);
 		return "redirect:/admin/list";
 	} 
 	
