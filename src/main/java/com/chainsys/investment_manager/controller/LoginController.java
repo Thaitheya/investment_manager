@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.model.UserRegistration;
 import com.chainsys.investment_manager.repository.UserRegistrationRepository;
@@ -27,6 +26,8 @@ public class LoginController {
 	UserRegistrationService userRegistrationService;
 	@Autowired
 	StockProductService productService;
+//	@Autowired
+//	AdminLoginService adminLoginService;
 
 	@GetMapping("/registerform")
 	public String userRegister(Model model) {
@@ -36,13 +37,13 @@ public class LoginController {
 	}
 
 	@PostMapping("/register")
-	public String adduser(@Valid @ModelAttribute("user") UserRegistration userRegisteration, Model model, Errors errors,
+	public String adduser(@Valid @ModelAttribute("user") UserRegistration register, Model model, Errors errors,
 			HttpSession session) {
 		if (errors.hasErrors()) {
 			return "register";
 		}
-		session.setAttribute("adhaarNo", userRegisteration.getAdhaarNumber());
-		ur.save(userRegisteration);
+		session.setAttribute("adhaarNo", register.getAdhaarNumber());
+		ur.save(register);
 		return "redirect:/form/login";
 	}
 
@@ -54,9 +55,31 @@ public class LoginController {
 	}
 
 	@RequestMapping("/getlogin")
-	public String log(@ModelAttribute("loginhere") UserRegistration registration, StockProduct stockProduct, Model model,
-		HttpSession httpSession) {
-		
+	public String log(@ModelAttribute("loginhere") UserRegistration userRegistration, StockProduct products,
+			Model model, HttpSession httpSession) {
+		UserRegistration registration = userRegistrationService.getEmailAndPasssword(userRegistration.getEmail(),
+				userRegistration.getPassword());
+		if (registration != null) {
+			return "redirect:/trade/index";
+		} else
+			model.addAttribute("signin", "Sign in failed");
+		return "login";
+	}
 
-	}
-	}
+//	@GetMapping("/adminlogin")
+//	public String logAdmin(Model model) {
+//		AdminLogin adminLogin = new  AdminLogin();
+//		model.addAttribute("loginadmin", adminLogin);
+//		return "adminlogin";
+//	}
+//	@RequestMapping("/getadminlogin")
+//	public String log(@ModelAttribute("loginadmin")AdminLogin adminLogin,Model model, HttpSession httpSession) {
+//		 AdminLogin login = adminLoginService.addlogin(adminLogin.getAdminId(),adminLogin.getPassword());
+//		if (login != null) {
+//			return "redirect:/admin/adminhome";
+//		} else
+//			model.addAttribute("signin", "Sign in failed");
+//		return "adminlogin";
+//	}
+
+}

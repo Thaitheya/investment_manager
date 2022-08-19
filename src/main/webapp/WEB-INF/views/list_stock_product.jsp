@@ -34,7 +34,7 @@
 			<caption></caption>
 			<thead>
 				<tr>
-					<th>Adhaar Number</th>
+					<th>Admin Id</th>
 					<th>Stock Id</th>
 					<th>Stock Name</th>
 					<th>Company</th>
@@ -49,7 +49,7 @@
 			<tbody>
 				<c:forEach var="StockProduct" items="${allstockproduct}">
 					<tr>
-						<td>${StockProduct.adminAdhaarNumber}</td>
+						<td>${StockProduct.adminId}</td>
 						<td>${StockProduct.stockId}</td>
 						<td>${StockProduct.stockName}</td>
 						<td>${StockProduct.company}</td>

@@ -30,7 +30,7 @@ public class AdminController {
 
 	@GetMapping("/adminhome")
 	public String adminHome() {
-		return "home";
+		return "admin";
 	}
 	// List
 

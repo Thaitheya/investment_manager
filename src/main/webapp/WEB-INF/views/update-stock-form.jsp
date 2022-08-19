@@ -15,9 +15,9 @@
 			<form:form action="update" method="post" modelAttribute="updatestock">
 
 				<div>
-					<label for="adhaarNumber">Adhaar Number</label>
+					<label for="adminId">Adhaar Number</label>
 					<div>
-						<form:input path="adhaarNumber"/>
+						<form:input path="adminId"/>
 					</div>
 				</div>
 				<div>

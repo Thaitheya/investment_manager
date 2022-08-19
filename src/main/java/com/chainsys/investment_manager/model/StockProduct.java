@@ -23,7 +23,7 @@ public class StockProduct {
 	@Column(name = "stock_id")
 	@NotNull
 	@Range(min = 1, message = "Enter the value greater than zero")
-	private int stockId; 
+	private int stockId;
 	@Column(name = "admin_id")
 	@NotNull
 	private int adminId;
@@ -33,10 +33,10 @@ public class StockProduct {
 	@Column(name = "company")
 	@NotBlank(message = "*Name can't be Empty")
 	private String company;
-	@Column(name ="no_of_shares_in_hand")
+	@Column(name = "no_of_shares_in_hand")
 	@NotNull
 	private int noOfSharesInHand;
-	
+
 	@Column(name = "face_value")
 	@NotNull
 	@Range(min = 1, message = "enter the valid face value")
@@ -48,11 +48,11 @@ public class StockProduct {
 	@NotNull
 	@Range(min = 1, message = "Enter the valid transaction value")
 	private float lastTansactionedValue;
-    @OneToMany(mappedBy = "stockProduct",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "stockProduct", cascade = CascadeType.ALL)
 	private List<SharesPurchase> sharesPurchases = new ArrayList<>();
-     
-    @OneToMany(mappedBy = "stockProduct",cascade = CascadeType.ALL)
-     private List<SharesSales> sharesSales = new ArrayList<>();
+
+	@OneToMany(mappedBy = "stockProduct", cascade = CascadeType.ALL)
+	private List<SharesSales> sharesSales = new ArrayList<>();
 
 	public int getStockId() {
 		return stockId;
@@ -133,10 +133,6 @@ public class StockProduct {
 	public void setSharesSales(List<SharesSales> sharesSales) {
 		this.sharesSales = sharesSales;
 	}
-    
-    
 
-
-	 
-
+	
 }

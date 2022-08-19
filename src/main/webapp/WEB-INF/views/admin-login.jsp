@@ -21,17 +21,15 @@
 				<ul class="navbar__menu">
 					<li class="navbar__item"><a href="/trade/home"
 						class="navbar__links">Home</a></li>
-					<li class="navbar__item"><a href="/form/registerform"
-						class="navbar__links">Signup</a></li>
 				</ul>
 			</div>
 		</nav>
 	</div>
 	<div class="login-form">
 		<h1>Login Form</h1>
-		<form:form action="getlogin" method="post" modelAttribute="loginhere" name="myForm">
+		<form:form action="getadminlogin" method="post" modelAttribute="loginadmin" name="myForm">
 			<label>Email</label><br>
-			<form:input path="email" name="email" type="email" id="emails"/>
+			<form:input path="email" name="adminId" type="email" id="emails"/>
 			<label>password</label>
 			<form:input path="password" id="pass" name="password" type="password"  onkeyup= "return validate()" />
 		<ul>
@@ -41,11 +39,6 @@
 			<li id="length">atleast 6 characters</li>
 			<li id="upper">atleast one uppercase</li>
 		</ul>
-		  <select>
-		  <option>Admin</option>
-		  <option>User</option>
-		  
-		  </select>
 		     <button >Submit</button>
 		</form:form>
 	</div>

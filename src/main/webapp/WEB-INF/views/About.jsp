@@ -15,7 +15,7 @@
 	<div class="testmonial">
 		<div class="testi-content">
 		  <div class="slide">
-		 <img src="https://i.ibb.co/2vHf2Md/Thaitheyasudan.png" alt="Thaitheyasudan" border="0">
+		 <img src="" alt="Thaitheyasudan" border="0">
 		       <p>
 		        This application is developed by Er.P.K.Thaitheyasudan
 		        With this application you can purchase and sell stocks.
