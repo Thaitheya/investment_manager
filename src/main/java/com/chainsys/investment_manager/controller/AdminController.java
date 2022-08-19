@@ -17,7 +17,9 @@ import com.chainsys.investment_manager.service.TransactionService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-
+  private static final String ADD = "add-stock-form";
+  private static final String UPDATE = "update-stock-form";
+  private static final String LIST ="list_stock_product";
 	@Autowired
 	StockProductsRepository stockProductsRepository;
 	@Autowired
@@ -36,7 +38,7 @@ public class AdminController {
 	public String getAllStockProduct(Model model) {
 		List<StockProduct> stocklist =  productService.getAllStock();
 		model.addAttribute("allstockproduct", stocklist);
-		return "list_stock_product";
+		return LIST;
 	}
 	// Added stock
 
@@ -44,7 +46,7 @@ public class AdminController {
 	public String stockProduct(Model model) {
 		StockProduct stock = new StockProduct();
 		model.addAttribute("stock", stock);
-		return "add-stock-form";
+		return ADD;
 	}
 
 	@PostMapping("/add")
@@ -52,8 +54,18 @@ public class AdminController {
 		if(product.getNoOfSharesInHand() <= 0) {
 			 return "error-pages";
 		}
-		productService.save(product);
-		return "redirect:/admin/list";
+		else {
+			try {
+				productService.save(product);
+				model.addAttribute("message","Stock added successfully");
+				return "redirect:/admin/list";
+			}
+			catch(Exception ex) {
+				model.addAttribute("message", "Insufficent stock");
+				return ADD;
+			}
+		
+		}
 	}
 
 	// Delete stock
@@ -71,7 +83,7 @@ public class AdminController {
 		StockProduct product = new StockProduct();
 		productService.findById(id);
 		model.addAttribute("updatestock", product);
-		return "update-stock-form";
+		return UPDATE;
 	}
 
 	@PostMapping("/update")
@@ -80,9 +92,4 @@ public class AdminController {
 		return "redirect:/admin/list";
 	} 
 	
-//	@GetMapping("/adminlogin")
-//	public String adminLogin(Model model) {
-//		StockProduct product = ;
-//		
-//	}
 }

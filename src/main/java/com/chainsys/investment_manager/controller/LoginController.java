@@ -55,17 +55,10 @@ public class LoginController {
 
 	@RequestMapping("/getlogin")
 	public String log(@ModelAttribute("loginhere") UserRegistration registration, StockProduct products, Model model,
-			HttpSession httpSession) {
-		
-				return null;
-   
- }
-//		if(userRegistration != null) {
-//		 return "redirect:/trade/index";
-//		}else {
-//		  model.addAttribute("Sign in failed","This email is already exist");
-//		}
-//		return "login";
+		HttpSession httpSession) {
+		if(registration.getEmail(),registration.getPassword()) {
+			
+		}
 
-
-}
+	}
+	}

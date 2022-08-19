@@ -28,7 +28,8 @@ import com.chainsys.investment_manager.service.StockSalesService;
 @Controller
 @RequestMapping("/trade")
 public class HomeController {
-
+	 private static final String ADD = "add-purchase-form";
+	 private static final String LIST ="list_stock_purchases";
 	@Autowired
 	StockProductsRepository products_Repository;
 	@Autowired
@@ -62,18 +63,23 @@ public class HomeController {
 		SharesPurchase purchases = new SharesPurchase();
 		model.addAttribute("addpurchases",purchases);
 		
-		return "add-purchase-form";
+		return ADD;
 	}
 
 	@PostMapping("/addp")
-	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase purchase, Errors error) {
+	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase purchase, Errors error, Model model) {
 		if(error.hasErrors()) {
-		  return "add-purchase-form";
+		  return ADD;
 		}
 		else {
-		purchasesServices.addStockProduct(purchase);
-		
-		return  "add-purchase-form";
+			try {
+				purchasesServices.addStockProduct(purchase);
+				return LIST;
+			}
+		    catch(Exception ex) {
+		    	model.addAttribute("message","Successfully purchased");
+		    	return ADD;
+		    }
 		}
 	}
 
