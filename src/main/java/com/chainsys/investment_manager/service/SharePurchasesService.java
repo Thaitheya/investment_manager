@@ -19,7 +19,9 @@ public class SharePurchasesService {
 	StockProductsRepository productsRepository;
 	@Autowired
 	StockProductService stockProductService;
-
+	@Autowired
+	CustomerAccountService customerAccountService;
+	
 	public StockProdectPurchaseDTO getStockProdectPurchaseDTO(int id) {
 		StockProdectPurchaseDTO dto = new StockProdectPurchaseDTO();
 		dto.setStockProduct(productsRepository.findById(id));

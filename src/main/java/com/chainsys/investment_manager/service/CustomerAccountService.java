@@ -18,10 +18,6 @@ public class CustomerAccountService {
 	TransactionsRepository repository;
 	@Autowired
 	CustomerAccountRepository customerAccountRepository;
-	public CustomerAccount getCustomer(CustomerAccount account) {
-		return customerAccountRepository.save(account);
-		
-	}
 	public CustomerTransactionDTO getCustomerTransDTO(int id)  {
 		CustomerAccount account = findById(id);
 		CustomerTransactionDTO dto = new CustomerTransactionDTO();
@@ -33,7 +29,14 @@ public class CustomerAccountService {
 		}
 		return dto;
 			}
-	private CustomerAccount findById(int id) {
+	public CustomerAccount findById(int id) {
 		return customerAccountRepository.findById(id);
 	}
+	 public CustomerAccount addcustomerDetails(CustomerAccount customerAccount) {
+         return customerAccountRepository.save(customerAccount);
+    }
+	 public List<CustomerAccount> accounts(){
+		 return customerAccountRepository.findAll();
+	 }
+
 }

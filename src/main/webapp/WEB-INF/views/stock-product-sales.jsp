@@ -18,7 +18,7 @@
 }
 .content-table {
   border-collapse: collapse;
-  margin: 500px 40px ;
+  margin: 600px 40px ;
   font-size: 0.9em;
   min-width: 400px;
   border-radius: 5px 5px 0 0;
@@ -74,9 +74,9 @@ border-bottom: 2px solid #009879;
 			<form:form action="" method="post" modelAttribute="getStockproductsales">
 
 				<div>
-					<label for="adhaarNumber">Adhaar Number</label>
+					<label for="adminId">Admin Id</label>
 					<div>
-						<form:input path="adhaarNumber"/>
+						<form:input path="adminId"/>
 					</div>
 				</div>
 				<div>

@@ -2,6 +2,7 @@ package com.chainsys.investment_manager.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,6 @@ import com.chainsys.investment_manager.service.StockSalesService;
 @RequestMapping("/trade")
 public class HomeController {
 	 private static final String ADD = "add-purchase-form";
-	 private static final String LIST ="list_stock_purchases";
 	@Autowired
 	StockProductsRepository productsRepository;
 	@Autowired
@@ -51,7 +51,7 @@ public class HomeController {
 	public String getAllPurchasedStock(Model model) {
 		List<SharesPurchase> purchasesList = purchasesServices.getAllPurchasedStock();
 		model.addAttribute("allstockpurchase", purchasesList);
-		return LIST;
+		return "list_stock_purchases";
 	}
 	//
 	
@@ -64,14 +64,14 @@ public class HomeController {
 	}
 
 	@PostMapping("/addp")
-	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase sharePurchase, Errors error, Model model) {
+	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase sharePurchase, Errors error, Model model,HttpSession session) {
 		if(error.hasErrors()) {
 		  return ADD;
 		}
 		else {
 			try {
 				purchasesServices.addStockProduct(sharePurchase);
-				return LIST;
+				return "redirect:/trade/tradepurchaselist";
 			}
 		    catch(Exception ex) {
 		    	model.addAttribute("message","Successfully purchased");
@@ -96,10 +96,13 @@ public class HomeController {
 	}
 
 	@PostMapping("/adds")
-	public String addStockSales(@ModelAttribute("addsales") SharesSales sharesSale) {
+	public String addStockSales(@ModelAttribute("addsales") SharesSales sharesSale,HttpSession session) {
+		session.setAttribute("adhaarNo",sharesSale.getAdhaarNumber());
+		session.setAttribute("stockId",sharesSale.getStockId());
 		salesService.sellStockProduct(sharesSale);
 		return "redirect:/trade/tradesaleslist";
 	}
+	@GetMapping("/updatesales")
     public String updateSalesForm(@RequestParam("id") int id, Model model) {
     	SharesSales sales = new SharesSales();
     	salesService.finBySalesId(id);
@@ -123,6 +126,7 @@ public class HomeController {
 		return "stock-product-sales";
 	}
 
-
+    
+	
 }
 

@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.chainsys.investment_manager.dto.CustomerTransactionDTO;
+import com.chainsys.investment_manager.model.CustomerAccount;
 import com.chainsys.investment_manager.model.Transactions;
 import com.chainsys.investment_manager.service.CustomerAccountService;
 import com.chainsys.investment_manager.service.TransactionService;
@@ -48,5 +50,33 @@ public class CustomerController {
 	model.addAttribute("getTrans", dto.getTransactions());
 	return "customer-transaction";
 }
+//Customer Account
+	@GetMapping("/getcustomer")
+	public String getCustomerDetails(Model model) {
+		CustomerAccount account =  new CustomerAccount();
+		model.addAttribute("addcustomerdetails", account);
+		return "customer-details";
+	}
+	
+	@PostMapping("/customeraccount") 
+	public String postCustomerDetails(@ModelAttribute("addcustomerdetails") CustomerAccount account,Model model,Errors error) {
+		
+		if(error.hasErrors()) {
+			return "customer-details";
+		}
+		else {
+			accountService.addcustomerDetails(account);
+			return "redirect:/customer/getCustomerlist";
+		}
+		
+	}
+    @GetMapping("/getCustomerlist")
+    public String customerTrans(Model model)
+    {
+       List<CustomerAccount> list = accountService.accounts();
+       model.addAttribute("customerlist",list);
+       return "customerdetailslist";
+    }
+    	
   
 }

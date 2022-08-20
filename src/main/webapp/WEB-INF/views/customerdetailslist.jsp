@@ -12,7 +12,7 @@
 </style>
 </head>
 <body>
-	<div>
+	<div id="root">
 		<div id="preloader"></div>
 		<div id="root">
 			<nav class="navbar">
@@ -22,48 +22,43 @@
 					<ul class="navbar__menu">
 						<li class="navbar__item"><a href="/trade/index"
 							class="navbar__links">Home</a></li>
-						<li class="navbar__item"><a href="/about"
+						<li class="navbar__item"><a href="/trade/about"
 							class="navbar__links">About</a></li>
-						<li class="navbar__item"><a href="/Help"
-							class="navbar__links">Help</a></li>
+						<li class="navbar__item"><a href="" class="navbar__links">Contact</a></li>
 					</ul>
 				</div>
 			</nav>
 		</div>
-		<div>
-			<table class="content-table">
+		<div></div>
+		<table class="content-table">
 			<caption></caption>
-				<thead>
+			<thead>
+				<tr>
+					<th>CustomerId</th>
+					<th>Adhaar Number</th>
+					<th>Deposited Amount</th>
+					<th>SharesPurchased</th>
+					<th>SharesSold</th>
+					<th>AmountUnderSettlement</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="customerdetails" items="${customerlist}">
 					<tr>
-						<th>Adhaar Number</th>
-						<th>Purchase Id</th>
-						<th>Date Of TXN</th>
-						<th>Stock Id</th>
-						<th>Buy Price</th>
-						<th>Qunatity</th>
-						<th>Amount Of INR</th>
-						<th>Mode Of Payment</th>
+						<td>${customerdetails.customerId}</td>
+						<td>${customerdetails.adhaarNumber}</td>
+						<td>${customerdetails.depositedAmount}</td>
+						<td>${customerdetails.sharesPurchased}</td>
+						<td>${customerdetails.sharesSold}</td>
+						<td>${customerdetails.amountUnderSettlement}</td>
 					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="StockPurchase" items="${allstockpurchase}">
-						<tr>
-							<td>${StockPurchase.adhaarNumber}</td>
-							<td>${StockPurchase.purchaseId}</td>
-							<td>${StockPurchase.dateOfTxn}</td>
-							<td>${StockPurchase.stockId}</td>
-							<td>${StockPurchase.buyPrice}</td>
-							<td>${StockPurchase.quantity}</td>
-							<td>${StockPurchase.amountOfInr}</td>
-							<td>${StockPurchase.modeOfPayment}</td>
-						</tr>
 
-					</c:forEach>
+				</c:forEach>
 
 
-				</tbody>
-			</table>
-		</div>
+			</tbody>
+		</table>
+
 	</div>
 	<script type="text/javascript">
 		var loader = document.getElementById("preloader");
@@ -72,5 +67,3 @@
 		}, 1000)
 	</script>
 
-</body>
-</html>

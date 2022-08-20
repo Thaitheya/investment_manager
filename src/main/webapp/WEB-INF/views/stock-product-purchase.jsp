@@ -73,9 +73,9 @@ border-bottom: 2px solid #009879;
 		<div>
 			<form:form action="" method="post" modelAttribute="getstockproduct">
 				<div>
-					<label for="adhaarNumber">Adhaar Number</label>
+					<label for="adminId">Admin Id</label>
 					<div>
-						<form:input path="adhaarNumber" />
+						<form:input path="adminId" />
 					</div>
 				</div>
 				<div>
