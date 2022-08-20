@@ -38,5 +38,10 @@ public class CustomerAccountService {
 	 public List<CustomerAccount> accounts(){
 		 return customerAccountRepository.findAll();
 	 }
-
+	 public CustomerAccount findByAdhaar(String adhaar) {
+			return customerAccountRepository.findByAdhaarNumber(adhaar);
+		}
+	 public CustomerAccount addCustomer(CustomerAccount account) {
+         return customerAccountRepository.save(account);
+    }
 }

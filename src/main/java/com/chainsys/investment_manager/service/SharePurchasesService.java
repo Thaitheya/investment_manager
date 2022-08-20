@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
+import com.chainsys.investment_manager.model.CustomerAccount;
 import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.repository.SharesPurchasesRepository;
@@ -35,6 +36,9 @@ public class SharePurchasesService {
 		StockProduct stockProduct= stockProductService.findById(purchaseService.getStockId());
 		stockProduct.setNoOfSharesInHand(stockProduct.getNoOfSharesInHand()-purchaseService.getQuantity());
 		stockProductService.save(stockProduct);
+		CustomerAccount account = customerAccountService.findByAdhaar(purchaseService.getAdhaarNumber());
+		account.setSharesPurchased(purchaseService.getQuantity()+account.getSharesPurchased());
+		customerAccountService.addCustomer(account);
 		return purchasesRepository.save(purchaseService);
 		
 	}
@@ -51,5 +55,5 @@ public class SharePurchasesService {
 	public List<SharesPurchase> getAllPurchasedStock() {
 		return purchasesRepository.findAll();
 	}
-
+	 
 }

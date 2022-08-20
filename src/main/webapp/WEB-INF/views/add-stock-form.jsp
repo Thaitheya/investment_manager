@@ -21,7 +21,7 @@
 					<a href="#" id="navbar__logo">OpenSea.io</a>
 
 					<ul class="navbar__menu">
-					<li class="navbar__item"><a href="/trade/index"
+					<li class="navbar__item"><a href="/admin/adminhome"
 						class="navbar__links">Home</a></li>
 						<li class="navbar__item"><a href="/trade/about"
 							class="navbar__links">About</a></li>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.investment_manager.dto.StockProductSalesDTO;
+import com.chainsys.investment_manager.model.CustomerAccount;
 import com.chainsys.investment_manager.model.SharesSales;
 import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.repository.ShareSalesRepository;
@@ -20,7 +21,8 @@ public class StockSalesService {
 	StockProductsRepository productsRepository;
 	@Autowired
 	StockProductService productService;
-
+    @Autowired
+    CustomerAccountService accountService;
 	public StockProductSalesDTO getProductSalesDTO(int id) {
 		StockProductSalesDTO dto = new StockProductSalesDTO();
 		dto.setStockProduct(productsRepository.findById(id));
@@ -30,6 +32,10 @@ public class StockSalesService {
 	public SharesSales sellStockProduct(SharesSales sharesSales) {
 		StockProduct product = productService.findById(sharesSales.getStockId());
 		product.setNoOfSharesInHand(product.getNoOfSharesInHand()+sharesSales.getQuantity());
+		productService.save(product);
+		CustomerAccount account = accountService.findByAdhaar(sharesSales.getAdhaarNumber());
+		account.setSharesSold(sharesSales.getQuantity()+account.getSharesSold());
+		accountService.addCustomer(account);
 		return repository.save(sharesSales);
 	}
 	public List<SharesSales> getAllSoldStock() {
