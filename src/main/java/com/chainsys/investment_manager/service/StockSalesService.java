@@ -21,31 +21,32 @@ public class StockSalesService {
 	StockProductsRepository productsRepository;
 	@Autowired
 	StockProductService productService;
-    @Autowired
-    CustomerAccountService accountService;
+	@Autowired
+	CustomerAccountService accountService;
+
 	public StockProductSalesDTO getProductSalesDTO(int id) {
 		StockProductSalesDTO dto = new StockProductSalesDTO();
 		dto.setStockProduct(productsRepository.findById(id));
 		dto.setSharesSales(repository.findAll());
 		return dto;
 	}
+
 	public SharesSales sellStockProduct(SharesSales sharesSales) {
-	     float percentage =10/100;
 		StockProduct product = productService.findById(sharesSales.getStockId());
-		product.setNoOfSharesInHand(product.getNoOfSharesInHand()+sharesSales.getQuantity());
+		product.setNoOfSharesInHand(product.getNoOfSharesInHand() + sharesSales.getQuantity());
 		productService.save(product);
 		CustomerAccount account = accountService.findByAdhaar(sharesSales.getAdhaarNumber());
-		account.setSharesSold(sharesSales.getQuantity()+account.getSharesSold());
+		account.setSharesSold(sharesSales.getQuantity() + account.getSharesSold());
 		accountService.addCustomer(account);
-		CustomerAccount account2 = accountService.findByAdhaar(sharesSales.getAdhaarNumber());
-		account2.setAmountUnderSettlement(account2.getDepositedAmount() + percentage);
 		return repository.save(sharesSales);
-		
+
 	}
+
 	public List<SharesSales> getAllSoldStock() {
 		return repository.findAll();
 	}
-    public SharesSales finBySalesId(int id) {
-    	return repository.findById(id);
-    }
+
+	public SharesSales finBySalesId(int id) {
+		return repository.findById(id);
+	}
 }
