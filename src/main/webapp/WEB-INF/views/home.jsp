@@ -223,7 +223,6 @@ setInterval(function(){updateChart()}, updateInterval);
 		</div>
 	</div>
 	<section>
-	
 		<div class="images" id="coll">
 			<h1>Explore</h1>
 			<div class="images__container">
@@ -251,6 +250,7 @@ setInterval(function(){updateChart()}, updateInterval);
 			</div>
 		</div>
 	</section>
+	<h1 style="text-align: center">Stocks available</h1>
 	 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script type="text/javascript">
 		var loader = document.getElementById("preloader");

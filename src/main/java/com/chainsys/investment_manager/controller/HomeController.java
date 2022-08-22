@@ -80,7 +80,7 @@ public class HomeController {
 			}
 		    catch(Exception ex) {
 		    	model.addAttribute("message",":(Purchase unsuccessful");
-		    	return "redirect:/trade/error";
+		    	return "add-purchase-form";
 		    }
 		}
 	}

@@ -1,6 +1,10 @@
 package com.chainsys.investment_manager.controller;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,9 +46,8 @@ public class AdminController {
 	// Added stock
 
 	@GetMapping("/addstockform")
-	public String stockProduct(Model model,int id) {
+	public String stockProduct(Model model) {
 		StockProduct stock = new StockProduct();
-		stock.setStockId(id);
 		model.addAttribute("stock", stock);
 		return ADD;
 	}

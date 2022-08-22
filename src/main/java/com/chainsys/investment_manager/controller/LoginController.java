@@ -1,4 +1,6 @@
 package com.chainsys.investment_manager.controller;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +32,8 @@ public class LoginController {
 	@GetMapping("/registerform")
 	public String userRegister(Model model) {
 		UserRegistration user = new UserRegistration();
-		model.addAttribute("user", user);
+		user.setFirstName(user.getFirstName());
+;		model.addAttribute("user", user);
 		return "register";
 	}
 

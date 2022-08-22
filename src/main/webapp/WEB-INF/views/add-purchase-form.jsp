@@ -109,6 +109,20 @@ color: #fff;
 			</div>
 		</form:form>
 	</div>
+	<c:forEach var="StockProduct" items="${allstockproduct}">
+					<tr>
+						<td>${StockProduct.adminId}</td>
+						<td>${StockProduct.stockId}</td>
+						<td>${StockProduct.stockName}</td>
+						<td>${StockProduct.company}</td>
+						<td>${StockProduct.noOfSharesInHand}</td>
+						<td>${StockProduct.faceValue}</td>
+						<td>${StockProduct.lastTansactionedDate}</td>
+						<td>${StockProduct.lastTansactionedValue}</td>
+					</tr>
+
+				</c:forEach>
+	
 	<script type="text/javascript">
 	function add_number() {
 
