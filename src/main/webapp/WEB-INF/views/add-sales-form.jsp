@@ -10,12 +10,20 @@
 <style>
 <%@include file="/WEB-INF/views/asserts/style.css"%>
 </style>
+<style type="text/css">
+#error {
+ color:#253453;
+ text-align: center;
+ font-size: 35px;
+}
+</style>
 </head>
 <body>
 	<div id="root">
 		<div id="preloader"></div>
 		<div id="root">
 			<nav class="navbar">
+			<button style="margin-bottom: auto;">Back</button>
 				<div class="navbar__container">
 					<a href="#" id="navbar__logo">OpenSea.io</a>
 
@@ -28,8 +36,8 @@
 					</ul>
 				</div>
 			</nav>
-			<button style="margin-bottom: auto;">Back</button>
 		</div>
+		<div id="error">${message}</div>
 		<div class="login-form">
 			<form:form action="adds" method="post" modelAttribute="addsales">
 

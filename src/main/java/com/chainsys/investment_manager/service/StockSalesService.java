@@ -30,13 +30,17 @@ public class StockSalesService {
 		return dto;
 	}
 	public SharesSales sellStockProduct(SharesSales sharesSales) {
+	     float percentage =10/100;
 		StockProduct product = productService.findById(sharesSales.getStockId());
 		product.setNoOfSharesInHand(product.getNoOfSharesInHand()+sharesSales.getQuantity());
 		productService.save(product);
 		CustomerAccount account = accountService.findByAdhaar(sharesSales.getAdhaarNumber());
 		account.setSharesSold(sharesSales.getQuantity()+account.getSharesSold());
 		accountService.addCustomer(account);
+		CustomerAccount account2 = accountService.findByAdhaar(sharesSales.getAdhaarNumber());
+		account2.setAmountUnderSettlement(account2.getDepositedAmount() + percentage);
 		return repository.save(sharesSales);
+		
 	}
 	public List<SharesSales> getAllSoldStock() {
 		return repository.findAll();

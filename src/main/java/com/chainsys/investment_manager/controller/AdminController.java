@@ -19,7 +19,6 @@ import com.chainsys.investment_manager.service.TransactionService;
 public class AdminController {
   private static final String ADD = "add-stock-form";
   private static final String UPDATE = "update-stock-form";
-  private static final String LIST ="list_stock_product";
 	@Autowired
 	StockProductsRepository stockProductsRepository;
 	@Autowired
@@ -38,13 +37,14 @@ public class AdminController {
 	public String getAllStockProduct(Model model) {
 		List<StockProduct> stocklist =  productService.getAllStock();
 		model.addAttribute("allstockproduct", stocklist);
-		return LIST;
+		return "list_stock_product";
 	}
 	// Added stock
 
 	@GetMapping("/addstockform")
-	public String stockProduct(Model model) {
+	public String stockProduct(Model model,int id) {
 		StockProduct stock = new StockProduct();
+		stock.setStockId(id);
 		model.addAttribute("stock", stock);
 		return ADD;
 	}
@@ -52,7 +52,7 @@ public class AdminController {
 	@PostMapping("/add")
 	public String addStockProduct(@ModelAttribute("stock") StockProduct stockProduct, Model model) {
 		if(stockProduct.getNoOfSharesInHand() <= 0) {
-			 return "error-pages";
+			return "redirect:/trade/error";
 		}
 		else {
 			try {

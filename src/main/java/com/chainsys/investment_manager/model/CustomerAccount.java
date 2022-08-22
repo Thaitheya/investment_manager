@@ -31,7 +31,7 @@ public class CustomerAccount {
 	@Column(name = "shares_sold")
 	private int sharesSold;
 	@Column(name = "amount_under_settlement")
-	private int amountUnderSettlement;
+	private float amountUnderSettlement;
 	@OneToMany(
          mappedBy = "account",cascade = CascadeType.ALL
 	)
@@ -66,10 +66,10 @@ public class CustomerAccount {
 	public void setSharesSold(int sharesSold) {
 		this.sharesSold = sharesSold;
 	}
-	public int getAmountUnderSettlement() {
+	public float getAmountUnderSettlement() {
 		return amountUnderSettlement;
 	}
-	public void setAmountUnderSettlement(int amountUnderSettlement) {
+	public void setAmountUnderSettlement(float amountUnderSettlement) {
 		this.amountUnderSettlement = amountUnderSettlement;
 	}
 	public List<Transactions> getTransactions() {

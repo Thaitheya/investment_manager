@@ -15,6 +15,11 @@
 text-decoration: none;
 color: #fff;
 }
+#error {
+ color:#253453;
+ text-align: center;
+ font-size: 35px;
+}
 </style>
 </head>
 <body style="background-color: #141414">
@@ -38,9 +43,11 @@ color: #fff;
 		</nav>
 		 
 	</div>
+	<div id="error">${message}</div>
 	<div class="login-form">
+	
 		<form:form action="addp" method="post" modelAttribute="addpurchases">
-
+				
 			<div>
 				<label for="adhaarNumber">Adhaar Number</label>
 				<div>
@@ -50,13 +57,13 @@ color: #fff;
 			<div>
 				<label for="purchaseId">Purchase Id</label>
 				<div id="auto">
-					<form:input path="purchaseId" id="purchaseid"/>
+					<form:input path="purchaseId" id="purchaseid" readonly="true"/>
 				</div>
 			</div>
 			<div>
 				<label for="dateOfTxn">Date Of TXN</label>
 				<div>
-					<form:input path="dateOfTxn" id="date" name="date" onkeyup="showdate();"/>
+					<form:input path="dateOfTxn" id="date" name="date" onkeyup="showdate();" readonly="true"/>
 				</div>
 			</div>
 			<div>

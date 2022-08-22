@@ -27,6 +27,7 @@ import com.chainsys.investment_manager.service.StockSalesService;
 @RequestMapping("/trade")
 public class HomeController {
 	 private static final String ADD = "add-purchase-form";
+	 private static final String SELL= "add-sales-form";
 	@Autowired
 	StockProductsRepository productsRepository;
 	@Autowired
@@ -47,6 +48,10 @@ public class HomeController {
     public String about() {
     	return "About";
     }
+    @GetMapping("/error") 
+    public String errormessage() {
+    	return"error";
+    }
 	@GetMapping("/tradepurchaselist")
 	public String getAllPurchasedStock(Model model) {
 		List<SharesPurchase> purchasesList = purchasesServices.getAllPurchasedStock();
@@ -64,9 +69,9 @@ public class HomeController {
 	}
 
 	@PostMapping("/addp")
-	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase sharePurchase, Errors error, Model model,HttpSession session) {
+	public String addStockPurchases(@Valid @ModelAttribute("addpurchases") SharesPurchase sharePurchase, Errors error, Model model) {
 		if(error.hasErrors()) {
-		  return ADD;
+			return "redirect:/trade/error";
 		}
 		else {
 			try {
@@ -74,8 +79,8 @@ public class HomeController {
 				return "redirect:/trade/tradepurchaselist";
 			}
 		    catch(Exception ex) {
-		    	model.addAttribute("message","Successfully purchased");
-		    	return ADD;
+		    	model.addAttribute("message",":(Purchase unsuccessful");
+		    	return "redirect:/trade/error";
 		    }
 		}
 	}
@@ -96,11 +101,17 @@ public class HomeController {
 	}
 
 	@PostMapping("/adds")
-	public String addStockSales(@ModelAttribute("addsales") SharesSales sharesSale,HttpSession session) {
-		session.setAttribute("adhaarNo",sharesSale.getAdhaarNumber());
-		session.setAttribute("stockId",sharesSale.getStockId());
+	public String addStockSales(@ModelAttribute("addsales") SharesSales sharesSale,Errors error,Model model) {
+		if(error.hasErrors()) {
+			return SELL;
+		}
+		try {
 		salesService.sellStockProduct(sharesSale);
 		return "redirect:/trade/tradesaleslist";
+		}catch (Exception e) {
+	      model.addAttribute("message",":(Sales Unsuccessful");
+	      return SELL;
+		}
 	}
 	@GetMapping("/updatesales")
     public String updateSalesForm(@RequestParam("id") int id, Model model) {

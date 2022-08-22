@@ -1,18 +1,11 @@
 /**
  * 
  */
- 
- const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '438afbd241msh4f23dc0c4f65d47p1412b0jsne66dee373eec',
-		'X-RapidAPI-Host': 'stock-price4.p.rapidapi.com'
-	}
-};
+var container  = document.getElementById('container');
+window.onmousemove =  function(e) {
+	var x = - e.clientX/5;
+	    y = - e.clienty/5;
+	container.style.backgroundPositionX = x + 'px';
+	container.style.backgroundPositionY = y + 'py';
 
-fetch('https://stock-price4.p.rapidapi.com/price/TSLA', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
-
-	
+}

@@ -20,5 +20,4 @@ public class UserRegistrationService {
 	public UserRegistration getEmailAndPasssword(String email, String password) {
 		return registrationRepository.findByEmailAndPassword(email, password);
 	}
-	
 }

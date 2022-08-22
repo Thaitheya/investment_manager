@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.chainsys.investment_manager.dto.CustomerTransactionDTO;
 import com.chainsys.investment_manager.model.CustomerAccount;
+import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.Transactions;
 import com.chainsys.investment_manager.repository.CustomerAccountRepository;
 import com.chainsys.investment_manager.repository.TransactionsRepository;

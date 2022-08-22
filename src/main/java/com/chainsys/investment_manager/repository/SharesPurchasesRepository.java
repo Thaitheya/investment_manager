@@ -14,5 +14,5 @@ public interface SharesPurchasesRepository extends JpaRepository<SharesPurchase,
 	SharesPurchase findById(int id);
 	void deleteById(int id);
 	
-    
+    SharesPurchase findByAdhaarNumber(String adhaar);
 }

@@ -44,13 +44,13 @@ color: #fff;
 			<div>
 				<label for="transactionId">TransactionId</label>
 				<div>
-					<form:input path="transactionId"  placeholder="Transaction Id"/>
+					<form:input path="transactionId"  placeholder="Transaction Id" id="transid"/>
 				</div>
 			</div>
 			<div>
 				<label for=" transactionDate"> TransactionDate</label>
 				<div>
-					<form:input path="transactionDate"/>
+					<form:input path="transactionDate" id="date" name="date" onkeyup="showdate();"/>
 				</div>
 			</div>
 			<div>
@@ -99,5 +99,11 @@ color: #fff;
            loader.style.display ="none";
        },1000)
 </script>
-
+<script type="text/javascript">
+		document.getElementById('transid').value = Math.floor(Math.random() * 10000);
+	
+	</script>
+	<script type="text/javascript">
+  document.getElementById('date').value = new Date().toISOString(); 
+</script>
 </html>

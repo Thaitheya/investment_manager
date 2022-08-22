@@ -1,6 +1,4 @@
 package com.chainsys.investment_manager.controller;
-
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.chainsys.investment_manager.model.StockProduct;
 import com.chainsys.investment_manager.model.UserRegistration;
 import com.chainsys.investment_manager.repository.UserRegistrationRepository;
@@ -26,8 +26,6 @@ public class LoginController {
 	UserRegistrationService userRegistrationService;
 	@Autowired
 	StockProductService productService;
-//	@Autowired
-//	AdminLoginService adminLoginService;
 
 	@GetMapping("/registerform")
 	public String userRegister(Model model) {
@@ -37,14 +35,17 @@ public class LoginController {
 	}
 
 	@PostMapping("/register")
-	public String adduser(@Valid @ModelAttribute("user") UserRegistration register, Model model, Errors errors,
-			HttpSession session) {
+	public String adduser(@Valid @ModelAttribute("user") UserRegistration register, Model model, Errors errors) {
 		if (errors.hasErrors()) {
-			return "register";
+			return "redirect:/trade/error";
 		}
-		session.setAttribute("adhaarNo", register.getAdhaarNumber());
+		try {
 		ur.save(register);
 		return "redirect:/form/login";
+		}catch (Exception e) {
+			return "redirect:/trade/error";
+		}
+		
 	}
 
 	@GetMapping("/login")
@@ -56,7 +57,7 @@ public class LoginController {
 
 	@RequestMapping("/getlogin")
 	public String log(@ModelAttribute("loginhere") UserRegistration userRegistration, StockProduct products,
-			Model model, HttpSession httpSession) {
+			Model model) {
 		UserRegistration registration = userRegistrationService.getEmailAndPasssword(userRegistration.getEmail(),
 				userRegistration.getPassword());
 		if (registration != null) {
@@ -65,21 +66,5 @@ public class LoginController {
 			model.addAttribute("signin", "Sign in failed");
 		return "login";
 	}
-
-//	@GetMapping("/adminlogin")
-//	public String logAdmin(Model model) {
-//		AdminLogin adminLogin = new  AdminLogin();
-//		model.addAttribute("loginadmin", adminLogin);
-//		return "adminlogin";
-//	}
-//	@RequestMapping("/getadminlogin")
-//	public String log(@ModelAttribute("loginadmin")AdminLogin adminLogin,Model model, HttpSession httpSession) {
-//		 AdminLogin login = adminLoginService.addlogin(adminLogin.getAdminId(),adminLogin.getPassword());
-//		if (login != null) {
-//			return "redirect:/admin/adminhome";
-//		} else
-//			model.addAttribute("signin", "Sign in failed");
-//		return "adminlogin";
-//	}
 
 }

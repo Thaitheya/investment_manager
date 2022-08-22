@@ -9,6 +9,7 @@ import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
 import com.chainsys.investment_manager.model.CustomerAccount;
 import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.StockProduct;
+import com.chainsys.investment_manager.model.UserRegistration;
 import com.chainsys.investment_manager.repository.SharesPurchasesRepository;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 @Service
@@ -39,6 +40,8 @@ public class SharePurchasesService {
 		CustomerAccount account = customerAccountService.findByAdhaar(purchaseService.getAdhaarNumber());
 		account.setSharesPurchased(purchaseService.getQuantity()+account.getSharesPurchased());
 		customerAccountService.addCustomer(account);
+		CustomerAccount account2 = customerAccountService.findByAdhaar(purchaseService.getAdhaarNumber());
+		account2.setDepositedAmount(account2.getDepositedAmount()-purchaseService.getAmountOfInr());
 		return purchasesRepository.save(purchaseService);
 		
 	}
@@ -55,5 +58,11 @@ public class SharePurchasesService {
 	public List<SharesPurchase> getAllPurchasedStock() {
 		return purchasesRepository.findAll();
 	}
-	 
+
+
+	public SharesPurchase findByAdhaarNumber(String adhaar) {
+		
+		return purchasesRepository.findByAdhaarNumber(adhaar);
+	}
+	
 }
