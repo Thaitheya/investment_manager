@@ -14,6 +14,9 @@
 #back {
 text-decoration: none;
 color: #fff;
+background-color: gold;
+height: 25px;
+border-radius: 10px;
 }
 #error {
  color:#253453;
@@ -26,11 +29,9 @@ color: #fff;
 <div id= "preloader"></div>
 	<div id="root">
 		<nav class="navbar">
-		  <button><a href="/trade/index" id="back">Back</a></button>
 			<div class="navbar__container">
 			
 				<a href="#" id="navbar__logo">OpenSea.io</a>
-
 				<ul class="navbar__menu">
 					<li class="navbar__item"><a href="/trade/index"
 						class="navbar__links">Home</a></li>
@@ -41,7 +42,7 @@ color: #fff;
 				</ul>
 			</div>
 		</nav>
-		 
+		 <a href="/trade/index" id="back">Back</a>
 	</div>
 	<div id="error">${message}</div>
 	<div class="login-form">
@@ -109,20 +110,6 @@ color: #fff;
 			</div>
 		</form:form>
 	</div>
-	<c:forEach var="StockProduct" items="${allstockproduct}">
-					<tr>
-						<td>${StockProduct.adminId}</td>
-						<td>${StockProduct.stockId}</td>
-						<td>${StockProduct.stockName}</td>
-						<td>${StockProduct.company}</td>
-						<td>${StockProduct.noOfSharesInHand}</td>
-						<td>${StockProduct.faceValue}</td>
-						<td>${StockProduct.lastTansactionedDate}</td>
-						<td>${StockProduct.lastTansactionedValue}</td>
-					</tr>
-
-				</c:forEach>
-	
 	<script type="text/javascript">
 	function add_number() {
 

@@ -24,5 +24,7 @@ public class StockProductService {
      public StockProduct findById(int id) {
 		return stockProductsRepository.findById(id);
      }
-
+     public StockProduct findByAdminId(int id) {
+ 		return stockProductsRepository.findByAdminId(id);
+      }
 }

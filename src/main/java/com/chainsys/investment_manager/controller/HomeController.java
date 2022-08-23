@@ -84,7 +84,7 @@ public class HomeController {
 			}
 		    catch(Exception ex) {
 		    	model.addAttribute("message",":(Purchase unsuccessful");
-		    	return "add-purchase-form";
+		    	return ADD;
 		    }
 		}
 	}
@@ -103,7 +103,7 @@ public class HomeController {
 		String adhaarNumber = (String) session.getAttribute("adhaarNumber");
 		sales.setAdhaarNumber(adhaarNumber);
 		model.addAttribute("addsales", sales);
-		return "add-sales-form";
+		return  SELL;
 
 	}
 

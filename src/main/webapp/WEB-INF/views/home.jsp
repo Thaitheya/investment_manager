@@ -188,7 +188,7 @@ setInterval(function(){updateChart()}, updateInterval);
 									</div>
 									<div class="dd_right">
 										<ul>
-											<li class="navbar__item"><a  href="/customer/getCustomerlist"class="navbar__links">Profile</a></li>
+											<li class="navbar__item"><a  href="/customer/getcustomer"class="navbar__links">Profile</a></li>
 											<li class="navbar__item"><a  href="/trade/tradepurchaselist"class="navbar__links">Recent Buy</a></li>
 											<li class="navbar__item"><a  href="/trade/tradesaleslist"class="navbar__links">Recent Sell</a></li>
 											<li class="navbar__item"><a  href="/trade/home" class="navbar__links">Logout</a></li>

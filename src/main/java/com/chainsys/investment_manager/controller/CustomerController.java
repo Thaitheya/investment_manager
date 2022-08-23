@@ -41,8 +41,8 @@ public class CustomerController {
 		HttpSession session = request.getSession();
 		String adhaarNumber = (String) session.getAttribute("adhaarNumber");
 		trans.setAdhaarNumber(adhaarNumber);
-		int customerid = (int) session.getAttribute("customerId");
-		trans.setCustomerId(customerid);
+		int customerId = (int) session.getAttribute("customerId");
+		trans.setCustomerId(customerId);
 		model.addAttribute("trans", trans);
 		return "add-trans-form";
 	}
@@ -63,8 +63,8 @@ public class CustomerController {
 
 //Customer Account
 	@GetMapping("/getcustomer")
-	public String getCustomerDetails(Model model, HttpServletRequest request) {
-		CustomerAccount account = new CustomerAccount();
+	public String getCustomerDetails(Model model, HttpSession session,CustomerAccount account) {	
+		session.setAttribute("customerId",account.getCustomerId());
 		model.addAttribute("addcustomerdetails", account);
 		return "customer-details";
 	}
@@ -72,7 +72,6 @@ public class CustomerController {
 	@PostMapping("/customeraccount")
 	public String postCustomerDetails(@ModelAttribute("addcustomerdetails") CustomerAccount account, Model model,
 			Errors error,HttpSession session) {
-		session.setAttribute("adhaarNumber",account.getCustomerId());
 		if (error.hasErrors()) {
 			return "customer-details";
 		} else {

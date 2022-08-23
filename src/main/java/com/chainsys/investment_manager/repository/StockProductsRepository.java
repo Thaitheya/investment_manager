@@ -11,5 +11,6 @@ public interface StockProductsRepository extends JpaRepository<StockProduct, Int
      void deleteById(int id);
      StockProduct findById(int id);
      List<StockProduct> findAll();
+     StockProduct findByAdminId(int adminid);
      
 }

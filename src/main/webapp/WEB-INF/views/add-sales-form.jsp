@@ -16,6 +16,13 @@
  text-align: center;
  font-size: 35px;
 }
+#back {
+text-decoration: none;
+color: #fff;
+background-color: gold;
+height: 25px;
+border-radius: 10px;
+}
 </style>
 </head>
 <body>
@@ -36,6 +43,7 @@
 					</ul>
 				</div>
 			</nav>
+			 <a href="/trade/index" id="back">Back</a>
 		</div>
 		<div id="error">${message}</div>
 		<div class="login-form">
@@ -67,7 +75,7 @@
 					</div>
 				</div>
 				<div>
-					<label for="soldPrice">Buy Price</label>
+					<label for="soldPrice">Sales Price</label>
 					<div>
 						<form:input path="soldPrice" id="num1" />
 					</div>

@@ -21,22 +21,19 @@
 
 					<ul class="navbar__menu">
 					<li class="navbar__item"><a href="/admin/adminhome"
-						class="navbar__links">Home</a></li>
-						<li class="navbar__item"><a href="/trade/about"
-							class="navbar__links">About</a></li>
-						<li class="navbar__item"><a href="" class="navbar__links">Contact</a></li>
+						class="navbar__links">Home</a></li>	
 					</ul>
 				</div>
 			</nav>
 		</div>
 		<div>${message}</div>
 		<div class="login-form">
-			<form:form action="add" method="post" modelAttribute="stock">
+			<form:form action="add" method="post" modelAttribute="stock" name="myForm">
 
 				<div>
 					<label for="adminId">AdminId</label>
 					<div>
-						<form:input path="adminId"   />
+						<form:input path="adminId" value="12"/>
 					</div>
 				</div>
 				<div>
@@ -60,7 +57,7 @@
 				<div>
 					<label for="noOfSharesInHand">No Of Shares In Hand</label>
 					<div>
-						<form:input path="noOfSharesInHand" />
+						<form:input path="noOfSharesInHand"/>
 					</div>
 				</div>
 				<div>
@@ -94,5 +91,10 @@
 			loader.style.display = "none";
 		}, 1000)
 	</script>
+	<script type="text/javascript">
+
+</script>
+
+	
 </body>
 </html>

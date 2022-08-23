@@ -30,7 +30,7 @@ public class LoginController {
 	@GetMapping("/registerform")
 	public String userRegister(Model model) {
 		UserRegistration user = new UserRegistration();
-;		model.addAttribute("user", user);
+		model.addAttribute("user", user);
 		return "register";
 	}
 
@@ -61,8 +61,9 @@ public class LoginController {
 			Model model) {
 		UserRegistration registration = userRegistrationService.getEmailAndPasssword(userRegistration.getEmail(),
 				userRegistration.getPassword());
+		session.setAttribute("adhaarNumber",userRegistration.getAdhaarNumber());
 		if (registration != null) {
-			session.setAttribute("adhaarNumber",userRegistration.getAdhaarNumber());
+			
 			return "redirect:/trade/index";
 		} else
 			model.addAttribute("signin", "Sign in failed");

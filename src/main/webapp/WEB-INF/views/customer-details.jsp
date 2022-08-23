@@ -78,10 +78,10 @@ color: #fff;
 			</div>
 			<div>
 			<div>${message}</div>
-				<div>
-					<button id="add_stock" style="color: #fff">Add stock</button>
-				</div>
 			</div>
+			<div>
+					<button style="color: #fff" onclick="con();">Add</button>
+				</div>
 		</form:form>
 	</div>
 	

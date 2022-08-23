@@ -3,11 +3,12 @@
 # Description
 
 ### Investment Manager:
-The main aim of the project is about providing stock to user via application and maintain the user credentials
+The main aim of the project is about providing stock to user via application and maintain the user credentials and user details.
 
 ### General Information
 
-1. In this project we can purchase and sell stocks 
+1. In this project we can purchase and sell stocks
+2. Stock product will reduce.
 
 # Project Flow
 
@@ -19,25 +20,16 @@ The main aim of the project is about providing stock to user via application and
 					  
 	        ADMIN-----> -ADD STOCK PRODUCT
 				     -DELETE STOCK PRODUCT
-					  
-		 
+
+
+
 
 # Features
 
 1. DataBase Connectivity
-2. DataBase Relational data Handling. One to many and one to one relation.
+2. DataBase Relational data Handling. One to many relation
 3. Exception Handling with try and catch.
 4. Form validation in frontend level.
 5. Form validation in JavaScript level.
 6. Form null validation in Oracle database level.
-
-
-
-
-
-
-
-
-
-		   
-
+7. Implementing dynamic charts using JavaScript.

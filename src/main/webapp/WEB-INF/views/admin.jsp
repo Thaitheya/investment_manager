@@ -169,28 +169,6 @@
 				</div>
 			</nav>
 		</section>
-		<h1 style="text-align: center">User Details</h1>
-		
-		<div class="container">
-					<div class="item item1">
-						<h3>Manage your stocks easily</h3>
-						<button>
-							<div class="navbar_category">
-
-								<a href="/admin/addstockform"><b>Add Stock</b></a>
-							</div>
-						</button>
-					</div>
-					<div class="item item2">
-						<h3>List of stocks in hand</h3>
-						<button>
-							<div class="navbar_product">
-
-								<a href="/admin/list"><b> Stock list</b></a>
-							</div>
-						</button>
-					</div>
-				</div>
 		<script type="text/javascript">
 		var loader = document.getElementById("preloader");
 		window.addEventListener("load", function() {

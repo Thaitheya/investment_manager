@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.chainsys.investment_manager.dto.CustomerTransactionDTO;
 import com.chainsys.investment_manager.model.CustomerAccount;
-import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.Transactions;
 import com.chainsys.investment_manager.repository.CustomerAccountRepository;
 import com.chainsys.investment_manager.repository.TransactionsRepository;
@@ -34,6 +33,7 @@ public class CustomerAccountService {
 		return customerAccountRepository.findById(id);
 	}
 	 public CustomerAccount addcustomerDetails(CustomerAccount customerAccount) {
+		 
          return customerAccountRepository.save(customerAccount);
     }
 	 public List<CustomerAccount> accounts(){
