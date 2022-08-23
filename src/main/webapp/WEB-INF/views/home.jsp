@@ -90,10 +90,10 @@ setInterval(function(){updateChart()}, updateInterval);
 								<div class="dd_menu">
 									<div class="dd_left">
 										<ul>
-											<li class="navbar__item"><a class="navbar__links"><i class="fas fa-solid fa-user"></i></a></li>
-											<li class="navbar__item"><a class="navbar__links"><img src="https://img.icons8.com/emoji/48/000000/chart-increasing-with-yen-emoji.png"/></a></li>
-											<li class="navbar__item"><a class="navbar__links"><img src="https://img.icons8.com/emoji/48/000000/chart-increasing-emoji.png"/></a></li>
-											<li class="navbar__item"><a  class="navbar__links"><i class="fas fa-sign-out-alt"></i></a></li>
+											<li class="navbar__item"><a class="navbar__links"><em class="fas fa-solid fa-user"></em></a></li>
+											<li class="navbar__item"><a class="navbar__links"><img alt="buy"src="https://img.icons8.com/emoji/48/000000/chart-increasing-with-yen-emoji.png"/></a></li>
+											<li class="navbar__item"><a class="navbar__links"><img alt="sell" src="https://img.icons8.com/emoji/48/000000/chart-increasing-emoji.png"/></a></li>
+											<li class="navbar__item"><a  class="navbar__links"><em class="fas fa-sign-out-alt"></em></a></li>
 											
 										</ul>
 									</div>
