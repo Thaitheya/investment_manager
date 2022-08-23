@@ -80,7 +80,7 @@ color: #fff;
 			<div>${message}</div>
 			</div>
 			<div>
-					<button style="color: #fff" onclick="con();">Add</button>
+					<button style="color: #fff">Add</button>
 				</div>
 		</form:form>
 	</div>
@@ -96,11 +96,6 @@ color: #fff;
 <script type="text/javascript">
   document.getElementById('date').value = new Date().toISOString(); 
 </script>
-	<script type="text/javascript">
-	function con() {
-			  return confirm("Are you sure you wnat to Buy?");
-	}
-	</script>
 	<script type="text/javascript">
 		document.getElementById('customerid').value = Math.floor(Math.random() * 10000);
 	

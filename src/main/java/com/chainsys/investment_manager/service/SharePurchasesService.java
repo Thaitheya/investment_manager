@@ -41,8 +41,6 @@ public class SharePurchasesService {
 		customerAccountService.addCustomer(account);
 		CustomerAccount account2 = customerAccountService.findByAdhaar(purchaseService.getAdhaarNumber());
 		account2.setDepositedAmount(account2.getDepositedAmount()-purchaseService.getAmountOfInr());
-		CustomerAccount account3 = customerAccountService.findByAdhaar(purchaseService.getAdhaarNumber());
-		
 		return purchasesRepository.save(purchaseService);
 		
 	}
