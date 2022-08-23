@@ -75,7 +75,7 @@ border-bottom: 2px solid #009879;
 				<div>
 					<label for="customerId">Customer Id</label>
 					<div>
-						<form:input path="customerId" />
+						<form:input path="customerId" id="customerid"/>
 					</div>
 				</div>
 				<div>

@@ -17,14 +17,11 @@
 		<div id="root">
 			<nav class="navbar">
 				<div class="navbar__container">
-					<a href="#" id="navbar__logo">OpenSea.io</a>
+					<a href="#" id="navbar__logo">OpenSea.io-Admin Page</a>
 
 					<ul class="navbar__menu">
-						<li class="navbar__item"><a href="/trade/index"
+						<li class="navbar__item"><a href="/admin/adminhome"
 							class="navbar__links">Home</a></li>
-						<li class="navbar__item"><a href="/trade/about"
-							class="navbar__links">About</a></li>
-						<li class="navbar__item"><a href="" class="navbar__links">Contact</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -43,7 +40,6 @@
 					<th>Last Tansactioned Date</th>
 					<th>Last Tansactioned Value</th>
 					<th>Delete</th>
-					<th>Update</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -60,8 +56,6 @@
 						<td><a id="red"
 							href="/admin/deletestock?id=${StockProduct.stockId}">Delete</a>
 						<td>
-						<td><a id="blue"
-							href="/admin/updateform?id=${StockProduct.stockId}">update</a></td>
 					</tr>
 
 				</c:forEach>

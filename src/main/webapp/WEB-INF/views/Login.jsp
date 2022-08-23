@@ -30,6 +30,8 @@
 	<div class="login-form">
 		<h1>Login Form</h1>
 		<form:form action="getlogin" method="post" modelAttribute="loginhere" name="myForm">
+		    <label>Adhaar Number</label><br>
+			<form:input path="adhaarNumber" name="adhaarNumber"/>
 			<label>Email</label><br>
 			<form:input path="email" name="email" type="email" id="emails"/>
 			<label>password</label>
@@ -41,11 +43,6 @@
 			<li id="length">atleast 6 characters</li>
 			<li id="upper">atleast one uppercase</li>
 		</ul>
-		  <select>
-		  <option>Admin</option>
-		  <option>User</option>
-		  
-		  </select>
 		     <button >Submit</button>
 		</form:form>
 	</div>

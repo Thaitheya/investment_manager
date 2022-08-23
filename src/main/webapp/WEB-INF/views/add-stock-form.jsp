@@ -13,12 +13,11 @@
 </style>
 </head>
 <body>
-<div>
 		<div id="preloader"></div>
 		<div id="root">
 			<nav class="navbar">
 				<div class="navbar__container">
-					<a href="#" id="navbar__logo">OpenSea.io</a>
+					<a href="#" id="navbar__logo">OpenSea.io-Admin Page</a>
 
 					<ul class="navbar__menu">
 					<li class="navbar__item"><a href="/admin/adminhome"
@@ -30,7 +29,8 @@
 				</div>
 			</nav>
 		</div>
-		<div id="login-form">
+		<div>${message}</div>
+		<div class="login-form">
 			<form:form action="add" method="post" modelAttribute="stock">
 
 				<div>
@@ -88,7 +88,6 @@
 				</div>
 			</form:form>
 		</div>
-	</div>
 	<script type="text/javascript">
 		var loader = document.getElementById("preloader");
 		window.addEventListener("load", function() {

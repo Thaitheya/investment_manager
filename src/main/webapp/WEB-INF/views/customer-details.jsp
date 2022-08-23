@@ -43,7 +43,7 @@ color: #fff;
              <div>
 				<label for="customerId">Customer Id</label>
 				<div>
-					<form:input path="customerId"/>
+					<form:input path="customerId"  id="customerid"/>
 				</div>
 			</div>
 			<div>
@@ -77,6 +77,7 @@ color: #fff;
 				</div>
 			</div>
 			<div>
+			<div>${message}</div>
 				<div>
 					<button id="add_stock" style="color: #fff">Add stock</button>
 				</div>
@@ -101,7 +102,7 @@ color: #fff;
 	}
 	</script>
 	<script type="text/javascript">
-		document.getElementById('purchaseid').value = Math.floor(Math.random() * 10000);
+		document.getElementById('customerid').value = Math.floor(Math.random() * 10000);
 	
 	</script>
 </body>

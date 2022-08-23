@@ -17,7 +17,6 @@
 	align-items: center;
 	padding: 0 30px;
 }
-
 .navbar .logo a {
 	text-decoration: none;
 	color: #fff;
@@ -27,13 +26,11 @@
 	text-transform: uppercase;
 	list-style:none;
 }
-
 .navbar .nav_right < ul {
 	display: flex;
 	align-items: center;
 	list-style:none;
 }
-
 .navbar .nav_right ul li.nr_li {
 	margin-left: 900px;
 	cursor: pointer;
@@ -44,18 +41,15 @@
 	list-style:none;
 	right:-40px;
 }
-
 .navbar .nav_right ul li.nr_li:hover {
 	color: gold;
 	list-style:none;
 }
-
 .navbar .nav_right ul li img {
 	width: 35px;
 	vertical-align: middle;
 	list-style:none;
 }
-
 .navbar .dd_menu {
 	position: absolute;
 	right: -25px;
@@ -67,7 +61,6 @@
 	display: none;
 	list-style:none;
 }
-
 .navbar .dd_menu .dd_left {
 	background: #141414;
 	padding: 15px 15px;
@@ -75,23 +68,19 @@
 	border-bottom-left-radius: 15px;
 	list-style:none;
 }
-
 .navbar .dd_menu .dd_left li {
 	color: #fff;
 	list-style:none;
 }
-
 .navbar .dd_menu .dd_right {
 	padding: 15px 10px;
 	list-style:none;
 }
-
 .navbar .dd_menu li {
 	margin-bottom: 10px;
 	color: gold;
 	list-style:none;
 }
-
 .navbar .dd_menu:before {
 	content: "";
 	position: absolute;
@@ -101,7 +90,6 @@
 	border-color: transparent transparent #fff transparent;
 	list-style:none;
 }
-
 .navbar .dd_main.active .dd_menu {
 	display: flex;
 	list-style:none;
@@ -122,7 +110,6 @@ border-radius:30px;
 
 <script>
 window.onload = function () {
-
 var dps = [];
 var chart = new CanvasJS.Chart("chartContainer", {
 	title :{
@@ -137,16 +124,12 @@ var chart = new CanvasJS.Chart("chartContainer", {
 		dataPoints: dps
 	}]
 });
-
 var xVal = 0;
 var yVal = 100; 
 var updateInterval = 1000;
 var dataLength = 20;
-
 var updateChart = function (count) {
-
 	count = count || 1;
-
 	for (var j = 0; j < count; j++) {
 		yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
 		dps.push({
@@ -155,17 +138,13 @@ var updateChart = function (count) {
 		});
 		xVal++;
 	}
-
 	if (dps.length > dataLength) {
 		dps.shift();
 	}
-
 	chart.render();
 };
-
 updateChart(dataLength);
 setInterval(function(){updateChart()}, updateInterval);
-
 }
 </script>
 </head>
@@ -250,7 +229,6 @@ setInterval(function(){updateChart()}, updateInterval);
 			</div>
 		</div>
 	</section>
-	<h1 style="text-align: center">Stocks available</h1>
 	 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script type="text/javascript">
 		var loader = document.getElementById("preloader");
@@ -260,7 +238,6 @@ setInterval(function(){updateChart()}, updateInterval);
 	</script>
 	<script>
 		var dd_main = document.querySelector(".dd_main");
-
 		dd_main.addEventListener("click", function() {
 			this.classList.toggle("active");
 		})

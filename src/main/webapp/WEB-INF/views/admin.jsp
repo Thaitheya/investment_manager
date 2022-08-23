@@ -128,7 +128,7 @@
 	<div class=actiom>
 		<nav class="navbar">
 			<div class="navbar__container">
-				<a href="#" id="navbar__logo">OpenSea.io</a>
+				<a href="#" id="navbar__logo">OpenSea.io-AdminPage</a>
 				<div>
 					<ul class="navbar__menu">
 						<li class="navbar__item"><a href="#"

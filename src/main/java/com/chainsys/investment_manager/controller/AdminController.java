@@ -1,11 +1,8 @@
 package com.chainsys.investment_manager.controller;
 
-import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,7 +43,7 @@ public class AdminController {
 	// Added stock
 
 	@GetMapping("/addstockform")
-	public String stockProduct(Model model) {
+	public String stockProduct(Model model,HttpServletRequest request) {
 		StockProduct stock = new StockProduct();
 		model.addAttribute("stock", stock);
 		return ADD;
@@ -55,6 +52,7 @@ public class AdminController {
 	@PostMapping("/add")
 	public String addStockProduct(@ModelAttribute("stock") StockProduct stockProduct, Model model) {
 		if(stockProduct.getNoOfSharesInHand() <= 0) {
+			model.addAttribute("message","insufficent fund");
 			return "redirect:/trade/error";
 		}
 		else {

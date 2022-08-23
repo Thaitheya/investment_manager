@@ -17,7 +17,7 @@
 		<div class="content">
 		   <h2>:( Error occured</h2>
 		   <h4>Oops! Page not found</h4>
-		   <p>Invalid info please be sure to check before register</p>
+		   <p>Sorry!!! for the inconvenience</p>
 		   <a href="/trade/home">Home page</a>
 		</div>
 	</div>

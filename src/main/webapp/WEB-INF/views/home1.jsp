@@ -63,6 +63,7 @@
 			</div>
 		</div>
 	</section>
+	
 	<script type="text/javascript">
 		var loader = document.getElementById("preloader");
 		window.addEventListener("load", function() {

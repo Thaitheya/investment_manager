@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Update user</title>
+<title>Update Stock</title>
 </head>
 <body>
 <div id="root">

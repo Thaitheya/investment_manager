@@ -2,6 +2,7 @@ package com.chainsys.investment_manager.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -61,8 +62,11 @@ public class HomeController {
 	//
 	
 	@GetMapping("/addpurchases")
-	public String stockPurchases(Model model) {
+	public String stockPurchases(HttpServletRequest request, Model model) {
 		SharesPurchase purchases = new SharesPurchase();
+		HttpSession session = request.getSession();
+		String adhaarNumber = (String) session.getAttribute("adhaarNumber");
+		purchases.setAdhaarNumber(adhaarNumber);
 		model.addAttribute("addpurchases",purchases);
 		
 		return ADD;
@@ -93,8 +97,11 @@ public class HomeController {
 	}
 
 	@GetMapping("/addSale")
-	public String addStockSell(Model model) {
+	public String addStockSell(Model model,HttpServletRequest request) {
 		SharesSales sales = new SharesSales();
+		HttpSession session = request.getSession();
+		String adhaarNumber = (String) session.getAttribute("adhaarNumber");
+		sales.setAdhaarNumber(adhaarNumber);
 		model.addAttribute("addsales", sales);
 		return "add-sales-form";
 
