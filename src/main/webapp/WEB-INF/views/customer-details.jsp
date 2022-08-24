@@ -38,12 +38,13 @@ color: #fff;
 		</nav>
 		 
 	</div>
+	<h1 style="text-align: center;">Deposit Amount</h1>
 	<div class="login-form">
 		<form:form action="customeraccount" method="post" modelAttribute="addcustomerdetails">
              <div>
 				<label for="customerId">Customer Id</label>
 				<div>
-					<form:input path="customerId"  id="customerid"/>
+					<form:input path="customerId" value="2206"/>
 				</div>
 			</div>
 			<div>
@@ -96,9 +97,5 @@ color: #fff;
 <script type="text/javascript">
   document.getElementById('date').value = new Date().toISOString(); 
 </script>
-	<script type="text/javascript">
-		document.getElementById('customerid').value = Math.floor(Math.random() * 10000);
-	
-	</script>
 </body>
 </html>

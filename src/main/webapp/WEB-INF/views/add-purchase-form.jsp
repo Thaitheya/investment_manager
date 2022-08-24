@@ -21,7 +21,7 @@ border-radius: 10px;
 #error {
  color:#253453;
  text-align: center;
- font-size: 35px;
+ font-size: 25px;
 }
 </style>
 </head>

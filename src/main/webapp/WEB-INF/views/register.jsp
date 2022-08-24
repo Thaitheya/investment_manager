@@ -107,5 +107,6 @@
 			loader.style.display = "none";
 		}, 1000)
 	</script>
+	
 </body>
 </html>

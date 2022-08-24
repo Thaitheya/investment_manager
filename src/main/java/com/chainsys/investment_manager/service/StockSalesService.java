@@ -8,6 +8,7 @@ import com.chainsys.investment_manager.dto.StockProductSalesDTO;
 import com.chainsys.investment_manager.model.CustomerAccount;
 import com.chainsys.investment_manager.model.SharesSales;
 import com.chainsys.investment_manager.model.StockProduct;
+import com.chainsys.investment_manager.model.Transactions;
 import com.chainsys.investment_manager.repository.ShareSalesRepository;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 
@@ -15,14 +16,13 @@ import com.chainsys.investment_manager.repository.StockProductsRepository;
 public class StockSalesService {
 
 	@Autowired
-	ShareSalesRepository repository;
+	private ShareSalesRepository repository;
 	@Autowired
-	StockProductsRepository productsRepository;
+	private StockProductsRepository productsRepository;
 	@Autowired
-	StockProductService productService;
+	private StockProductService productService;
 	@Autowired
-	CustomerAccountService accountService;
-
+	private CustomerAccountService accountService;
 	public StockProductSalesDTO getProductSalesDTO(int id) {
 		StockProductSalesDTO dto = new StockProductSalesDTO();
 		dto.setStockProduct(productsRepository.findById(id));
@@ -40,6 +40,9 @@ public class StockSalesService {
 		CustomerAccount account2 = accountService.findByAdhaar(sharesSales.getAdhaarNumber());
 		account2.setDepositedAmount(account2.getDepositedAmount() + sharesSales.getAmountOfInr());
 		accountService.addCustomer(account2);
+		CustomerAccount account3 = accountService.findByAdhaar(sharesSales.getAdhaarNumber());
+		account3.setAmountUnderSettlement( sharesSales.getSoldPrice() + account3.getSharesPurchased());
+		accountService.addCustomer(account3);
 		return repository.save(sharesSales);
 
 	}

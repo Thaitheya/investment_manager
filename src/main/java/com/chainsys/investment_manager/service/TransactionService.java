@@ -10,17 +10,13 @@ import com.chainsys.investment_manager.repository.TransactionsRepository;
 public class TransactionService {
      @Autowired
      private TransactionsRepository repository;
+    
      public List<Transactions> getAllTrans(){
           return repository.findAll();
      }  
      
      public Transactions addTransactions(Transactions transactions) {
           return repository.save(transactions);
-     }
-    	
-
-    	
-
-
-     
+     }   
+ 
 }

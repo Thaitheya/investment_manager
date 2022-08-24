@@ -20,7 +20,6 @@ import com.chainsys.investment_manager.dto.StockProductSalesDTO;
 import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.SharesSales;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
-import com.chainsys.investment_manager.service.CustomerAccountService;
 import com.chainsys.investment_manager.service.SharePurchasesService;
 import com.chainsys.investment_manager.service.StockSalesService;
 
@@ -35,8 +34,6 @@ public class HomeController {
 	StockSalesService salesService;
 	@Autowired
 	SharePurchasesService purchasesServices;
-	@Autowired
-	CustomerAccountService accountService;
     @GetMapping("/home")
     public String home() {
     	return "home1";
@@ -83,7 +80,7 @@ public class HomeController {
 				return "redirect:/trade/tradepurchaselist";
 			}
 		    catch(Exception ex) {
-		    	model.addAttribute("message",":(Purchase unsuccessful");
+		    	model.addAttribute("message",":(Purchase unsuccessful insufficent fund");
 		    	return ADD;
 		    }
 		}
@@ -116,7 +113,7 @@ public class HomeController {
 		salesService.sellStockProduct(sharesSale);
 		return "redirect:/trade/tradesaleslist";
 		}catch (Exception e) {
-	      model.addAttribute("message",":(Sales Unsuccessful");
+	      model.addAttribute("message",":(Sales Unsuccessful,Please enter the value above 100");
 	      return SELL;
 		}
 	}

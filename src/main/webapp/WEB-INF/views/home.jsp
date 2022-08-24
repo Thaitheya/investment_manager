@@ -9,16 +9,104 @@
 <%@ include file="/WEB-INF/views/asserts/style.css"%>
 </style>
 <style type="text/css">
-<%@ include file="/WEB-INF/views/asserts/home.css"%>
+.navbar {
+	background: #141414;
+	width: 100%;
+	height: 80px;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 30px;
+}
+.navbar .logo a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: 2px;
+	font-size: 25px;
+	text-transform: uppercase;
+	list-style:none;
+}
+.navbar .nav_right < ul {
+	display: flex;
+	align-items: center;
+	list-style:none;
+}
+.navbar .nav_right ul li.nr_li {
+	margin-left: 850px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 20px;
+	position: relative;
+	top: -80px;
+	list-style:none;
+	right:-40px;
+}
+.navbar .nav_right ul li.nr_li:hover {
+	color: gold;
+	list-style:none;
+}
+.navbar .nav_right ul li img {
+	width: 35px;
+	vertical-align: middle;
+	list-style:none;
+}
+.navbar .dd_menu {
+	position: absolute;
+	right: -25px;
+	top: 47px;
+	display: flex;
+	background: #fff;
+	border-radius: 15px;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+	display: none;
+	list-style:none;
+}
+.navbar .dd_menu .dd_left {
+	background: #141414;
+	padding: 15px 15px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	list-style:none;
+}
+.navbar .dd_menu .dd_left li {
+	color: #fff;
+	list-style:none;
+}
+.navbar .dd_menu .dd_right {
+	padding: 15px 10px;
+	list-style:none;
+}
+.navbar .dd_menu li {
+	margin-bottom: 10px;
+	color: gold;
+	list-style:none;
+}
+.navbar .dd_menu:before {
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 30px;
+	border: 10px solid;
+	border-color: transparent transparent #fff transparent;
+	list-style:none;
+}
+.navbar .dd_main.active .dd_menu {
+	display: flex;
+	list-style:none;
+}
+.image {
+border-radius:30px;
+}
+#name {
+	text-align: center;
+}
 </style>
-
 <link
 	href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap"
 	rel="stylesheet">
 <link
 	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
 	rel="stylesheet">
-
 <script>
 window.onload = function () {
 var dps = [];
@@ -71,9 +159,8 @@ setInterval(function(){updateChart()}, updateInterval);
 							class="navbar__links">Buy</a></li>
 						<li class="navbar__item"><a href="/trade/addSale"
 							class="navbar__links">Sell</a></li>
-						<li class="navbar__item"><a href="/trade/about"
-							class="navbar__links">About</a></li>
-						<li class="navbar__item"><a href="" class="navbar__links">Contact</a></li>
+						<li class="navbar__item"><a href="/customer/getcustomer" class="navbar__links">Deposit</a></li>
+						<li class="navbar__item"><a href="/customer/addtransform" class="navbar__links">Transactions</a></li>
 					</ul>
 				</div>
 			</div>
@@ -86,20 +173,19 @@ setInterval(function(){updateChart()}, updateInterval);
 							<li class="nr_li dd_main"><img
 								src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"
 								alt="profile_img" class="image">
-
 								<div class="dd_menu">
 									<div class="dd_left">
 										<ul>
-											<li class="navbar__item"><a class="navbar__links"><em class="fas fa-solid fa-user"></em></a></li>
+											<li class="navbar__item"><a class="navbar__links"><i class="fas fa-solid fa-user"></i></a></li>
 											<li class="navbar__item"><a class="navbar__links"><img alt="buy"src="https://img.icons8.com/emoji/48/000000/chart-increasing-with-yen-emoji.png"/></a></li>
 											<li class="navbar__item"><a class="navbar__links"><img alt="sell" src="https://img.icons8.com/emoji/48/000000/chart-increasing-emoji.png"/></a></li>
-											<li class="navbar__item"><a  class="navbar__links"><em class="fas fa-sign-out-alt"></em></a></li>
+											<li class="navbar__item"><a  class="navbar__links"><i class="fas fa-sign-out-alt"></i></a></li>
 											
 										</ul>
 									</div>
 									<div class="dd_right">
 										<ul>
-											<li class="navbar__item"><a  href="/customer/getcustomer"class="navbar__links">Profile</a></li>
+											<li class="navbar__item"><a  href="/customer/getCustomerlist"class="navbar__links">Profile</a></li>
 											<li class="navbar__item"><a  href="/trade/tradepurchaselist"class="navbar__links">Recent Buy</a></li>
 											<li class="navbar__item"><a  href="/trade/tradesaleslist"class="navbar__links">Recent Sell</a></li>
 											<li class="navbar__item"><a  href="/trade/home" class="navbar__links">Logout</a></li>
@@ -119,7 +205,6 @@ setInterval(function(){updateChart()}, updateInterval);
 				<div class="images__card">
 					<h2>TATA</h2>
 					<p>TATA Motors</p>
-
 				</div>
 				<div class="images__card">
 					<h2>Adani</h2>

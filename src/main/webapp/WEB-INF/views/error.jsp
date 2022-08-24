@@ -8,9 +8,6 @@
 <style>
 <%@include file="/WEB-INF/views/asserts/error.css"%>
 </style>
-<script type="text/javascript">
-<%@include file="/WEB-INF/views/asserts/app.js"%>
-</script>
 </head>
 <body>
 	<div id=container>

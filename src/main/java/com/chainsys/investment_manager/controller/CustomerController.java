@@ -41,8 +41,6 @@ public class CustomerController {
 		HttpSession session = request.getSession();
 		String adhaarNumber = (String) session.getAttribute("adhaarNumber");
 		trans.setAdhaarNumber(adhaarNumber);
-		int customerId = (int) session.getAttribute("customerId");
-		trans.setCustomerId(customerId);
 		model.addAttribute("trans", trans);
 		return "add-trans-form";
 	}
@@ -63,8 +61,10 @@ public class CustomerController {
 
 //Customer Account
 	@GetMapping("/getcustomer")
-	public String getCustomerDetails(Model model, HttpSession session,CustomerAccount account) {	
-		session.setAttribute("customerId",account.getCustomerId());
+	public String getCustomerDetails(Model model,CustomerAccount account,HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String adhaarNumber = (String) session.getAttribute("adhaarNumber");
+		account.setAdhaarNumber(adhaarNumber);
 		model.addAttribute("addcustomerdetails", account);
 		return "customer-details";
 	}

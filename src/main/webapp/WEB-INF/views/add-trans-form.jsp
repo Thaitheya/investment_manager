@@ -68,13 +68,13 @@ color: #fff;
 			<div>
 				<label for="description">Description</label>
 				<div>
-					<form:input path="description" id="num1"/>
+					<form:input path="description" value="personal"/>
 				</div>
 			</div>
 			<div>
 				<label for="amountReceived">AmountReceived</label>
 				<div>
-					<form:input path="amountReceived" id="num2"/>
+					<form:input path="amountReceived"/>
 				</div>
 			</div>
 			

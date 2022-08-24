@@ -8,5 +8,5 @@ import com.chainsys.investment_manager.model.CustomerAccount;
 public interface CustomerAccountRepository extends JpaRepository<CustomerAccount,Integer>{
      CustomerAccount findByAdhaarNumber(String adhaar);
      CustomerAccount findById(int id);
-     CustomerAccount save(CustomerAccount account);
+	CustomerAccount save(CustomerAccount account);
 }

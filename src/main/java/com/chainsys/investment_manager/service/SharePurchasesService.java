@@ -9,20 +9,20 @@ import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
 import com.chainsys.investment_manager.model.CustomerAccount;
 import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.StockProduct;
+import com.chainsys.investment_manager.model.Transactions;
 import com.chainsys.investment_manager.repository.SharesPurchasesRepository;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 @Service
 public class SharePurchasesService {
 	@Autowired
-	SharesPurchasesRepository purchasesRepository;
+	private SharesPurchasesRepository purchasesRepository;
 
 	@Autowired
-	StockProductsRepository productsRepository;
+	private StockProductsRepository productsRepository;
 	@Autowired
-	StockProductService stockProductService;
+	private StockProductService stockProductService;
 	@Autowired
-	CustomerAccountService customerAccountService;
-	
+	private CustomerAccountService customerAccountService;
 	public StockProdectPurchaseDTO getStockProdectPurchaseDTO(int id) {
 		StockProdectPurchaseDTO dto = new StockProdectPurchaseDTO();
 		dto.setStockProduct(productsRepository.findById(id));
@@ -41,6 +41,10 @@ public class SharePurchasesService {
 		customerAccountService.addCustomer(account);
 		CustomerAccount account2 = customerAccountService.findByAdhaar(purchaseService.getAdhaarNumber());
 		account2.setDepositedAmount(account2.getDepositedAmount()-purchaseService.getAmountOfInr());
+		customerAccountService.addCustomer(account);
+		CustomerAccount account3 = customerAccountService.findByAdhaar(purchaseService.getAdhaarNumber());
+		account3.setAmountUnderSettlement( purchaseService.getBuyPrice() - account3.getSharesPurchased());
+		customerAccountService.addCustomer(account3);
 		return purchasesRepository.save(purchaseService);
 		
 	}
