@@ -33,7 +33,7 @@
 				<div>
 					<label for="adminId">AdminId</label>
 					<div>
-						<form:input path="adminId" value="12"/>
+						<form:input path="adminId" value="12" readonly="true"/>
 					</div>
 				</div>
 				<div>

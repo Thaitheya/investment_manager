@@ -17,11 +17,8 @@
  font-size: 35px;
 }
 #back {
+color: gold;
 text-decoration: none;
-color: #fff;
-background-color: gold;
-height: 25px;
-border-radius: 10px;
 }
 </style>
 </head>
@@ -30,7 +27,7 @@ border-radius: 10px;
 		<div id="preloader"></div>
 		<div id="root">
 			<nav class="navbar">
-			<button style="margin-bottom: auto;">Back</button>
+			<button style="margin-bottom: auto;"><a  href="/trade/index" id="back">Back</a></button>
 				<div class="navbar__container">
 					<a href="#" id="navbar__logo">OpenSea.io</a>
 
@@ -43,7 +40,6 @@ border-radius: 10px;
 					</ul>
 				</div>
 			</nav>
-			 <a href="/trade/index" id="back">Back</a>
 		</div>
 		<div id="error">${message}</div>
 		<div class="login-form">

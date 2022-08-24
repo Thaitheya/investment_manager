@@ -241,4 +241,24 @@ setInterval(function(){updateChart()}, updateInterval);
 	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </body>
+<footer id="contact-me">
+            <div class="socials">
+            </div>
+          <div>
+            <h2 class="contact">Contact me</h2>
+          </div>
+          <div>
+            <label for="Email" class="labels">Email</label>
+            <input type="Email" class="form" placeholder="Email">
+          </div>
+
+          <div>
+             <button type="button" class="btn"onclick="document.getElementById('demo').innerHTML = 'Thank you!'">Submit</button>
+          </div>
+          <p id="demo">Please submit your detail to get in touch with us...</p>
+          <hr>
+           <div class="Copy-rights">
+            © 2005 - 2022 Content is available under these licenses.
+          </div>
+    </footer>
 </html>
