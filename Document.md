@@ -7,9 +7,12 @@ The main aim of the project is about providing stock to user via application and
 
 ### General Information
 
-1. In this project we can purchase and sell stocks
-2. Stock product will reduce.
+1. In this project we can purchase and sell stocks.
+2. Can deposit Amount
+3. Stock product will reduce when the stock is sold.
+4. Amount under settlement will be calculated.
 
+```
 # Project Flow
 
 		REGISTER ---> LOGIN ---> USER ---> 
@@ -21,7 +24,7 @@ The main aim of the project is about providing stock to user via application and
 	        ADMIN-----> -ADD STOCK PRODUCT
 				     -DELETE STOCK PRODUCT
 
-
+```
 
 
 # Features
