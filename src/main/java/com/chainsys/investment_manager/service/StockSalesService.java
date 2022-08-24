@@ -8,7 +8,6 @@ import com.chainsys.investment_manager.dto.StockProductSalesDTO;
 import com.chainsys.investment_manager.model.CustomerAccount;
 import com.chainsys.investment_manager.model.SharesSales;
 import com.chainsys.investment_manager.model.StockProduct;
-import com.chainsys.investment_manager.model.Transactions;
 import com.chainsys.investment_manager.repository.ShareSalesRepository;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 

@@ -9,7 +9,6 @@ import com.chainsys.investment_manager.dto.StockProdectPurchaseDTO;
 import com.chainsys.investment_manager.model.CustomerAccount;
 import com.chainsys.investment_manager.model.SharesPurchase;
 import com.chainsys.investment_manager.model.StockProduct;
-import com.chainsys.investment_manager.model.Transactions;
 import com.chainsys.investment_manager.repository.SharesPurchasesRepository;
 import com.chainsys.investment_manager.repository.StockProductsRepository;
 @Service
