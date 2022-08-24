@@ -19,11 +19,11 @@ The main aim of the project is about providing stock to user via application and
 		REGISTER ---> LOGIN ---> USER ---> 
 					  -ADD SHARESPURCHASE
 					  -ADD SHARESSALES
-					  -ADD CUSTOMER ACCOUNT 
+					  -ADD CUSTOMER ACCOUNT --->Deposit amount
 		  ---> LOGOUT  
 					  
-	        ADMIN-----> -ADD STOCK PRODUCT
-				     -DELETE STOCK PRODUCT
+	         ADMIN-----> -ADD STOCK PRODUCT
+		            -DELETE STOCK PRODUCT
 
 ```
 
